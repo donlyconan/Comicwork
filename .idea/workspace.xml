@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="921aab84-2033-4a0c-9015-52444967e934" name="Default Changelist" comment="Update-Model">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/index2.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/index3.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/hello.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/hello.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/post.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,7 +211,7 @@
       <workItem from="1598851962515" duration="5927000" />
       <workItem from="1598922278122" duration="7313000" />
       <workItem from="1598955585731" duration="1893000" />
-      <workItem from="1599019498266" duration="6762000" />
+      <workItem from="1599019498266" duration="8322000" />
     </task>
     <task id="LOCAL-00001" summary="Update-Model">
       <created>1599024156214</created>
@@ -229,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599024156214</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Update-Model">
+      <created>1599028559071</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1599028559071</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,10 +338,10 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="193" y="0" key="SettingsEditor/0.0.1304.768@0.0.1304.768" timestamp="1599019912035" />
-    <state x="244" y="117" key="Vcs.Push.Dialog.v2" timestamp="1599028232399">
+    <state x="244" y="117" key="Vcs.Push.Dialog.v2" timestamp="1599029588232">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="244" y="117" key="Vcs.Push.Dialog.v2/0.0.1304.768@0.0.1304.768" timestamp="1599028232399" />
+    <state x="244" y="117" key="Vcs.Push.Dialog.v2/0.0.1304.768@0.0.1304.768" timestamp="1599029588232" />
     <state x="308" y="37" width="672" height="678" key="search.everywhere.popup" timestamp="1599021059871">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
