@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="921aab84-2033-4a0c-9015-52444967e934" name="Default Changelist" comment="Update-Model">
+      <change afterPath="$PROJECT_DIR$/txt.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,9 +24,14 @@
   <component name="Git.Settings">
     <option name="PUSH_TAGS">
       <GitPushTagMode>
-        <option name="argument" value="--tags" />
-        <option name="title" value="All" />
+        <option name="argument" value="--follow-tags" />
+        <option name="title" value="Current Branch" />
       </GitPushTagMode>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -190,6 +196,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="JavaScript Debug.localhost:8000" />
+        <item itemvalue="JavaScript Debug.localhost:8000" />
+        <item itemvalue="JavaScript Debug.localhost:8000" />
       </list>
     </recent_temporary>
   </component>
@@ -211,7 +219,7 @@
       <workItem from="1598851962515" duration="5927000" />
       <workItem from="1598922278122" duration="7313000" />
       <workItem from="1598955585731" duration="1893000" />
-      <workItem from="1599019498266" duration="8322000" />
+      <workItem from="1599019498266" duration="9411000" />
     </task>
     <task id="LOCAL-00001" summary="Update-Model">
       <created>1599024156214</created>
@@ -227,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599028559071</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Update-Model">
+      <created>1599030018533</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1599030018533</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -338,10 +353,18 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="193" y="0" key="SettingsEditor/0.0.1304.768@0.0.1304.768" timestamp="1599019912035" />
-    <state x="244" y="117" key="Vcs.Push.Dialog.v2" timestamp="1599029588232">
+    <state x="244" y="117" key="Vcs.Push.Dialog.v2" timestamp="1599030180860">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="244" y="117" key="Vcs.Push.Dialog.v2/0.0.1304.768@0.0.1304.768" timestamp="1599029588232" />
+    <state x="244" y="117" key="Vcs.Push.Dialog.v2/0.0.1304.768@0.0.1304.768" timestamp="1599030180860" />
+    <state x="480" y="118" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1599030025733">
+      <screen x="0" y="0" width="1304" height="768" />
+    </state>
+    <state x="480" y="118" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1304.768@0.0.1304.768" timestamp="1599030025732" />
+    <state x="412" y="173" key="git4idea.ui.GitUnstashDialog" timestamp="1599030004438">
+      <screen x="0" y="0" width="1304" height="768" />
+    </state>
+    <state x="412" y="173" key="git4idea.ui.GitUnstashDialog/0.0.1304.768@0.0.1304.768" timestamp="1599030004438" />
     <state x="308" y="37" width="672" height="678" key="search.everywhere.popup" timestamp="1599021059871">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
