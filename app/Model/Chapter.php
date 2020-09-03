@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -8,6 +8,7 @@ class Chapter extends Model
 {
     //ten bang co so du lieu Mac dinh: Model+s (chapters)
     protected $table = 'chapter';
+    protected $dateFormat = 'dd/MM/yyyy';
 
     /**
      * Nhung truong bi gioi han truy cap theo cach "Chon toan bo"
@@ -50,5 +51,7 @@ class Chapter extends Model
      */
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
+
+
 
 }

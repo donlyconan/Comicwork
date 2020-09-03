@@ -1,0 +1,152 @@
+body {
+    padding-top: 4.2rem;
+    padding-bottom: 4.2rem;
+    background: #e5e5e5;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+h1, h2, h3 {
+    font-family: 'Kaushan Script', cursive;
+}
+
+.myform {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 1rem;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 1.1rem;
+    outline: 0;
+    max-width: 480px;
+}
+
+.tx-tfm {
+    text-transform: uppercase;
+}
+
+.mybtn {
+    border-radius: 50px;
+}
+
+
+.login-or {
+    position: relative;
+    color: #aaa;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.span-or {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: -2px;
+    margin-left: -25px;
+    background-color: #fff;
+    width: 50px;
+    text-align: center;
+}
+
+.hr-or {
+    height: 1px;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+.google {
+    color: #666;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    outline: none;
+    border: 1px solid lightgrey;
+}
+
+form .error {
+    color: #ff0000;
+}
+
+#second {
+    display: none;
+}
+
+.bot-left {
+    width: 45%;
+    float: left;
+}
+
+.bot-right {
+    width: 45%;
+    margin-right: 10px;
+    float: right;
+}
+
+.bot-right a {
+    width: 100%;
+    font-size: 14px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: right;
+}
+
+#bottom {
+    clear: both;
+    margin-top: 20px;
+}
+
+#remember {
+    width: 15px;
+    height: 15px;
+    margin-top: 5px;
+}
+
+#lbremeber {
+    font-size: 14px;
+}
+
+.bottom-media {
+    margin-top: 5px;
+    margin: auto;
+}
+
+
+.notify {
+    width: auto;
+    margin: auto;
+    height: auto;
+    text-align: center;
+    clear: both;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.notify span {
+    font-size: 14px;
+    color: #b83d3d;
+}
+
+.messages {
+    clear: both;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.messages input {
+    margin-left: 10px;
+    width: auto;
+    line-height: 20px;
+}
+
+
