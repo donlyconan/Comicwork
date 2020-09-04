@@ -21,26 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="921aab84-2033-4a0c-9015-52444967e934" name="Default Changelist" comment="Update-Model">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Chapter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Chapter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Comicwork.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Comicwork.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Follow.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Follow.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/History.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/History.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Image.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Image.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Notification.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Notification.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Role.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/RoleUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/RoleUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Tag.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/TagComicwork.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/ComicworkTag.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/View.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Vote.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Vote.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/ganeric.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/ganeric.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/signup.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/signup.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/share/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/share/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/share/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/share/header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -265,7 +245,7 @@
       <workItem from="1598955585731" duration="1893000" />
       <workItem from="1599019498266" duration="18523000" />
       <workItem from="1599105408827" duration="46092000" />
-      <workItem from="1599205924972" duration="12104000" />
+      <workItem from="1599205924972" duration="12723000" />
     </task>
     <task id="LOCAL-00001" summary="Update-Model">
       <created>1599024156214</created>
@@ -302,7 +282,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599153469442</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Update-Model">
+      <created>1599219621912</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1599219621913</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

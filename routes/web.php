@@ -136,23 +136,25 @@ Route::get('tester', function (){
 //        \App\Model\Chapter::find(1)->views
 //    ];
 
-    $commicwork = [
-        \App\Model\Comicwork::all(),
-        \App\Model\Comicwork::find(1)->follows,
-        \App\Model\Comicwork::find(1)->histories,
-        \App\Model\Comicwork::find(1)->votes,
-        \App\Model\Comicwork::find(1)->views,
-        \App\Model\Comicwork::find(1)->chapters,
-        \App\Model\Comicwork::find(1)->users
+//    $commicwork = [
+//        \App\Model\Comicwork::all(),
+//        \App\Model\Comicwork::find(1)->follows,
+//        \App\Model\Comicwork::find(1)->histories,
+//        \App\Model\Comicwork::find(1)->votes,
+//        \App\Model\Comicwork::find(1)->views,
+//        \App\Model\Comicwork::find(1)->chapters,
+//        \App\Model\Comicwork::find(1)->users,
 //        \App\Model\Comicwork::find(1)->tags    //[error]
-    ];
+//    ];
+//
+//    $tags = [
+//        \App\Model\Tag::all(),
+//        \App\Model\Tag::find(1)->comicworkTag,
+//        \App\Model\Tag::find(1)->comicworks
+//    ];
 
-    $follow = [
 
-    ];
-
-
-    dd(\App\Model\Comicwork::find(1)->tags);
+//    dd($commicwork);
 });
 
 
