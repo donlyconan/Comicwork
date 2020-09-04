@@ -4,10 +4,11 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class Chapter extends Model
 {
     //ten bang co so du lieu Mac dinh: Model+s (chapters)
-    protected $table = 'chapter';
+    protected $table = 'chapters';
     protected $dateFormat = 'dd/MM/yyyy';
 
     /**
@@ -20,7 +21,7 @@ class Chapter extends Model
      * cac truong la id cua bang: default 'id'
      * @var string[]
      */
-    public $primaryKey = ['id'];
+    public $primaryKey = 'id';
 
     /**
      * Cho phep truong id tu dong tang ma khong can su can thiep cua lap trinh vien
@@ -52,6 +53,22 @@ class Chapter extends Model
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
+
+    public function comicwork()
+    {
+        return $this->belongsTo('App\Model\Comicwork', 'id_comicwork');
+    }
+
+    public function images()
+    {
+        return $this->hasMany('App\Model\Image', 'id_chapter');
+    }
+
+
+    public function views()
+    {
+        return $this->hasMany('App\Model\View', 'id_chapter');
+    }
 
 
 }

@@ -5,7 +5,9 @@
 <section class="main-content">
     <div class="container story-list">
 
-        <div class="title-list">Tìm kiếm: Comicwork</div>
+        @if(isset($title))
+            <div class="title-list">{{$title}}</div>
+        @endif
 
         <div class="tile is-ancestor">
             <div class="tile is-vertical is-parent">

@@ -4,13 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Model\Chapter;
 use App\Model\Comicwork;
+use App\Model\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('home/index');
+        return view('home/index', ['user'=>User::find(6)]);
+    }
+
+    public function filter(Request $request) {
+
+
     }
 
 //

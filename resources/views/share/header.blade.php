@@ -5,13 +5,10 @@
           content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=6.0, user-scalable=yes">
     <link rel="shortcut icon" href="http://static.truyenqq.com/template/frontend/images/favicon.ico?v=1.1"
           type="image/x-icon">
-
     <link rel="stylesheet" type="text/css" href="http://static.truyenqq.com/template/frontend/styles/styles.css?v=4.1">
     <link rel="stylesheet" type="text/css" href="http://static.truyenqq.com/template/frontend/styles/read.css?v=1.0">
     <script src="http://static.truyenqq.com/template/frontend/scripts/main.js?v=4.4"></script>
-
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
-
 </head>
 
 <section class="top-bar" id="home">
@@ -19,42 +16,44 @@
         <div class="level">
             <div class="level-left pc">
                 <span class="logo">
-                    <a href="home">Truyen QQ</a>
+                    <a href="/">Truyen QQ</a>
                 </span>
-                <!-- /.logo -->
+
                 <div class="top-search">
                     <input type="text" class="text-search" placeholder="Bạn cứ nhập từ khoá...">
                     <button class="submit-btn btn_search"></button>
                     <div class="list-results">
                         <div class="title-search">Tìm kiếm gần đây</div>
                         <div class="list-container">
-
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="level-right">
                 <ul class="top-links pc">
                     <li>
-                        <a href="http://truyenqq.com/lich-su.html">Lịch sử</a>
+                        <a href="/user/history">Lịch sử</a>
                     </li>
                     <li>
-                        <a href="http://truyenqq.com/truyen-dang-theo-doi.html">Theo dõi</a>
+                        <a href="/user/follow">Theo dõi</a>
                     </li>
                     <li>
-                        <a href="javascript:void(0);" class="download-app-link">
+                        <a href="" class="download-app-link">
                             <span class="download-app-icon"></span>
                             Tải App
                         </a>
                     </li>
                 </ul>
-                <!-- /.top-links -->
-
 
                 @if(isset($user) && $user != null)
                     <div class="top-buttons has-login">
-                        <div class="notify home smp"><a href="http://truyenqq.com/index.html"><i
-                                    class="fas fa-home"></i></a></div>
+                        <div class="notify home smp">
+                            <a href="http://truyenqq.com/index.html">
+                                <i class="fas fa-home">sssssssssssssssssdad</i>
+                            </a>
+                        </div>
+
                         <div class="notify center " data-id="notification">
                             <i class="fas fa-bell"></i>
                             <div class="list-messages">
@@ -84,7 +83,7 @@
                             <div class="notify btn-user smp"><i class="fas fa-user-circle"></i></div>
                             <ul class="user-links">
                                 <li>
-                                    <a href="user/info"><i
+                                    <a href="user"><i
                                             class="fas fa-user-circle"></i>Quản lý tài khoản</a>
                                 </li>
                                 <li>
@@ -110,24 +109,21 @@
                             </ul>
                         </div>
 
-                        @else
-                            <div class="top-buttons has-login">
-                                <button onclick="onLogin" id="btn_login" class="login-btn">Đăng nhập</button>
-                                <button onclick="onRegister" id="btn_register" class="register-btn">Đăng ký</button>
-                            </div>
-                            <script>
-                                $('#btn_login').click(() => {
-                                    location.href = 'login'
-                                });
-                                $('#btn_register').click(() => {
-                                    location.href = 'signup'
-                                });
-                            </script>
-                        @endif
-
 
                         <div class="head_menu smp"><span>&nbsp;</span></div>
                     </div>
+
+                @else
+                    <div id="userinfo" class="top-buttons has-login">
+                        <button onclick="window.location.href = '/login'" id="btn_login" class="login-btn">Đăng
+                            nhập
+                        </button>
+                        <button onclick="window.location.href = '/register'" id="btn_register"
+                                class="register-btn">Đăng ký
+                        </button>
+                    </div>
+                @endif
+
             </div>
         </div>
     </div>
@@ -145,7 +141,7 @@
                         <div class="list-results">
                         </div>
                     </div>
-                    <a href="http://truyenqq.com/index.html" class="navbar-item">Trang Chủ</a>
+                    <a href="/" class="navbar-item">Trang Chủ</a>
                     <div class="navbar-item has-dropdown is-hoverable is-mega">
                         <div class="navbar-link">Thể loại</div>
                         <div class="navbar-dropdown ">
@@ -382,6 +378,7 @@
                                 <div class="level">
                                     <div class="level-left mega-list-wrapper">
                                         <div class="columns">
+
                                             <div class="column">
                                                 <ul class="mega-list">
                                                     <li><a href="http://truyenqq.com/top-ngay.html">Top Ngày</a>
@@ -435,5 +432,7 @@
             </div>
         </nav>
     </div>
+
+
 </section>
 <!-- /.main-menu -->

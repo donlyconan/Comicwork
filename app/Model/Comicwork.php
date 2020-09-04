@@ -10,33 +10,53 @@ class Comicwork extends Model
     protected $table = 'Comicworks';
     public $incrementing = true;
     protected $guarded = [];
-    protected $primaryKey = ['id'];
+    protected $primaryKey = 'id';
     protected $dateFormat = 'dd/MM/yyyy';
 
 
-    public function getTags() {
+    public function tags() {
         $this->belongsToMany('App\Model\Tag', 'Comicwork_tag', 'id_comicwork', 'id_tag');
     }
 
-    public function getFollows() {
-        return $this->hasMany('App\Model\Follow', 'id_comicwork', 'id');
+    public function follows() {
+        return $this->hasMany('App\Model\Follow', 'id_comicwork');
+    }
+
+    public function users() {
+        return $this->belongsToMany('App\Model\User', 'Follows'
+            , 'id_comicwork', 'id_user');
     }
 
 
-    public function getViews() {
-        return $this->hasMany('App\Model\View', 'id_comicwork', 'id');
+    public function views() {
+        return $this->hasMany('App\Model\View', 'id_comicwork');
     }
 
-    public function getChapters() {
-        return $this->hasMany('App\Model\Chapter', 'id_comicwork', 'id');
+    public function chapters() {
+        return $this->hasMany('App\Model\Chapter', 'id_comicwork');
     }
 
-    public function getHistories() {
-        return $this->hasMany('App\Model\History', 'id_comicwork', 'id');
+    public function histories() {
+        return $this->hasMany('App\Model\History', 'id_comicwork');
     }
 
 
-    public function getVotes() {
-        return $this->hasMany('App\Model\Vote', 'id_comicwork', 'id');
+    public function votes() {
+        return $this->hasMany('App\Model\Vote', 'id_comicwork');
+    }
+
+    public function comicworkTag() {
+        return $this->hasMany('App\Model\ComicworkTag', 'id_comicwork');
+    }
+
+    public function followUser() {
+        return $this->belongsToMany('App\Model\User', 'Follows'
+            , 'ic_comicwork', 'id_user');
+    }
+
+
+    public function viewUser() {
+        return $this->belongsToMany('App\Model\User', 'Views'
+            , 'id_comicwork', 'id_user');
     }
 }

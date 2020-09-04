@@ -10,12 +10,12 @@ class Notification extends Model
     protected $table = 'notifications';
     public $incrementing = true;
     protected $guarded = [];
-    protected $primaryKey = ['id'];
+    protected $primaryKey = 'id';
     public $timestamps = true;
     protected $dateFormat = 'dd/MM/yyyy';
 
 
-    public function getUser() {
+    public function user() {
         return $this->belongsTo('App\Model\User', 'id_user');
     }
 }

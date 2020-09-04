@@ -48,7 +48,8 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email</label>
-                    <input type="email" name="email" pattern="([\w\d.]+)+@+(\w+){2,5}+.+(\w+){1,5}" class="form-control" placeholder="Nhập email">
+                    <input type="email" name="email" pattern="(([\w\d.]+)@(\w+){2,5}(\.(\w+).{1,50})$)"
+                           class="form-control" placeholder="Nhập email">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Mật khẩu</label>

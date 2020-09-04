@@ -13,11 +13,11 @@ class Vote extends Model
     protected $primaryKey = ['id_user', 'id_comicwork'];
     public $timestamps = true;
 
-    public function getUser() {
+    public function user() {
         return $this->belongsTo('App\Model\User', 'id_user');
     }
 
-    public function getComicwork()
+    public function comicwork()
     {
         return $this->belongsTo('App\Model\Comicwork', 'id_comicwork');
     }

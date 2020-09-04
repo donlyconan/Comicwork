@@ -29,16 +29,16 @@
                 <div class="form-group">
                     <label for="exampleInputEmail1">Tài khoản</label>
                     <input type="text" name="username" class="form-control" id="username"
-                           pattern="(([\w\d.]+)+@+(\w+){2,5}+.+(\w+){1,5})|([\w\d]+){3,50}"
-                           required="Sai định dạng tài khoản"
-                           placeholder="Nhập tài khoản">
+                           pattern="(([\w\d.]+)@(\w+){2,5}(\.(\w+).{1,50})$)|([\w\d]+){5,50}"
+                           placeholder="Nhập tài khoản"
+                            required>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Mật khẩu</label>
                     <input type="password" name="password" id="password" class="form-control"
                            pattern="([\w\d@.~!&*()^#]+){5,60}"
-                           required="Mật khẩu phải chứa 5 đến 60 ký tự và không có ký tự khoảng trắng"
-                           placeholder="Nhập mật khẩu">
+                           placeholder="Nhập mật khẩu"   required>
+{{--                    ="Mật khẩu phải chứa 5 đến 60 ký tự và không có ký tự khoảng trắng"--}}
                 </div>
                 <div class="form-group" id="bottom-media">
                     <div class="bot-left">
@@ -80,8 +80,9 @@
 </body>
 
 <script>
-
-    $('#error').val("Tài khoản hoặc mật khẩu không chính xác");
+    @if (isset($result) && !$result)
+        $('#error').text("Tài khoản hoặc mật khẩu không chính xác");
+    @endif
 
     // $(document).ready(function() {
     //

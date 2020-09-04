@@ -15,12 +15,12 @@ class History extends Model
     protected $dateFormat = 'dd/MM/yyyy';
 
 
-    public function getComicwrork()
+    public function comicwrork()
     {
         return $this->belongsTo('App\Model\Comicwork', 'id_comicwork');
     }
 
-    public function getUser()
+    public function user()
     {
         return $this->belongsTo('App\Model\User', 'id_user');
     }

@@ -10,10 +10,10 @@ class Role extends Model
     protected $table = 'roles';
     public $incrementing = true;
     protected $guarded = [];
-    protected $primaryKey = ['id'];
+    protected $primaryKey = 'id';
     public $timestamps = false;
 
-    public function getUsers() {
+    public function users() {
         return $this->belongsToMany('App\Model\User', 'User_role', 'id_role', 'id_user');
     }
 }

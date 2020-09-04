@@ -36,28 +36,48 @@ class User extends Authenticatable
     ];
 
 
-    public function getFollows() {
-        return $this->hasMany('App\Models\Follow','id_user', 'id');
+    public function follows()
+    {
+        return $this->hasMany('App\Model\Follow', 'id_user');
     }
 
-    public function getVotes() {
-        return $this->hasMany('App\Models\Vote','id_user', 'id');
+    public function votes()
+    {
+        return $this->hasMany('App\Model\Vote', 'id_user');
     }
 
-    public function getNotifications() {
-        return $this->hasMany('App\Models\Notification','id_user', 'id');
+    public function notifications()
+    {
+        return $this->hasMany('App\Model\Notification', 'id_user');
     }
 
-    function getRoles() {
-        return $this->belongsToMany('App\Models\Role', 'User_Role', 'id_user', 'id_role');
+    public function roles()
+    {
+        return $this->belongsToMany('App\Model\Role', 'User_Role'
+            , 'id_user', 'id_role');
     }
 
-    function getHistories() {
-        return $this->hasMany('App\Models\History', 'id_user', 'id');
+    public function histories()
+    {
+        return $this->hasMany('App\Model\History', 'id_user');
     }
 
-    function getViews() {
-        return $this->hasMany('App\Models\View', 'id_user', 'id');
+    public function views()
+    {
+        return $this->hasMany('App\Model\View', 'id_user');
+    }
+
+
+
+    public function followComicworks() {
+        return $this->belongsToMany('App\Model\Comicwork', 'Follows'
+            , 'id_user', 'id_comicwork');
+    }
+
+
+    public function viewComicworks() {
+        return $this->belongsToMany('App\Model\Comicwork', 'Views'
+            , 'id_user', 'id_comicwork');
     }
 
 }

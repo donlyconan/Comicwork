@@ -17,12 +17,12 @@ class Follow extends Model
     public const CREATED_AT = 'follow_date';
 
 
-    public function getComicwork()
+    public function comicwork()
     {
         return $this->belongsTo('App\Model\Comicwork', 'id_comicwork');
     }
 
-    public function getUser()
+    public function user()
     {
         return $this->belongsTo('App\Model\User', 'id_user');
     }

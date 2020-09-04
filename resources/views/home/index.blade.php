@@ -551,16 +551,16 @@
                                 <p class="info">Tình trạng: Đang Cập Nhật</p>
                                 <p class="info">Lượt xem: 809,919</p>
                                 <p class="info">Lượt theo dõi: 3,982</p>
+
+{{--                                the tag--}}
                                 <div class="list-tags">
-                                    <a class="blue" href="http://truyenqq.com/the-loai/action-26.html">Action</a><a
-                                        class="blue" href="http://truyenqq.com/the-loai/adventure-27.html">Adventure</a><a
-                                        class="blue" href="http://truyenqq.com/the-loai/comedy-28.html">Comedy</a><a
-                                        class="blue" href="http://truyenqq.com/the-loai/fantasy-30.html">Fantasy</a><a
-                                        class="blue" href="http://truyenqq.com/the-loai/supernatural-32.html">Supernatural</a><a
-                                        class="blue" href="http://truyenqq.com/the-loai/manhua-35.html">Manhua</a><a
-                                        class="blue" href="http://truyenqq.com/the-loai/martial-arts-41.html">Martial
-                                        Arts</a><a class="blue"
-                                                   href="http://truyenqq.com/the-loai/magic-58.html">Magic</a></div>
+                                    <a class="blue" href="http://truyenqq.com/the-loai/action-26.html">Action</a>
+                                    <a class="blue" href="http://truyenqq.com/the-loai/adventure-27.html">Adventure</a>
+                                    <a class="blue" href="http://truyenqq.com/the-loai/comedy-28.html">Comedy</a>
+                                    <a class="blue" href="http://truyenqq.com/the-loai/fantasy-30.html">Fantasy</a>
+                                    <a class="blue" href="http://truyenqq.com/the-loai/supernatural-32.html">Supernatural</a>
+                                    <a class="blue" href="http://truyenqq.com/the-loai/manhua-35.html">Manhua</a>
+                                </div>
                                 <div class="excerpt">Bẩm sinh phế vật, được thần rồng nhập vào người, kế thừa ý chí và
                                     năng lực của thần rồng, mọc vảy hóa vuốt, ngự thủy long tức, đi mây về gió, nhục
                                     thân vô địch. Vào thời đại mà ai cũng muốn đồ long này, Lý Mục Dương sống dưới áp

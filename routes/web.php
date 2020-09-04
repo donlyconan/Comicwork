@@ -29,6 +29,7 @@ Route::group(['prefix' => 'admin'], function () {
  * danh cho phan home
  */
 Route::group(['prefix' => 'home'], function () {
+
     Route::get('category', ['as' => 'category', function () {
         return view('home/category');
     }]);
@@ -44,9 +45,15 @@ Route::group(['prefix' => 'home'], function () {
  * nang cap, chinh sua thong tin cua user
  */
 Route::group(['prefix' => 'user'], function () {
-    Route::get('info', [
+    Route::get('/', [
         'as' => 'userinfo', 'uses' => 'Home\\UserController@index'
     ]);
+
+    //cai dat route duong danh den lich su
+    Route::get('history', 'Home\\UserController@history');
+
+    //cai dat route duong danh den theo doi truyen
+    Route::get('follow', 'Home\\UserController@follow');
 });
 
 /**
@@ -70,11 +77,8 @@ Route::get('login', ['as' => 'view-login'
 ]);
 
 
-////cai dat route duong danh den lich su
-//Route::get('history', [
-//    'as'=> 'myhistory', 'uses'=>'HomeController'
-//]);
-//
+
+
 
 //Dang nhap vao may chu
 Route::post('login', ['as' => 'login', 'uses' => 'Home\\LoginController@login']);
@@ -89,7 +93,7 @@ Route::get('signup', ['as' => 'signup',
 
 //mac dinh trang web se di den trang tru
 Route::get('/', [
-    "as" => "homepage",
+    "as" => "index",
     "uses" => function () {
         return view('home/index');
     }
@@ -98,6 +102,58 @@ Route::get('/', [
 
 
 
+
+//kiem tra ket noi
+Route::get('tester', function (){
+//    $tester = [
+//        \App\Model\Chapter::all(),
+//        \App\Model\Comicwork::all(),
+//        \App\Model\Follow::all(),
+//        \App\Model\History::all(),
+//        \App\Model\Image::all(),
+//        \App\Model\Notification::all(),
+//        \App\Model\Role::all(),
+//        \App\Model\RoleUser::all(),
+//        \App\Model\Tag::all(),
+//        \App\Model\ComicworkTag::all(),
+//        \App\Model\User::all(),
+//        \App\Model\View::all(),
+//        \App\Model\Vote::all()
+//    ];
+
+//    $user = [
+//        \App\Model\User::find(1)->follows,
+//        \App\Model\User::find(1)->votes,
+//        \App\Model\User::find(1)->histories,
+//        \App\Model\User::find(1)->notifications,
+//        \App\Model\User::find(1)->votes,
+//        \App\Model\User::find(1)->roles
+//    ];
+
+//    $chapter = [
+//        \App\Model\Chapter::find(1)->comicwork,
+//        \App\Model\Chapter::find(1)->images,
+//        \App\Model\Chapter::find(1)->views
+//    ];
+
+    $commicwork = [
+        \App\Model\Comicwork::all(),
+        \App\Model\Comicwork::find(1)->follows,
+        \App\Model\Comicwork::find(1)->histories,
+        \App\Model\Comicwork::find(1)->votes,
+        \App\Model\Comicwork::find(1)->views,
+        \App\Model\Comicwork::find(1)->chapters,
+        \App\Model\Comicwork::find(1)->users
+//        \App\Model\Comicwork::find(1)->tags    //[error]
+    ];
+
+    $follow = [
+
+    ];
+
+
+    dd(\App\Model\Comicwork::find(1)->tags);
+});
 
 
 
