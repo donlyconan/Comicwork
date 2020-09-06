@@ -14,7 +14,7 @@ class Comicwork extends Model
     protected $dateFormat = 'dd/MM/yyyy';
 
 
-    public function comicworks() {
+    public function tags() {
         return $this->belongsToMany('App\Model\Tag', 'Comicwork_tag'
             , 'id_comicwork', 'id_tag');
     }

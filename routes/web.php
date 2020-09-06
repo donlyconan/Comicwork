@@ -65,6 +65,12 @@ Route::group(['prefix' => 'comicwork'], function () {
     ]);
 });
 
+//tim kiem noi dung
+Route::get('search', [
+   'as'=>'search',
+   'uses' =>'ComicworkController@search'
+]);
+
 /**
  * Bo dinh tuyen danh cho chuc nang co ban cua trang web
  */
@@ -75,9 +81,6 @@ Route::get('login', ['as' => 'view-login'
         return view('home/login');
     }
 ]);
-
-
-
 
 
 //Dang nhap vao may chu
@@ -101,6 +104,7 @@ Route::get('/', [
 
 
 
+Route::get('query', 'ComicworkController@index');
 
 
 //kiem tra ket noi
@@ -152,7 +156,6 @@ Route::get('tester', function (){
 //        \App\Model\Tag::find(1)->comicworkTag,
 //        \App\Model\Tag::find(1)->comicworks
 //    ];
-
 
 //    dd($commicwork);
 });

@@ -370,3 +370,7 @@ body.fb_hidden {
     margin-left: 5px;
 }
 
+.form-send {
+    width: auto;
+    height: 25px;
+}

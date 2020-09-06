@@ -14,57 +14,6 @@
                     <td>
                         <div class="select is-warning">
                             <select id="category">
-                                <option value="http://truyenqq.com/the-loai/action-26.html">Action</option>
-                                <option value="http://truyenqq.com/the-loai/adult-68.html">Adult</option>
-                                <option value="http://truyenqq.com/the-loai/adventure-27.html">Adventure</option>
-                                <option value="http://truyenqq.com/the-loai/anime-62.html">Anime</option>
-                                <option value="http://truyenqq.com/the-loai/chuyen-sinh-91.html">Chuyển Sinh</option>
-                                <option value="http://truyenqq.com/the-loai/co-dai-90.html">Cổ Đại</option>
-                                <option value="http://truyenqq.com/the-loai/comedy-28.html">Comedy</option>
-                                <option selected="" value="http://truyenqq.com/the-loai/comic-60.html">Comic</option>
-                                <option value="http://truyenqq.com/the-loai/demons-99.html">Demons</option>
-                                <option value="http://truyenqq.com/the-loai/detective-100.html">Detective</option>
-                                <option value="http://truyenqq.com/the-loai/doujinshi-96.html">Doujinshi</option>
-                                <option value="http://truyenqq.com/the-loai/drama-29.html">Drama</option>
-                                <option value="http://truyenqq.com/the-loai/dam-my-93.html">Đam Mỹ</option>
-                                <option value="http://truyenqq.com/the-loai/ecchi-50.html">Ecchi</option>
-                                <option value="http://truyenqq.com/the-loai/fantasy-30.html">Fantasy</option>
-                                <option value="http://truyenqq.com/the-loai/gender-bender-45.html">Gender Bender
-                                </option>
-                                <option value="http://truyenqq.com/the-loai/harem-47.html">Harem</option>
-                                <option value="http://truyenqq.com/the-loai/historical-51.html">Historical</option>
-                                <option value="http://truyenqq.com/the-loai/horror-44.html">Horror</option>
-                                <option value="http://truyenqq.com/the-loai/huyen-huyen-468.html">Huyền Huyễn</option>
-                                <option value="http://truyenqq.com/the-loai/isekai-85.html">Isekai</option>
-                                <option value="http://truyenqq.com/the-loai/josei-54.html">Josei</option>
-                                <option value="http://truyenqq.com/the-loai/mafia-69.html">Mafia</option>
-                                <option value="http://truyenqq.com/the-loai/magic-58.html">Magic</option>
-                                <option value="http://truyenqq.com/the-loai/manhua-35.html">Manhua</option>
-                                <option value="http://truyenqq.com/the-loai/manhwa-49.html">Manhwa</option>
-                                <option value="http://truyenqq.com/the-loai/martial-arts-41.html">Martial Arts</option>
-                                <option value="http://truyenqq.com/the-loai/mature-48.html">Mature</option>
-                                <option value="http://truyenqq.com/the-loai/military-101.html">Military</option>
-                                <option value="http://truyenqq.com/the-loai/mystery-39.html">Mystery</option>
-                                <option value="http://truyenqq.com/the-loai/ngon-tinh-87.html">Ngôn Tình</option>
-                                <option value="http://truyenqq.com/the-loai/one-shot-95.html">One shot</option>
-                                <option value="http://truyenqq.com/the-loai/psychological-40.html">Psychological
-                                </option>
-                                <option value="http://truyenqq.com/the-loai/romance-36.html">Romance</option>
-                                <option value="http://truyenqq.com/the-loai/school-life-37.html">School Life</option>
-                                <option value="http://truyenqq.com/the-loai/sci-fi-43.html">Sci-fi</option>
-                                <option value="http://truyenqq.com/the-loai/seinen-42.html">Seinen</option>
-                                <option value="http://truyenqq.com/the-loai/shoujo-38.html">Shoujo</option>
-                                <option value="http://truyenqq.com/the-loai/shoujo-ai-98.html">Shoujo Ai</option>
-                                <option value="http://truyenqq.com/the-loai/shounen-31.html">Shounen</option>
-                                <option value="http://truyenqq.com/the-loai/shounen-ai-86.html">Shounen Ai</option>
-                                <option value="http://truyenqq.com/the-loai/slice-of-life-46.html">Slice of life
-                                </option>
-                                <option value="http://truyenqq.com/the-loai/smut-97.html">Smut</option>
-                                <option value="http://truyenqq.com/the-loai/sports-57.html">Sports</option>
-                                <option value="http://truyenqq.com/the-loai/supernatural-32.html">Supernatural</option>
-                                <option value="http://truyenqq.com/the-loai/tragedy-52.html">Tragedy</option>
-                                <option value="http://truyenqq.com/the-loai/trong-sinh-82.html">Trọng Sinh</option>
-                                <option value="http://truyenqq.com/the-loai/truyen-mau-92.html">Truyện Màu</option>
                                 <option value="http://truyenqq.com/the-loai/webtoon-55.html">Webtoon</option>
                                 <option value="http://truyenqq.com/the-loai/xuyen-khong-88.html">Xuyên Không</option>
                                 <option value="http://truyenqq.com/the-loai/yaoi-70.html">Yaoi</option>
@@ -80,6 +29,8 @@
                             <li><a class="" href="http://truyenqq.com/the-loai/comic-60.html?status=0">Đang tiến
                                     hành</a></li>
                             <li><a class="" href="http://truyenqq.com/the-loai/comic-60.html?status=2">Hoàn thành</a>
+                            </li>
+                            <li><a class="" href="/home/category">Tất cả</a>
                             </li>
                         </ul>
                     </td>
@@ -105,6 +56,18 @@
                                 <option value="">2018</option>
                                 <option value="">2017</option>
                                 <option value="">Tất cả</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Sắp xếp</th>
+                    <td>
+                        <div class="select is-warning">
+                            <select id="category-sort" style="width: 200px;">
+                                <option value="">Thời gian cập nhật</option>
+                                <option value="">Thời gian đăng</option>
+                                <option value="">Năm xuất bản</option>
                             </select>
                         </div>
                     </td>

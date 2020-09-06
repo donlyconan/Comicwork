@@ -19,8 +19,23 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="921aab84-2033-4a0c-9015-52444967e934" name="Default Changelist" comment="Update-Model">
+    <list default="true" id="921aab84-2033-4a0c-9015-52444967e934" name="Default Changelist" comment="Hoàn tất thiết lập Model">
+      <change afterPath="$PROJECT_DIR$/resources/views/include/item.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/include/menu-bar.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/include/nominations.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/include/top-bar.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layout/master.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/share/menubar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Comicwork.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Comicwork.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/category.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/chapter.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/chapter.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/comicwork.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/comicwork.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/ganeric.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/ganeric.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/share/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/share/header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -183,16 +198,16 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Xampp\htdocs\Comicwork\app\Http\Controllers\Home" />
-      <recent name="D:\Xampp\htdocs\Comicwork\resources\views\share" />
-      <recent name="D:\Xampp\htdocs\Comicwork\public" />
-      <recent name="D:\Xampp\htdocs\Comicwork\resources" />
-      <recent name="D:\Xampp\htdocs\Comicwork\resources\admin" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Xampp\htdocs\Comicwork\public\image" />
       <recent name="D:\Xampp\htdocs\Comicwork\public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Xampp\htdocs\Comicwork\resources\views\share" />
+      <recent name="D:\Xampp\htdocs\Comicwork\app\Http\Controllers\Home" />
+      <recent name="D:\Xampp\htdocs\Comicwork\public" />
+      <recent name="D:\Xampp\htdocs\Comicwork\resources" />
+      <recent name="D:\Xampp\htdocs\Comicwork\resources\admin" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.localhost:8000">
@@ -245,7 +260,9 @@
       <workItem from="1598955585731" duration="1893000" />
       <workItem from="1599019498266" duration="18523000" />
       <workItem from="1599105408827" duration="46092000" />
-      <workItem from="1599205924972" duration="12723000" />
+      <workItem from="1599205924972" duration="17761000" />
+      <workItem from="1599302286537" duration="8417000" />
+      <workItem from="1599365812761" duration="8393000" />
     </task>
     <task id="LOCAL-00001" summary="Update-Model">
       <created>1599024156214</created>
@@ -289,7 +306,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599219621913</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Hoàn tất thiết lập Model">
+      <created>1599227353816</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1599227353816</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,7 +333,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update-Model" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update-Model" />
+    <MESSAGE value="Hoàn tất thiết lập Model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hoàn tất thiết lập Model" />
   </component>
   <component name="WindowStateProjectService">
     <state x="232" y="39" key="#CLI_Interpreters" timestamp="1598758025949">
@@ -332,10 +357,10 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="49" y="0" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1304.768@0.0.1304.768" timestamp="1598853759535" />
-    <state x="419" y="186" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599144784244">
+    <state x="419" y="186" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599305168113">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="419" y="186" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1304.768@0.0.1304.768" timestamp="1599144784244" />
+    <state x="419" y="186" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1304.768@0.0.1304.768" timestamp="1599305168113" />
     <state x="457" y="25" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1599218568970">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
@@ -408,10 +433,10 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state width="1261" height="239" key="GridCell.Tab.2.right/0.0.1304.768@0.0.1304.768" timestamp="1599177734898" />
-    <state x="486" y="307" key="NewPhpFileDialog" timestamp="1598856586961">
+    <state x="486" y="307" key="NewPhpFileDialog" timestamp="1599232808186">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="486" y="307" key="NewPhpFileDialog/0.0.1304.768@0.0.1304.768" timestamp="1598856586961" />
+    <state x="486" y="307" key="NewPhpFileDialog/0.0.1304.768@0.0.1304.768" timestamp="1599232808186" />
     <state x="193" y="0" key="SettingsEditor" timestamp="1599019912035">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
