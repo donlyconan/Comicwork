@@ -37,6 +37,12 @@ Route::group(['prefix' => 'home'], function () {
     Route::get('sort', ['as' => 'category', function () {
         return view('home/ganeric');
     }]);
+
+    //tim kiem noi dung
+    Route::get('search', [
+        'as' => 'search',
+        'uses' => 'ComicworkController@search'
+    ]);
 });
 
 
@@ -54,6 +60,8 @@ Route::group(['prefix' => 'user'], function () {
 
     //cai dat route duong danh den theo doi truyen
     Route::get('follow', 'Home\\UserController@follow');
+
+
 });
 
 /**
@@ -61,27 +69,22 @@ Route::group(['prefix' => 'user'], function () {
  */
 Route::group(['prefix' => 'comicwork'], function () {
     Route::get('/', [
-        'as' => 'ck_control', function(){return view('home/comicwork');}
+        'as' => 'ck_control', function () {
+            return view('home/comicwork');
+        }
     ]);
 });
 
-//tim kiem noi dung
-Route::get('search', [
-   'as'=>'search',
-   'uses' =>'ComicworkController@search'
-]);
 
 /**
  * Bo dinh tuyen danh cho chuc nang co ban cua trang web
  */
-
 //Tai trang dang nhap
 Route::get('login', ['as' => 'view-login'
     , function () {
         return view('home/login');
     }
 ]);
-
 
 //Dang nhap vao may chu
 Route::post('login', ['as' => 'login', 'uses' => 'Home\\LoginController@login']);
@@ -103,12 +106,11 @@ Route::get('/', [
 ]);
 
 
-
 Route::get('query', 'ComicworkController@index');
 
 
 //kiem tra ket noi
-Route::get('tester', function (){
+Route::get('tester', function () {
 //    $tester = [
 //        \App\Model\Chapter::all(),
 //        \App\Model\Comicwork::all(),

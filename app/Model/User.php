@@ -67,15 +67,13 @@ class User extends Authenticatable
         return $this->hasMany('App\Model\View', 'id_user');
     }
 
-
-
-    public function followComicworks() {
+    public function follow_comicworks() {
         return $this->belongsToMany('App\Model\Comicwork', 'Follows'
             , 'id_user', 'id_comicwork');
     }
 
 
-    public function viewComicworks() {
+    public function view_comicworks() {
         return $this->belongsToMany('App\Model\Comicwork', 'Views'
             , 'id_user', 'id_comicwork');
     }

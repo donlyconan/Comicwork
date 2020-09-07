@@ -13,12 +13,6 @@ class HomeController extends Controller
     {
         return view('home/index', ['user'=>User::find(6)]);
     }
-
-    public function search(Request $request) {
-        $q = $request->get('q');
-        $sort = $request->get('sort');
-    }
-
 //
 //    public function getName($name)
 //    {

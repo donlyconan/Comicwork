@@ -20,6 +20,10 @@ class History extends Model
         return $this->belongsTo('App\Model\Comicwork', 'id_comicwork');
     }
 
+    public function  chapter() {
+        return $this->belongsTo('App\Model\Chapter', 'id_chapter');
+    }
+
     public function user()
     {
         return $this->belongsTo('App\Model\User', 'id_user');

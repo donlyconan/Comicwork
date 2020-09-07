@@ -47,17 +47,17 @@ class Comicwork extends Model
         return $this->hasMany('App\Model\Vote', 'id_comicwork');
     }
 
-    public function comicworkTag() {
+    public function comicwork_tag() {
         return $this->hasMany('App\Model\ComicworkTag', 'id_comicwork');
     }
 
-    public function followUser() {
+    public function users_follow() {
         return $this->belongsToMany('App\Model\User', 'Follows'
             , 'ic_comicwork', 'id_user');
     }
 
 
-    public function viewUser() {
+    public function users_view() {
         return $this->belongsToMany('App\Model\User', 'Views'
             , 'id_comicwork', 'id_user');
     }

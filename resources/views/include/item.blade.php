@@ -1,9 +1,7 @@
 <li>
     <div class="story-item">
-        @if(isset($isViewList) && $isViewList)
             <span class="remove-subscribe" title="Xóa" data-id="128">
             <i class="far fa-times-circle"></i></span>
-        @endif
 
         <a href="http://truyenqq.com/truyen-tranh/dao-hai-tac-128" title="Đảo Hải Tặc"><img
                 class="story-cover lazy_cover"
@@ -11,9 +9,7 @@
         <div class="top-notice">
             <span class="time-ago">20 phút Trước</span>
 
-            @if(!isset($isViewList) || !$isViewList)
-                <span class="type-label hot">Hot</span>
-            @endif
+            <span class="type-label hot">Hot</span>
         </div>
         <h3 class="title-book">
             <a href="http://truyenqq.com/truyen-tranh/dao-hai-tac-128" title="Đảo Hải Tặc">Đảo Hải Tặc</a>
@@ -30,11 +26,8 @@
 
             <div class="list-tags">
                 <a class="blue" href="http://truyenqq.com/the-loai/action-26.html">Action</a><a class="blue"
-                                                                                                href="http://truyenqq.com/the-loai/adventure-27.html">Adventure</a><a
                     class="blue" href="http://truyenqq.com/the-loai/comedy-28.html">Comedy</a><a class="blue"
-                                                                                                 href="http://truyenqq.com/the-loai/drama-29.html">Drama</a><a
                     class="blue" href="http://truyenqq.com/the-loai/fantasy-30.html">Fantasy</a><a class="blue"
-                                                                                                   href="http://truyenqq.com/the-loai/shounen-31.html">Shounen</a><a
                     class="blue" href="http://truyenqq.com/the-loai/supernatural-32.html">Supernatural</a>
             </div>
 
