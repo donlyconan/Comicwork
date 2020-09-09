@@ -31,14 +31,14 @@
                     <input type="text" name="username" class="form-control" id="username"
                            pattern="(([\w\d.]+)@(\w+){2,5}(\.(\w+).{1,50})$)|([\w\d]+){5,50}"
                            placeholder="Nhập tài khoản"
-                            required>
+                           required>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Mật khẩu</label>
                     <input type="password" name="password" id="password" class="form-control"
                            pattern="([\w\d@.~!&*()^#]+){5,60}"
-                           placeholder="Nhập mật khẩu"   required>
-{{--                    ="Mật khẩu phải chứa 5 đến 60 ký tự và không có ký tự khoảng trắng"--}}
+                           placeholder="Nhập mật khẩu" required>
+                    {{--                    ="Mật khẩu phải chứa 5 đến 60 ký tự và không có ký tự khoảng trắng"--}}
                 </div>
                 <div class="form-group" id="bottom-media">
                     <div class="bot-left">
@@ -51,7 +51,9 @@
                     </div>
                 </div>
                 <div class="notify">
-                    <span id="error"></span>
+                    @if(session('notify'))
+                        <span id="error">{{session('notify')}}</span>
+                    @endif
                 </div>
                 <div class="col-md-12 text-center ">
                     <button type="submit" class="btn btn-block mybtn btn-primary tx-tfm">Đăng nhập</button>
@@ -78,42 +80,5 @@
     </div>
 </div>
 </body>
-
-<script>
-    @if (isset($result) && !$result)
-        $('#error').text("Tài khoản hoặc mật khẩu không chính xác");
-    @endif
-
-    // $(document).ready(function() {
-    //
-    //     $('#first_form').submit(function(e) {
-    //         e.preventDefault();
-    //         var username = $('#username').val();
-    //         var password = $('#password').val();
-    //
-    //         $(".error").remove();
-    //
-    //         if (first_name.length < 1) {
-    //             $('#first_name').after('<span class="error">This field is required</span>');
-    //         }
-    //         if (last_name.length < 1) {
-    //             $('#last_name').after('<span class="error">This field is required</span>');
-    //         }
-    //         if (email.length < 1) {
-    //             $('#email').after('<span class="error">This field is required</span>');
-    //         } else {
-    //             var regEx = /^[A-Z0-9][A-Z0-9._%+-]{0,63}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/;
-    //             var validEmail = regEx.test(email);
-    //             if (!validEmail) {
-    //                 $('#email').after('<span class="error">Enter a valid email</span>');
-    //             }
-    //         }
-    //         if (password.length < 8) {
-    //             $('#password').after('<span class="error">Password must be at least 8 characters long</span>');
-    //         }
-    //     });
-    //
-    // });
-</script>
 
 </html>

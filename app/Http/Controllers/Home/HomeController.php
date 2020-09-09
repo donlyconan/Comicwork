@@ -11,7 +11,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('home/index', ['user'=>User::find(6)]);
+        return view('main/index', ['user'=>User::find(6)]);
     }
 //
 //    public function getName($name)

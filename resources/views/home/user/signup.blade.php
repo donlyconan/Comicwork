@@ -28,12 +28,12 @@
                 <div class="bot-left">
                     <label for="exampleInputEmail1">Họ</label>
                     <input type="text" name="firstname" class="form-control" id="firstname" aria-describedby="emailHelp"
-                           pattern="(([\w]+?(\s))+){1,50}" placeholder="Nhập họ">
+                            placeholder="Nhập họ">
                 </div>
                 <div class="bot-right">
                     <label for="exampleInputEmail1">Tên</label>
                     <input type="text" name="lastname" class="form-control" id="lastname" aria-describedby="emailHelp"
-                           pattern="([\w\s]+){1,30}" placeholder="Nhập tên">
+                            placeholder="Nhập tên">
                 </div>
             </div>
 
@@ -43,26 +43,24 @@
 
             <div id="bottom">
                 <div class="form-group">
-                    <label for="email">Tên tài khoản</label>
-                    <input type="email" pattern="([\w\d]+){3,50}" name="username" class="form-control" placeholder="Nhập tên tài khoản">
+                    <label for="username">Tên tài khoản</label>
+                    <input type="text"  name="username" class="form-control" placeholder="Nhập tên tài khoản">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email</label>
-                    <input type="email" name="email" pattern="(([\w\d.]+)@(\w+){2,5}(\.(\w+).{1,50})$)"
+                    <input type="email" name="email"
                            class="form-control" placeholder="Nhập email">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Mật khẩu</label>
                     <input type="password" name="password" id="password" class="form-control"
                            aria-describedby="emailHelp"
-                               pattern="([\w\d@.~!&*()^#]+){5,60}"
                            placeholder="Nhập mật khẩu">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Xác nhận mật khẩu</label>
                     <input type="password" name="repassword" id="repassword" class="form-control"
                            aria-describedby="emailHelp"
-                           pattern="([\w\d@.~!&*()^#]+){5,60}"
                            placeholder="Nhập lại mật khẩu">
                 </div>
                 <div>

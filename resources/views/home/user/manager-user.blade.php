@@ -1,4 +1,4 @@
-@include('share/header');
+@include('share.header');
 
 
 <section class="main-content">
@@ -138,4 +138,4 @@
     });
 </script>
 
-@include('share/footer');
+@include('share.footer');

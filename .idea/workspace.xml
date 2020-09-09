@@ -16,19 +16,33 @@
         <item name="GROUP_NODE:master" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:Donly-Conan" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="921aab84-2033-4a0c-9015-52444967e934" name="Default Changelist" comment="Hoàn tất thiết lập Model">
-      <change afterPath="$PROJECT_DIR$/resources/views/home/general.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Core/Pattern.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Comicwork.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Comicwork.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/History.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/History.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/ganeric.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/include/item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/include/item.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/category/search.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/chapter.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/comicwork/chapter.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/comicwork.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/comicwork/comicwork.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/general.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/category/general.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/main/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/manager-user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user/manager-user.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/main/search.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/signup.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user/signup.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/include/top-bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/include/top-bar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/master.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,13 +64,13 @@
   <component name="Git.Settings">
     <option name="PUSH_TAGS">
       <GitPushTagMode>
-        <option name="argument" value="--follow-tags" />
-        <option name="title" value="Current Branch" />
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
       </GitPushTagMode>
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="admin" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -178,6 +192,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public/image" />
@@ -188,15 +203,15 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.HTML" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Xampp\htdocs\Comicwork\resources\views\home\home" />
+      <recent name="D:\Xampp\htdocs\Comicwork\resources\views\home\user" />
+      <recent name="D:\Xampp\htdocs\Comicwork\resources\views\home\category" />
+      <recent name="D:\Xampp\htdocs\Comicwork\resources\views\home\comicwork" />
       <recent name="D:\Xampp\htdocs\Comicwork\resources\views\share" />
-      <recent name="D:\Xampp\htdocs\Comicwork\app\Http\Controllers\Home" />
-      <recent name="D:\Xampp\htdocs\Comicwork\public" />
-      <recent name="D:\Xampp\htdocs\Comicwork\resources" />
-      <recent name="D:\Xampp\htdocs\Comicwork\resources\admin" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Xampp\htdocs\Comicwork\public\image" />
@@ -226,9 +241,7 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.localhost:8000" />
         <item itemvalue="JavaScript Debug.login.blade.php" />
-        <item itemvalue="JavaScript Debug.localhost:8000" />
         <item itemvalue="JavaScript Debug.localhost:8000" />
       </list>
     </recent_temporary>
@@ -258,6 +271,8 @@
       <workItem from="1599365812761" duration="11997000" />
       <workItem from="1599461165818" duration="1227000" />
       <workItem from="1599469439944" duration="810000" />
+      <workItem from="1599548707781" duration="10350000" />
+      <workItem from="1599578784520" duration="11433000" />
     </task>
     <task id="LOCAL-00001" summary="Update-Model">
       <created>1599024156214</created>
@@ -326,7 +341,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Donly-Conan" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -355,10 +382,10 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="359" y="27" key="#PHP/0.0.1304.768@0.0.1304.768" timestamp="1598755245452" />
-    <state x="49" y="0" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598853759535">
+    <state x="49" y="0" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599583808114">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="49" y="0" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1304.768@0.0.1304.768" timestamp="1598853759535" />
+    <state x="49" y="0" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1304.768@0.0.1304.768" timestamp="1599583808114" />
     <state x="419" y="186" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599305168113">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
@@ -371,10 +398,10 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="277" y="0" key="CommitChangelistDialog2/0.0.1304.768@0.0.1304.768" timestamp="1599020403214" />
-    <state x="375" y="100" key="FileChooserDialogImpl" timestamp="1599024505093">
+    <state x="375" y="100" key="FileChooserDialogImpl" timestamp="1599579907162">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="375" y="100" key="FileChooserDialogImpl/0.0.1304.768@0.0.1304.768" timestamp="1599024505093" />
+    <state x="375" y="100" key="FileChooserDialogImpl/0.0.1304.768@0.0.1304.768" timestamp="1599579907162" />
     <state x="432" y="251" key="Github.CreatePullRequestDialog" timestamp="1599020417636">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
@@ -439,22 +466,22 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="486" y="307" key="NewPhpFileDialog/0.0.1304.768@0.0.1304.768" timestamp="1599232808186" />
-    <state x="193" y="0" key="SettingsEditor" timestamp="1599019912035">
+    <state x="118" y="0" width="998" height="768" key="SettingsEditor" timestamp="1599580380383">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="193" y="0" key="SettingsEditor/0.0.1304.768@0.0.1304.768" timestamp="1599019912035" />
-    <state x="244" y="117" key="Vcs.Push.Dialog.v2" timestamp="1599381239425">
+    <state x="118" y="0" width="998" height="768" key="SettingsEditor/0.0.1304.768@0.0.1304.768" timestamp="1599580380383" />
+    <state x="244" y="117" key="Vcs.Push.Dialog.v2" timestamp="1599472025227">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="244" y="117" key="Vcs.Push.Dialog.v2/0.0.1304.768@0.0.1304.768" timestamp="1599381239425" />
+    <state x="244" y="117" key="Vcs.Push.Dialog.v2/0.0.1304.768@0.0.1304.768" timestamp="1599472025227" />
     <state x="480" y="118" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1599030025733">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="480" y="118" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1304.768@0.0.1304.768" timestamp="1599030025732" />
-    <state x="719" y="0" width="585" height="768" key="find.popup" timestamp="1599211277933">
+    <state x="719" y="0" width="585" height="768" key="find.popup" timestamp="1599588348165">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="719" y="0" width="585" height="768" key="find.popup/0.0.1304.768@0.0.1304.768" timestamp="1599211277933" />
+    <state x="719" y="0" width="585" height="768" key="find.popup/0.0.1304.768@0.0.1304.768" timestamp="1599588348165" />
     <state x="432" y="97" key="git4idea.branch.GitSmartOperationDialog" timestamp="1599136179549">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
@@ -463,10 +490,10 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="412" y="173" key="git4idea.ui.GitUnstashDialog/0.0.1304.768@0.0.1304.768" timestamp="1599030004438" />
-    <state x="308" y="172" width="672" height="677" key="run.anything.popup" timestamp="1599207515531">
+    <state x="308" y="172" width="672" height="677" key="run.anything.popup" timestamp="1599589922674">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="308" y="172" width="672" height="677" key="run.anything.popup/0.0.1304.768@0.0.1304.768" timestamp="1599207515531" />
+    <state x="308" y="172" width="672" height="677" key="run.anything.popup/0.0.1304.768@0.0.1304.768" timestamp="1599589922674" />
     <state x="308" y="37" width="672" height="678" key="search.everywhere.popup" timestamp="1599211560011">
       <screen x="0" y="0" width="1304" height="768" />
     </state>

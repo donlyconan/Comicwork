@@ -1,4 +1,4 @@
-@include('share/header');
+@include('share.header');
 <div class="movie-list-index">
     <h1 class="header-list-index">
         <span class="title-list-index">Tìm kiếm: predator</span>
@@ -53,4 +53,4 @@
     </div>
 </section>
 
-@include('share/footer');
+@include('share.footer');

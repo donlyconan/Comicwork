@@ -5,14 +5,14 @@
                     <a href="/">Truyen QQ</a>
                 </span>
 
-            <form class="form-send" action="search" method="get">
-                <div class="top-search">
-                    <input name="q" type="text" class="text-search" placeholder="Nhập nội dung tìm kiếm...">
-                    <button class="submit-btn btn_search"></button>
-                    <div class="list-results">
-                        <div class="title-search">Tìm kiếm gần đây</div>
-                        <div class="list-container">
-                        </div>
+
+            <form class="top-search" class="form-send" action="/home/search" method="get">
+                <input name="q" id="txtSearch" type="text" onkeypress="onEnter()" class="txt-search"
+                       placeholder="Nhập nội dung tìm kiếm...">
+                <button type="submit" class="submit-btn btn_search"></button>
+                <div class="list-results">
+                    <div class="title-search">Tìm kiếm gần đây</div>
+                    <div class="list-container">
                     </div>
                 </div>
             </form>
@@ -54,5 +54,8 @@
 
 
 <script>
-
+    function onEnter() {
+        var txtSearch = document.getElementById('txtSearch');
+        location.href = '/main/search?q=' + txtSearch.value;
+    }
 </script>

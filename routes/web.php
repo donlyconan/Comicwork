@@ -25,17 +25,21 @@ Route::group(['prefix' => 'admin'], function () {
 
 
 /**
- * Bo dinh tuyen danh home co the chinh sua theo kich ban dua ra
- * danh cho phan home
+ * Bo dinh tuyen danh main co the chinh sua theo kich ban dua ra
+ * danh cho phan main
  */
-Route::group(['prefix' => 'home'], function () {
+Route::group(['prefix' => 'main'], function () {
+
+    Route::get('/', function () {
+        return view('main.ganeric');
+    });
 
     Route::get('category', ['as' => 'category', function () {
-        return view('home/category');
+        return view('main/category');
     }]);
 
     Route::get('sort', ['as' => 'category', function () {
-        return view('home/ganeric');
+        return view('main/ganeric');
     }]);
 
     //tim kiem noi dung
@@ -67,11 +71,10 @@ Route::group(['prefix' => 'user'], function () {
 /**
  * Bo dinh tuyen danh cho nhom truyen, tac pham truyen tranh
  */
+
 Route::group(['prefix' => 'comicwork'], function () {
-    Route::get('/', [
-        'as' => 'ck_control', function () {
-            return view('home/comicwork');
-        }
+    Route::get('/{id}', [
+        'as' => 'go-comicwork', 'uses' => 'ComicworkController@index'
     ]);
 });
 
@@ -82,7 +85,7 @@ Route::group(['prefix' => 'comicwork'], function () {
 //Tai trang dang nhap
 Route::get('login', ['as' => 'view-login'
     , function () {
-        return view('home/login');
+        return view('home.user.login');
     }
 ]);
 
@@ -93,20 +96,24 @@ Route::post('login', ['as' => 'login', 'uses' => 'Home\\LoginController@login'])
 //trang dang ky tai khoan
 Route::get('signup', ['as' => 'signup',
     function () {
-        return view('home/signup');
+        return view('home.user.signup');
     }
 ]);
+
+Route::get('comicwork', 'ComicworkController@index');
 
 //mac dinh trang web se di den trang tru
 Route::get('/', [
     "as" => "index",
     "uses" => function () {
-        return view('home/index');
+        return view('home.main.index');
     }
 ]);
 
 
-Route::get('query', 'ComicworkController@index');
+Route::get('query', function () {
+    return view('home.category.search');
+});
 
 
 //kiem tra ket noi
@@ -166,7 +173,7 @@ Route::get('tester', function () {
 
 
 
-//Route::get('/home', [
+//Route::get('/main', [
 //    "as" => "homeindex",
 //    "uses" => "HomeController@index"
 //]);

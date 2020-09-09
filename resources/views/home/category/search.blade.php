@@ -6,75 +6,73 @@
         <div class="box">
             Truyện tranh Châu Âu và Châu Mĩ
         </div>
-        <div class="story-list-bl01 box">
+
+        <form action="" method="GET" class="story-list-bl01 box">
+            @csrf
             <table>
-                <tbody>
                 <tr>
-                    <th>Thể loại truyện</th>
-                    <td>
-                        <div class="select is-warning">
-                            <select id="category">
-                                <option value="http://truyenqq.com/the-loai/webtoon-55.html">Webtoon</option>
-                                <option value="http://truyenqq.com/the-loai/xuyen-khong-88.html">Xuyên Không</option>
-                                <option value="http://truyenqq.com/the-loai/yaoi-70.html">Yaoi</option>
-                                <option value="http://truyenqq.com/the-loai/yuri-75.html">Yuri</option>
-                            </select>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
+                    <th>Thể loại</th>
                     <th>Tình trạng</th>
-                    <td>
-                        <ul class="choose">
-                            <li><a class="" href="http://truyenqq.com/the-loai/comic-60.html?status=0">Đang tiến
-                                    hành</a></li>
-                            <li><a class="" href="http://truyenqq.com/the-loai/comic-60.html?status=2">Hoàn thành</a>
-                            </li>
-                            <li><a class="" href="/home/category">Tất cả</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
                     <th>Quốc gia</th>
-                    <td>
-                        <div class="select is-warning">
-                            <select id="category" style="width: 200px;">
-                                <option value="http://truyenqq.com/the-loai/action-26.html">Trung Quốc</option>
-                                <option value="http://truyenqq.com/the-loai/adult-68.html">Nhật Bản</option>
-                                <option value="http://truyenqq.com/the-loai/adventure-27.html">Việt Nam</option>
-                            </select>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Năm phát hành</th>
-                    <td>
-                        <div class="select is-warning">
-                            <select id="category-sort" style="width: 100px;">
-                                <option value="">2019</option>
-                                <option value="">2018</option>
-                                <option value="">2017</option>
-                                <option value="">Tất cả</option>
-                            </select>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
                     <th>Sắp xếp</th>
+                    <th>Năm phát hành</th>
+                    <th></th>
+                </tr>
+                <tr>
                     <td>
                         <div class="select is-warning">
-                            <select id="category-sort" style="width: 200px;">
-                                <option value="">Thời gian cập nhật</option>
-                                <option value="">Thời gian đăng</option>
-                                <option value="">Năm xuất bản</option>
+                            <select name="category is-warning">
+                                <option value="Webtoon">Webtoon</option>
+                                <option value="Xuyên Không">Xuyên Không</option>
+                                <option value="Yaoi">Yaoi</option>
                             </select>
                         </div>
                     </td>
+                    <td>
+                        <div class="select is-warning">
+                            <select name="status">
+                                <option value="1">Đang cập nhật</option>
+                                <option value="0">Đã hoàn thành</option>
+                                <option value="2">Tất cả</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td style="margin: 0px;">
+                        <div class="select is-warning">
+                            <select name="country">
+                                <option value="Trung Quốc">Trung Quốc</option>
+                                <option value="Nhật Bản">Nhật Bản</option>
+                                <option value="Việt Nam">Việt Nam</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="select is-warning">
+                            <select name="sort">
+                                <option value="1">Thời gian cập nhật</option>
+                                <option value="2">Thời gian đăng</option>
+                                <option value="3">Năm xuất bản</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="select is-warning">
+                            <select name="time">
+                                <option value="2019">2019</option>
+                                <option value="2018">2018</option>
+                                <option value="2017">2017</option>
+                                <option value="all">Tất cả</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td>
+                        <button class="top-buttons" type="submit" value="Tìm kiếm">Tìm kiếm</button>
+                    </td>
+
                 </tr>
-                </tbody>
             </table>
-        </div>
+        </form>
+
         <div class="tile is-ancestor">
             <div class="tile is-vertical is-parent">
                 <ul class="list-stories grid-6">
