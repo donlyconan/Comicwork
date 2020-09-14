@@ -24,21 +24,18 @@
                     <h1>Đăng nhập</h1>
                 </div>
             </div>
-            <form action="login" method="post" name="login">
+            <form action="/login" method="post">
                 @csrf
                 <div class="form-group">
                     <label for="exampleInputEmail1">Tài khoản</label>
                     <input type="text" name="username" class="form-control" id="username"
-                           pattern="(([\w\d.]+)@(\w+){2,5}(\.(\w+).{1,50})$)|([\w\d]+){5,50}"
-                           placeholder="Nhập tài khoản"
-                           required>
+                           value="{{old('username')}}"
+                           placeholder="Nhập tài khoản">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Mật khẩu</label>
                     <input type="password" name="password" id="password" class="form-control"
-                           pattern="([\w\d@.~!&*()^#]+){5,60}"
-                           placeholder="Nhập mật khẩu" required>
-                    {{--                    ="Mật khẩu phải chứa 5 đến 60 ký tự và không có ký tự khoảng trắng"--}}
+                           placeholder="Nhập mật khẩu">
                 </div>
                 <div class="form-group" id="bottom-media">
                     <div class="bot-left">
@@ -47,15 +44,21 @@
                         <label class="text-center" id="lbremeber">Nhớ mật khẩu</label>
                     </div>
                     <div class="bot-right">
-                        <a href="#"><u>Quên mật khẩu?</u></a>
+                        <a href="/user/forgot"><u>Quên mật khẩu?</u></a>
                     </div>
                 </div>
                 <div class="notify">
-                    @if(session('notify'))
-                        <span id="error">{{session('notify')}}</span>
+                    @if(count($errors) > 0 && $errors->any())
+                        <ul class="alert alert-danger">
+                            @foreach($errors->all() as $error)
+                                <li style="margin-left: 10px;">{{$error}}</li>
+                            @endforeach
+                        </ul>
+                    @elseif(session('notify'))
+                        <div class="alert alert-warning" style="text-align: center;">{{session('notify')}}</div>
                     @endif
                 </div>
-                <div class="col-md-12 text-center ">
+                <div style="margin-top: 20px;"  class="col-md-12 text-center ">
                     <button type="submit" class="btn btn-block mybtn btn-primary tx-tfm">Đăng nhập</button>
                 </div>
                 <div class="col-md-12 ">
@@ -73,7 +76,8 @@
                     </p>
                 </div>
                 <div class="form-group">
-                    <p class="text-center">Bạn không có tài khoản? <a href="signup" id="signup">Đăng ký tại đây.</a></p>
+                    <p class="text-center">Bạn không có tài khoản? <a href="signup" id="signup">Đăng ký tại
+                            đây.</a></p>
                 </div>
             </form>
         </div>

@@ -26,24 +26,54 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="921aab84-2033-4a0c-9015-52444967e934" name="Default Changelist" comment="Hoàn tất thiết lập Model">
-      <change afterPath="$PROJECT_DIR$/app/Core/Pattern.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_06_042735_create_comicworks_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/home/mail/email_template.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/home/user/forgot.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/home/user/info.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/home/user/password.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/home/user/user-master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Comicwork.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Comicwork.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Core/Pattern.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Core/Manager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/HomeController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Chapter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Chapter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Comicwork.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Comicwork.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Image.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Image.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Notification.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Notification.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Role.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/RoleUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/RoleUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Tag.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/View.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/login.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/category/search.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/chapter.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/comicwork/chapter.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/comicwork.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/comicwork/comicwork.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/general.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/category/general.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/main/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/manager-user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user/manager-user.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/main/search.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/signup.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user/signup.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/category/general.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/category/general.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/category/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/category/search.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/comicwork/chapter.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/comicwork/chapter.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/comicwork/comicwork.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/comicwork/info.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/main/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/main/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/user/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/user/manager-user.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/user/signup.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user/signup.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/include/menu-bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/include/menu-bar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/include/top-bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/include/top-bar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/share/menubar.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/channels.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/channels.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/ExampleTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/ExampleTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +109,12 @@
     <option name="CREATE_PULL_REQUEST_DEFAULT_BRANCH" value="master" />
     <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_USER" value="donlyconan" />
     <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_NAME" value="Comicwork" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
     <include_path>
@@ -183,6 +219,17 @@
       <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
       <path value="$PROJECT_DIR$/vendor/phar-io/version" />
       <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/seld/phar-utils" />
+      <path value="$PROJECT_DIR$/vendor/seld/jsonlint" />
+      <path value="$PROJECT_DIR$/vendor/justinrainbow/json-schema" />
+      <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-ide-helper" />
+      <path value="$PROJECT_DIR$/vendor/unisharp/laravel-filemanager" />
+      <path value="$PROJECT_DIR$/vendor/intervention/image" />
     </include_path>
   </component>
   <component name="ProjectId" id="1gnf8Jx9uexJE5nOGSCQB5J8zlA" />
@@ -195,7 +242,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/image" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/storage/app/User/default" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -203,26 +250,37 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.HTML" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Xampp\htdocs\Comicwork\storage\app\User\default" />
+      <recent name="D:\Xampp\htdocs\Comicwork\database\migrations" />
+      <recent name="D:\Xampp\htdocs\Comicwork\public\image" />
+      <recent name="D:\Xampp\htdocs\Comicwork\public" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Xampp\htdocs\Comicwork\storage\app\public" />
       <recent name="D:\Xampp\htdocs\Comicwork\resources\views\home\home" />
       <recent name="D:\Xampp\htdocs\Comicwork\resources\views\home\user" />
       <recent name="D:\Xampp\htdocs\Comicwork\resources\views\home\category" />
       <recent name="D:\Xampp\htdocs\Comicwork\resources\views\home\comicwork" />
-      <recent name="D:\Xampp\htdocs\Comicwork\resources\views\share" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Xampp\htdocs\Comicwork\public\image" />
-      <recent name="D:\Xampp\htdocs\Comicwork\public" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.localhost:8000">
+  <component name="RunManager" selected="PHPUnit.ExampleTest.testBasicTest (1)">
     <configuration name="localhost:8000" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" engineId="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" uri="http://localhost:8000">
       <method v="2" />
     </configuration>
-    <configuration name="login.blade.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Comicwork/resources/views/home/login.blade.php" useBuiltInWebServerPort="true">
+    <configuration name="ExampleTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\ExampleTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/ExampleTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ExampleTest.testBasicTest (1)" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\ExampleTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ExampleTest.php" method="testBasicTest" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ExampleTest.testBasicTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\ExampleTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/ExampleTest.php" method="testBasicTest" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -234,14 +292,23 @@
       <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" coverage_engine="PHPDBG" scope="XML" />
       <method v="2" />
     </configuration>
+    <configuration name="TestCase.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/tests/TestCase.php">
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="JavaScript Debug.localhost:8000" />
-      <item itemvalue="JavaScript Debug.login.blade.php" />
+      <item itemvalue="PHP Script.TestCase.php" />
       <item itemvalue="PHPUnit.phpunit.xml" />
+      <item itemvalue="PHPUnit.ExampleTest" />
+      <item itemvalue="PHPUnit.ExampleTest.testBasicTest" />
+      <item itemvalue="PHPUnit.ExampleTest.testBasicTest (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.login.blade.php" />
+        <item itemvalue="PHPUnit.ExampleTest.testBasicTest (1)" />
+        <item itemvalue="PHPUnit.ExampleTest.testBasicTest" />
+        <item itemvalue="PHPUnit.ExampleTest" />
+        <item itemvalue="PHP Script.TestCase.php" />
         <item itemvalue="JavaScript Debug.localhost:8000" />
       </list>
     </recent_temporary>
@@ -273,6 +340,14 @@
       <workItem from="1599469439944" duration="810000" />
       <workItem from="1599548707781" duration="10350000" />
       <workItem from="1599578784520" duration="11433000" />
+      <workItem from="1599649610380" duration="3073000" />
+      <workItem from="1599712592659" duration="2381000" />
+      <workItem from="1599714998942" duration="35219000" />
+      <workItem from="1599800294709" duration="14828000" />
+      <workItem from="1599921699444" duration="614000" />
+      <workItem from="1599983867068" duration="27725000" />
+      <workItem from="1600073716936" duration="1244000" />
+      <workItem from="1600086851998" duration="3921000" />
     </task>
     <task id="LOCAL-00001" summary="Update-Model">
       <created>1599024156214</created>
@@ -330,7 +405,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599377891443</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Hoàn tất thiết lập Model">
+      <created>1599649797620</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1599649797620</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -382,26 +464,30 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="359" y="27" key="#PHP/0.0.1304.768@0.0.1304.768" timestamp="1598755245452" />
-    <state x="49" y="0" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599583808114">
+    <state x="49" y="0" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599717419932">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="49" y="0" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1304.768@0.0.1304.768" timestamp="1599583808114" />
-    <state x="419" y="186" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599305168113">
+    <state x="49" y="0" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1304.768@0.0.1304.768" timestamp="1599717419932" />
+    <state x="419" y="186" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599805551375">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="419" y="186" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1304.768@0.0.1304.768" timestamp="1599305168113" />
+    <state x="419" y="186" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1304.768@0.0.1304.768" timestamp="1599805551375" />
     <state x="457" y="25" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1599218568970">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="457" y="25" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1304.768@0.0.1304.768" timestamp="1599218568970" />
+    <state x="382" y="139" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1599994348867">
+      <screen x="0" y="0" width="1304" height="768" />
+    </state>
+    <state x="382" y="139" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1304.768@0.0.1304.768" timestamp="1599994348867" />
     <state x="277" y="0" key="CommitChangelistDialog2" timestamp="1599020403214">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="277" y="0" key="CommitChangelistDialog2/0.0.1304.768@0.0.1304.768" timestamp="1599020403214" />
-    <state x="375" y="100" key="FileChooserDialogImpl" timestamp="1599579907162">
+    <state x="375" y="100" key="FileChooserDialogImpl" timestamp="1599652690932">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="375" y="100" key="FileChooserDialogImpl/0.0.1304.768@0.0.1304.768" timestamp="1599579907162" />
+    <state x="375" y="100" key="FileChooserDialogImpl/0.0.1304.768@0.0.1304.768" timestamp="1599652690932" />
     <state x="432" y="251" key="Github.CreatePullRequestDialog" timestamp="1599020417636">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
@@ -414,70 +500,78 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="424" y="89" key="Github.UntrackedFilesDialog/0.0.1304.768@0.0.1304.768" timestamp="1599020037960" />
-    <state width="1261" height="239" key="GridCell.Tab.0.bottom" timestamp="1599177734898">
+    <state width="1261" height="417" key="GridCell.Tab.0.bottom" timestamp="1599821987513">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="239" key="GridCell.Tab.0.bottom/0.0.1304.768@0.0.1304.768" timestamp="1599177734898" />
-    <state width="1261" height="239" key="GridCell.Tab.0.center" timestamp="1599177734898">
+    <state width="1261" height="417" key="GridCell.Tab.0.bottom/0.0.1304.768@0.0.1304.768" timestamp="1599821987513" />
+    <state width="1261" height="417" key="GridCell.Tab.0.center" timestamp="1599821987512">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="239" key="GridCell.Tab.0.center/0.0.1304.768@0.0.1304.768" timestamp="1599177734898" />
-    <state width="1261" height="239" key="GridCell.Tab.0.left" timestamp="1599177734890">
+    <state width="1261" height="417" key="GridCell.Tab.0.center/0.0.1304.768@0.0.1304.768" timestamp="1599821987512" />
+    <state width="1261" height="417" key="GridCell.Tab.0.left" timestamp="1599821987512">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="239" key="GridCell.Tab.0.left/0.0.1304.768@0.0.1304.768" timestamp="1599177734890" />
-    <state width="1261" height="239" key="GridCell.Tab.0.right" timestamp="1599177734898">
+    <state width="1261" height="417" key="GridCell.Tab.0.left/0.0.1304.768@0.0.1304.768" timestamp="1599821987512" />
+    <state width="1261" height="417" key="GridCell.Tab.0.right" timestamp="1599821987512">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="239" key="GridCell.Tab.0.right/0.0.1304.768@0.0.1304.768" timestamp="1599177734898" />
-    <state width="1261" height="239" key="GridCell.Tab.1.bottom" timestamp="1599177734898">
+    <state width="1261" height="417" key="GridCell.Tab.0.right/0.0.1304.768@0.0.1304.768" timestamp="1599821987512" />
+    <state width="1261" height="239" key="GridCell.Tab.1.bottom" timestamp="1599752957461">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="239" key="GridCell.Tab.1.bottom/0.0.1304.768@0.0.1304.768" timestamp="1599177734898" />
-    <state width="1261" height="239" key="GridCell.Tab.1.center" timestamp="1599177734898">
+    <state width="1261" height="239" key="GridCell.Tab.1.bottom/0.0.1304.768@0.0.1304.768" timestamp="1599752957461" />
+    <state width="1261" height="239" key="GridCell.Tab.1.center" timestamp="1599752957461">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="239" key="GridCell.Tab.1.center/0.0.1304.768@0.0.1304.768" timestamp="1599177734898" />
-    <state width="1261" height="239" key="GridCell.Tab.1.left" timestamp="1599177734898">
+    <state width="1261" height="239" key="GridCell.Tab.1.center/0.0.1304.768@0.0.1304.768" timestamp="1599752957461" />
+    <state width="1261" height="239" key="GridCell.Tab.1.left" timestamp="1599752957461">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="239" key="GridCell.Tab.1.left/0.0.1304.768@0.0.1304.768" timestamp="1599177734898" />
-    <state width="1261" height="239" key="GridCell.Tab.1.right" timestamp="1599177734898">
+    <state width="1261" height="239" key="GridCell.Tab.1.left/0.0.1304.768@0.0.1304.768" timestamp="1599752957461" />
+    <state width="1261" height="239" key="GridCell.Tab.1.right" timestamp="1599752957461">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="239" key="GridCell.Tab.1.right/0.0.1304.768@0.0.1304.768" timestamp="1599177734898" />
-    <state width="1261" height="239" key="GridCell.Tab.2.bottom" timestamp="1599177734898">
+    <state width="1261" height="239" key="GridCell.Tab.1.right/0.0.1304.768@0.0.1304.768" timestamp="1599752957461" />
+    <state width="1261" height="239" key="GridCell.Tab.2.bottom" timestamp="1599752957462">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="239" key="GridCell.Tab.2.bottom/0.0.1304.768@0.0.1304.768" timestamp="1599177734898" />
-    <state width="1261" height="239" key="GridCell.Tab.2.center" timestamp="1599177734898">
+    <state width="1261" height="239" key="GridCell.Tab.2.bottom/0.0.1304.768@0.0.1304.768" timestamp="1599752957462" />
+    <state width="1261" height="239" key="GridCell.Tab.2.center" timestamp="1599752957462">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="239" key="GridCell.Tab.2.center/0.0.1304.768@0.0.1304.768" timestamp="1599177734898" />
-    <state width="1261" height="239" key="GridCell.Tab.2.left" timestamp="1599177734898">
+    <state width="1261" height="239" key="GridCell.Tab.2.center/0.0.1304.768@0.0.1304.768" timestamp="1599752957462" />
+    <state width="1261" height="239" key="GridCell.Tab.2.left" timestamp="1599752957462">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="239" key="GridCell.Tab.2.left/0.0.1304.768@0.0.1304.768" timestamp="1599177734898" />
-    <state width="1261" height="239" key="GridCell.Tab.2.right" timestamp="1599177734898">
+    <state width="1261" height="239" key="GridCell.Tab.2.left/0.0.1304.768@0.0.1304.768" timestamp="1599752957462" />
+    <state width="1261" height="239" key="GridCell.Tab.2.right" timestamp="1599752957462">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="239" key="GridCell.Tab.2.right/0.0.1304.768@0.0.1304.768" timestamp="1599177734898" />
-    <state x="486" y="307" key="NewPhpFileDialog" timestamp="1599232808186">
+    <state width="1261" height="239" key="GridCell.Tab.2.right/0.0.1304.768@0.0.1304.768" timestamp="1599752957462" />
+    <state x="461" y="107" key="NewPhpClassDialog" timestamp="1599806156363">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="486" y="307" key="NewPhpFileDialog/0.0.1304.768@0.0.1304.768" timestamp="1599232808186" />
-    <state x="118" y="0" width="998" height="768" key="SettingsEditor" timestamp="1599580380383">
+    <state x="461" y="107" key="NewPhpClassDialog/0.0.1304.768@0.0.1304.768" timestamp="1599806156363" />
+    <state x="486" y="307" key="NewPhpFileDialog" timestamp="1599805584843">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="118" y="0" width="998" height="768" key="SettingsEditor/0.0.1304.768@0.0.1304.768" timestamp="1599580380383" />
-    <state x="244" y="117" key="Vcs.Push.Dialog.v2" timestamp="1599472025227">
+    <state x="486" y="307" key="NewPhpFileDialog/0.0.1304.768@0.0.1304.768" timestamp="1599805584843" />
+    <state x="118" y="0" width="998" height="754" key="SettingsEditor" timestamp="1600074269373">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="244" y="117" key="Vcs.Push.Dialog.v2/0.0.1304.768@0.0.1304.768" timestamp="1599472025227" />
-    <state x="480" y="118" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1599030025733">
+    <state x="118" y="0" width="998" height="754" key="SettingsEditor/0.0.1304.768@0.0.1304.768" timestamp="1600074269373" />
+    <state x="244" y="117" key="Vcs.Push.Dialog.v2" timestamp="1599649681793">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="480" y="118" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1304.768@0.0.1304.768" timestamp="1599030025732" />
+    <state x="244" y="117" key="Vcs.Push.Dialog.v2/0.0.1304.768@0.0.1304.768" timestamp="1599649681793" />
+    <state x="480" y="118" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1599649986674">
+      <screen x="0" y="0" width="1304" height="768" />
+    </state>
+    <state x="480" y="118" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1304.768@0.0.1304.768" timestamp="1599649986674" />
+    <state x="204" y="113" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1599721649743">
+      <screen x="0" y="0" width="1304" height="768" />
+    </state>
+    <state x="204" y="113" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1304.768@0.0.1304.768" timestamp="1599721649743" />
     <state x="719" y="0" width="585" height="768" key="find.popup" timestamp="1599588348165">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
@@ -490,14 +584,14 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="412" y="173" key="git4idea.ui.GitUnstashDialog/0.0.1304.768@0.0.1304.768" timestamp="1599030004438" />
-    <state x="308" y="172" width="672" height="677" key="run.anything.popup" timestamp="1599589922674">
+    <state x="308" y="172" width="672" height="677" key="run.anything.popup" timestamp="1600005467888">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="308" y="172" width="672" height="677" key="run.anything.popup/0.0.1304.768@0.0.1304.768" timestamp="1599589922674" />
-    <state x="308" y="37" width="672" height="678" key="search.everywhere.popup" timestamp="1599211560011">
+    <state x="308" y="172" width="672" height="677" key="run.anything.popup/0.0.1304.768@0.0.1304.768" timestamp="1600005467888" />
+    <state x="308" y="37" width="672" height="678" key="search.everywhere.popup" timestamp="1600007299440">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="308" y="37" width="672" height="678" key="search.everywhere.popup/0.0.1304.768@0.0.1304.768" timestamp="1599211560011" />
+    <state x="308" y="37" width="672" height="678" key="search.everywhere.popup/0.0.1304.768@0.0.1304.768" timestamp="1600007299440" />
     <state x="450" y="70" key="svn.repositoryBrowser" timestamp="1599019653195">
       <screen x="0" y="0" width="1304" height="768" />
     </state>

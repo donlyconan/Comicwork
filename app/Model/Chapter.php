@@ -5,6 +5,33 @@ namespace App\Model;
 use Illuminate\Database\Eloquent\Model;
 
 
+/**
+ * App\Model\Chapter
+ *
+ * @property int $id
+ * @property int $id_comicwork
+ * @property int|null $chapter_number
+ * @property string|null $title
+ * @property string $created_at
+ * @property string $updated_at
+ * @property-read \App\Model\Comicwork $comicwork
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Model\Image[] $images
+ * @property-read int|null $images_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Model\View[] $views
+ * @property-read int|null $views_count
+ * @method static \Illuminate\Database\Eloquent\Builder|Chapter newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Chapter newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Chapter query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Chapter whereChapterNumber($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Chapter whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Chapter whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Chapter whereIdComicwork($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Chapter whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Chapter whereUpdatedAt($value)
+ * @mixin \Eloquent
+ * @property string $release_date
+ * @method static \Illuminate\Database\Eloquent\Builder|Chapter whereReleaseDate($value)
+ */
 class Chapter extends Model
 {
     //ten bang co so du lieu Mac dinh: Model+s (chapters)

@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('layout.home')
 
 @section('body-page')
     <section class="main-content on">

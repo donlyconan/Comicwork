@@ -2,8 +2,7 @@
 
 namespace App\Model;
 
-
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;use phpDocumentor\Reflection\DocBlock\Tags\Property;
 
 class RoleUser extends Model
 {

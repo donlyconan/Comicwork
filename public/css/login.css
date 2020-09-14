@@ -126,16 +126,14 @@ form .error {
     width: auto;
     margin: auto;
     height: auto;
-    text-align: center;
     clear: both;
-    margin-top: 20px;
-    margin-bottom: 15px;
 }
 
-.notify span {
+.notify * {
     font-size: 14px;
-    color: #b83d3d;
 }
+
+
 
 .messages {
     clear: both;
@@ -148,5 +146,4 @@ form .error {
     width: auto;
     line-height: 20px;
 }
-
 

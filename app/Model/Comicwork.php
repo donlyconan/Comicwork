@@ -5,6 +5,53 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\Model\Comicwork
+ *
+ * @property int $id
+ * @property string|null $name
+ * @property string|null $description
+ * @property int $id_country
+ * @property string|null $author
+ * @property int|null $status
+ * @property string|null $publishing_company
+ * @property string $publishing_year
+ * @property string|null $url_image
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Model\Chapter[] $chapters
+ * @property-read int|null $chapters_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Model\ComicworkTag[] $comicwork_tag
+ * @property-read int|null $comicwork_tag_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Model\Follow[] $follows
+ * @property-read int|null $follows_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Model\History[] $histories
+ * @property-read int|null $histories_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Model\Tag[] $tags
+ * @property-read int|null $tags_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Model\User[] $users
+ * @property-read int|null $users_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Model\User[] $users_follow
+ * @property-read int|null $users_follow_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Model\User[] $users_view
+ * @property-read int|null $users_view_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Model\View[] $views
+ * @property-read int|null $views_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Model\Vote[] $votes
+ * @property-read int|null $votes_count
+ * @method static \Illuminate\Database\Eloquent\Builder|Comicwork newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Comicwork newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Comicwork query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Comicwork whereAuthor($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Comicwork whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Comicwork whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Comicwork whereIdCountry($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Comicwork whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Comicwork wherePublishingCompany($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Comicwork wherePublishingYear($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Comicwork whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Comicwork whereUrlImage($value)
+ * @mixin \Eloquent
+ * @property-read \App\Model\Country|null $country
+ */
 class Comicwork extends Model
 {
     protected $table = 'Comicworks';
@@ -14,51 +61,102 @@ class Comicwork extends Model
     protected $dateFormat = 'dd/MM/yyyy';
 
 
-    public function tags() {
+    public function tags()
+    {
         return $this->belongsToMany('App\Model\Tag', 'Comicwork_tag'
             , 'id_comicwork', 'id_tag');
     }
 
 
-    public function follows() {
+    public function follows()
+    {
         return $this->hasMany('App\Model\Follow', 'id_comicwork');
     }
 
-    public function users() {
+    public function users()
+    {
         return $this->belongsToMany('App\Model\User', 'Follows'
             , 'id_comicwork', 'id_user');
     }
 
 
-    public function views() {
+    public function views()
+    {
         return $this->hasMany('App\Model\View', 'id_comicwork');
     }
 
-    public function chapters() {
+    public function chapters()
+    {
         return $this->hasMany('App\Model\Chapter', 'id_comicwork');
     }
 
-    public function histories() {
+    public function histories()
+    {
         return $this->hasMany('App\Model\History', 'id_comicwork');
     }
 
 
-    public function votes() {
+    public function votes()
+    {
         return $this->hasMany('App\Model\Vote', 'id_comicwork');
     }
 
-    public function comicwork_tag() {
+    public function country()
+    {
+        return $this->hasOne('App\Model\Country', 'id_country');
+    }
+
+    public function comicwork_tag()
+    {
         return $this->hasMany('App\Model\ComicworkTag', 'id_comicwork');
     }
 
-    public function users_follow() {
+    public function users_follow()
+    {
         return $this->belongsToMany('App\Model\User', 'Follows'
             , 'ic_comicwork', 'id_user');
     }
 
 
-    public function users_view() {
+    public function users_view()
+    {
         return $this->belongsToMany('App\Model\User', 'Views'
             , 'id_comicwork', 'id_user');
     }
+
+    public function getColumns()
+    {
+        return ['comicworks.id', 'name', 'description', 'id_country', 'author', 'comicworks.status', 'publishing_company', 'publishing_year', 'url_image'];
+    }
+
+    //Đếm số lượng người đã xem
+    public function countViews()
+    {
+        return self::leftJoin("Views", "views.id_comicwork", '=', 'comicworks.id')
+            ->count("Views.id");
+    }
+
+    //Đếm số người theo dõi
+    public function countFollows()
+    {
+        return self::leftJoin("Follows", "Follows.id_comicwork", '=', 'comicworks.id')
+            ->where("Follows.status", '=', '1')->count("Follows.id_comicwork");
+    }
+
+
+    //Đếm số lượng votes
+    public function countVotes()
+    {
+        return self::leftJoin("Votes", "Votes.id_comicwork", '=', 'comicworks.id')
+            ->where("Votes.status", '=', '1')->count("Votes.id_comicwork");
+    }
+
+
+    //lấy chương truyện mới nhất của đoạn truyện
+    public function newChapter()
+    {
+        return self::leftJoin("chapters", "Chapters.id_comicwork", '=', 'Comicworks.id')
+            ->max("chapter_number");
+    }
+
 }

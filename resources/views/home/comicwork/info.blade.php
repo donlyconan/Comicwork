@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('layout.home')
 
 @section('body-page')
     <section class="main-content">
@@ -6,7 +6,7 @@
             <div id="path">
                 <ol class="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">
                     <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-                        <a itemprop="item" href="http://truyenqq.com/index.html">
+                        <a itemprop="item" href="/">
                             <span itemprop="name">Trang Chủ</span>
                         </a>
                         <meta itemprop="position" content="1">
@@ -84,20 +84,34 @@
                     <h2 class="story-detail-title">Danh sách chương</h2>
                 </div>
                 <div class="box">
-                    <div class="works-chapter-list">
-                        @foreach($comic->chapters as $chapter)
+                    @if($comic->chapters->count() > 0)
+                        <div class="works-chapter-list">
+                            @foreach($comic->chapters as $chapter)
+                                <div class="works-chapter-item row">
+                                    <div class="col-md-10 col-sm-10 col-xs-8 ">
+                                        <a target="_blank"
+                                           href="/comicwork/{{$comic->id}}/{{$chapter->id}}">Chương
+                                            {{$chapter->chapter_number}}</a>
+                                    </div>
+                                    <div class="col-md-2 col-sm-2 col-xs-4 text-right">
+                                        {{date('m/d/Y', strtotime($chapter->created_at))}}
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    @else
+                        <div class="works-chapter-list">
+
                             <div class="works-chapter-item row">
                                 <div class="col-md-10 col-sm-10 col-xs-8 ">
-                                    <a target="_blank"
-                                       href="http://truyenqq.com/truyen-tranh/ayakashiko-4247-chap-63.html">Chương
-                                        {{$chapter->chapter_number}}</a>
+                                    <a target="_blank">Đang cập nhật</a>
                                 </div>
                                 <div class="col-md-2 col-sm-2 col-xs-4 text-right">
-                                    {{date('m/d/Y', strtotime($chapter->created_at))}}
+                                    {{date('m/d/Y', time())}}
                                 </div>
                             </div>
-                        @endforeach
-                    </div>
+                        </div>
+                    @endif
                 </div>
             </div>
             <div class="block03">
@@ -117,17 +131,19 @@
             <span class="story-detail-title"><i class="fas fa-comments"></i>Bình Luận (<span
                     class="comment-count">42</span>)</span>
                 <div class="group01 comments-container">
-                    <div class="form-comment main_comment">
-                        <div class="message-content">
-                            <img src="image/avatar.png" alt="">
-                            <div class="mess-input">
-                                <b id="full_name">Donly Conan</b>
-                                <textarea style="margin-top: 5px;" class="textarea" placeholder="Nội dung bình luận"
-                                          id="content_comment"></textarea>
-                                <button style="margin-top: 30px;" type="submit" class="submit_comment"></button>
+                    @if(Auth::check())
+                        <div class="form-comment main_comment">
+                            <div class="message-content">
+                                <img src="{{URL::asset("image/avatar.png")}}" alt="">
+                                <div class="mess-input">
+                                    <b id="full_name">{{Auth::user()->full_name}}</b>
+                                    <textarea style="margin-top: 5px;" class="textarea" placeholder="Nội dung bình luận"
+                                              id="content_comment"></textarea>
+                                    <button style="margin-top: 30px;" type="submit" class="submit_comment"></button>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    @endif
 
                     <div class="list-comment">
                         <article class="info-comment child_1036934 parent_0 comment-main-level">

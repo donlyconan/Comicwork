@@ -1,6 +1,8 @@
 <?php
 
+use App\Model\Comicwork;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controller\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,25 +30,21 @@ Route::group(['prefix' => 'admin'], function () {
  * Bo dinh tuyen danh main co the chinh sua theo kich ban dua ra
  * danh cho phan main
  */
-Route::group(['prefix' => 'main'], function () {
+Route::group(['prefix' => 'home'], function () {
+    //trả về trang giao diện chính
+    Route::get('/', 'Home\HomeController@index')->name('home');
 
-    Route::get('/', function () {
-        return view('main.ganeric');
-    });
+    //Tìm kiếm theo thể loại
+    Route::get('/category', 'Home\HomeController@category')->name("home.category");
 
-    Route::get('category', ['as' => 'category', function () {
-        return view('main/category');
-    }]);
+    //Tìm kiếm theo đất nước
+    Route::get('/country', 'Home\HomeController@country')->name("home.country");
 
-    Route::get('sort', ['as' => 'category', function () {
-        return view('main/ganeric');
-    }]);
+    //Tìm kiếm theo danh mục
+    Route::get('/sort', 'Home\HomeController@sort')->name("home.sort");
 
     //tim kiem noi dung
-    Route::get('search', [
-        'as' => 'search',
-        'uses' => 'ComicworkController@search'
-    ]);
+    Route::get('search', 'Home\ComicworkController@search')->name('home.search');
 });
 
 
@@ -54,70 +52,72 @@ Route::group(['prefix' => 'main'], function () {
  * Nhóm định tuyến danh cho user thuc hien cac chuc nang thay doi cap nhat
  * nang cap, chinh sua thong tin cua user
  */
-Route::group(['prefix' => 'user'], function () {
-    Route::get('/', [
-        'as' => 'userinfo', 'uses' => 'Home\\UserController@index'
-    ]);
+Route::prefix("user")->group(function () {
+
+    //Xem thong tin user
+    Route::get('/', 'Home\UserController@index')->name("user.info");
 
     //cai dat route duong danh den lich su
-    Route::get('history', 'Home\\UserController@history');
+    Route::get('history', 'Home\UserController@history')->name("user.history");
 
     //cai dat route duong danh den theo doi truyen
-    Route::get('follow', 'Home\\UserController@follow');
+    Route::get('follow', 'Home\UserController@follow')->name("user.follow");
 
+    //dang xuat khoi danh sach
+    Route::get('logout', 'Home\UserController@logout')->name("user.logout");
 
+    //Trang hien thi lay lai mat khau-doi mat khau
+    Route::get("forgot", 'Home\UserController@forgot')->name('user.forgot');
+
+    //thay doi mat khau cho user
+    Route::match(["get", "put"], "change-password", 'Home\UserController@changePassword')->name("change-password");
+
+    //chinh sua thong tin user
+    Route::post("edit", 'Home\UserController@edit')->name("user.edit");
 });
 
-/**
- * Bo dinh tuyen danh cho nhom truyen, tac pham truyen tranh
- */
-
-Route::group(['prefix' => 'comicwork'], function () {
-    Route::get('/{id}', [
-        'as' => 'go-comicwork', 'uses' => 'ComicworkController@index'
-    ]);
+//cau hinh nhom truyen tranh voi tien to la tac pham
+Route::prefix("comicwork")->group(function () {
+    //di toi xem trang truyen
+    Route::get('/{id}', 'Home\ComicworkController@index')->name("comicwork.info");
 });
 
 
-/**
- * Bo dinh tuyen danh cho chuc nang co ban cua trang web
- */
 //Tai trang dang nhap
-Route::get('login', ['as' => 'view-login'
-    , function () {
-        return view('home.user.login');
-    }
-]);
+Route::get('login', 'Home\LoginController@index')->name("login");
+
+//giu email yeu cap cap lai mat khau
+Route::post("send-email", "Home\MailController@send")->name("email.send");
 
 //Dang nhap vao may chu
 Route::post('login', ['as' => 'login', 'uses' => 'Home\\LoginController@login']);
 
-
 //trang dang ky tai khoan
-Route::get('signup', ['as' => 'signup',
-    function () {
-        return view('home.user.signup');
-    }
-]);
+Route::get('signup', 'Home\SignUpController@index')->name("signup");
 
-Route::get('comicwork', 'ComicworkController@index');
+//dang ky tai khoan
+Route::post("/signup/new-account", 'Home\SignUpController@register')->name("signup.register");
 
 //mac dinh trang web se di den trang tru
-Route::get('/', [
-    "as" => "index",
-    "uses" => function () {
-        return view('home.main.index');
-    }
-]);
+Route::get('/', 'Home\HomeController@index')->name("homepage");
 
 
-Route::get('query', function () {
-    return view('home.category.search');
+//tao api
+Route::prefix("/api")->group(function () {
+
+});
+
+//thu nghiem
+Route::get("/query", function () {
+    $comics =  Comicwork::find(1);
+
+    dd($comics->newChapter());
 });
 
 
 //kiem tra ket noi
-Route::get('tester', function () {
+Route::get('/tester', function () {
+    return view("home.category.general");
 //    $tester = [
 //        \App\Model\Chapter::all(),
 //        \App\Model\Comicwork::all(),
@@ -171,47 +171,3 @@ Route::get('tester', function () {
 
 
 
-
-
-//Route::get('/main', [
-//    "as" => "homeindex",
-//    "uses" => "HomeController@index"
-//]);
-//
-//Route::get('index/{id}', ['as' => 'index2s', function ($id) {
-//    echo "Result: $id";
-//}])->where(['id' => "[0-9]+"]);
-//
-//Route::get('index/{ngay}', ['as' => 'index3s', function ($ngay) {
-//    echo 'Result: ' . $ngay;
-//}])->where(['ngay' => '\w+']);
-//
-//
-//Route::group(['prefix' => 'admin'], function () {
-//
-//    Route::get('sua/{id}', function ($id) {
-//        echo 'Sua: ' . $id;
-//    });
-//
-//    Route::get('xoa/{id}', function ($id) {
-//        echo 'Xoa: ' . $id;
-//    });
-//});
-//
-//
-//Route::get("myname/{name}", "HomeController@getName");
-//
-//
-//Route::post("post/{id}", function ($id) {
-//    return 'post: ' . $id;
-//});
-//
-//Route::get('upload', function () {
-//    return view("post");
-//});
-//
-//Route::post("index/postFile", ['as' => 'postFile',
-//        'uses' => 'HomeController@postFile']
-//);
-//
-//Route::get('hello/{name}', 'HomeController@getView');

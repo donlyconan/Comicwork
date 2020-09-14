@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Model\Comicwork;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -14,8 +15,8 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        $response = $this->get('/');
+        $response = $this->get('/query');
 
-        $response->assertStatus(200);
+        dd($response);
     }
 }
