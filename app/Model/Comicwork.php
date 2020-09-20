@@ -4,10 +4,11 @@ namespace App\Model;
 
 
 use Illuminate\Database\Eloquent\Model;
+use phpDocumentor\Reflection\Types\Self_;
+use phpDocumentor\Reflection\Types\This;
 
 /**
  * App\Model\Comicwork
- *
  * @property int $id
  * @property string|null $name
  * @property string|null $description
@@ -111,20 +112,22 @@ class Comicwork extends Model
         return $this->hasMany('App\Model\ComicworkTag', 'id_comicwork');
     }
 
-    public function users_follow()
+    public function user_follow()
     {
         return $this->belongsToMany('App\Model\User', 'Follows'
             , 'ic_comicwork', 'id_user');
     }
 
 
-    public function users_view()
+    public function user_view()
     {
         return $this->belongsToMany('App\Model\User', 'Views'
             , 'id_comicwork', 'id_user');
     }
 
-    public function getColumns()
+
+    //trả về tên các trường của Model
+    public function columns()
     {
         return ['comicworks.id', 'name', 'description', 'id_country', 'author', 'comicworks.status', 'publishing_company', 'publishing_year', 'url_image'];
     }
@@ -133,6 +136,7 @@ class Comicwork extends Model
     public function countViews()
     {
         return self::leftJoin("Views", "views.id_comicwork", '=', 'comicworks.id')
+            ->where("comicworks.id", $this->id)
             ->count("Views.id");
     }
 
@@ -140,7 +144,9 @@ class Comicwork extends Model
     public function countFollows()
     {
         return self::leftJoin("Follows", "Follows.id_comicwork", '=', 'comicworks.id')
-            ->where("Follows.status", '=', '1')->count("Follows.id_comicwork");
+            ->where("comicworks.id", '=', $this->id)
+            ->where("Follows.status", '=', 1)
+            ->count("Follows.id_comicwork");
     }
 
 
@@ -148,15 +154,79 @@ class Comicwork extends Model
     public function countVotes()
     {
         return self::leftJoin("Votes", "Votes.id_comicwork", '=', 'comicworks.id')
-            ->where("Votes.status", '=', '1')->count("Votes.id_comicwork");
+            ->where("comicworks.id", '=', $this->id)
+            ->where("Votes.status", '=', '1')
+            ->count("Votes.id_comicwork");
+    }
+ //Đếm số chương ra mắt
+    public function countChapters()
+    {
+        return self::leftJoin("Chapters", "Chapters.id_comicwork", '=', 'comicworks.id')
+            ->where("comicworks.id", '=', $this->id)
+            ->count("Chapters.id");
     }
 
 
     //lấy chương truyện mới nhất của đoạn truyện
-    public function newChapter()
+    public function currentChapter()
     {
-        return self::leftJoin("chapters", "Chapters.id_comicwork", '=', 'Comicworks.id')
+        return self::selectRaw('chapters.chapter_number')->leftJoin("chapters", "Chapters.id_comicwork", '=', 'Comicworks.id')
             ->max("chapter_number");
+    }
+
+    /*
+     * kiểm tra trạng thái của bộ truyện
+     * status: 0 đang cập nhật
+     *         1 đã hoàn thành
+     */
+    public function isUpdating()
+    {
+        return $this->status == 0;
+    }
+
+    /**
+     * Trả về ảnh đại diện của bộ truyện
+     */
+    public function profile()
+    {
+        return \Storage::url('public/comicwork/demo.jpg');
+    }
+
+    /**
+     * Trả về thời gian dạng chữ
+     */
+
+    public function getTimeAgo()
+    {
+        $release_time = self::selectRaw('chapters.release_date')
+            ->leftJoin("chapters", "Chapters.id_comicwork", '=', 'Comicworks.id')
+            ->orderBy('chapters.release_date', 'desc')
+            ->first()->release_date;
+
+        $min = 60;
+        $hour = $min * 60;
+        $day = $min * 24;
+        $weak = $day * 7;
+        $month = $day * 30;
+        $year = $day * 365;
+
+        $release_time = time() - strtotime($release_time);
+
+        if ($release_time < $min) {
+            return '1 phút trước';
+        } elseif ($release_time >= $min && $release_time < $hour) {
+            return round($release_time / $min, 0, PHP_ROUND_HALF_DOWN) . ' phút trước';
+        } elseif ($release_time >= $hour && $release_time < $day) {
+            return round($release_time / $hour, 0, PHP_ROUND_HALF_DOWN) . ' giờ trước';
+        } elseif ($release_time >= $day && $release_time < $weak) {
+            return round($release_time / $day, 0, PHP_ROUND_HALF_DOWN). ' ngày trước';
+        } elseif ($release_time >= $weak && $release_time < $month) {
+            return round($release_time / $weak, 0, PHP_ROUND_HALF_DOWN). ' tuần trước';
+        } elseif ($release_time >= $month && $release_time < $year) {
+            return round($release_time / $year, 0, PHP_ROUND_HALF_DOWN). ' tháng trước';
+        } elseif ($release_time >= $year) {
+            return round($release_time / $year, 0, PHP_ROUND_HALF_DOWN). ' năm trước';
+        }
     }
 
 }

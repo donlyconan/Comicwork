@@ -37,53 +37,62 @@
 
         <section class="main-content index">
             <div class="container">
-                <div class="latest">
-                    <div class="caption" id="list-update"><a href="http://truyenqq.com/truyen-moi-cap-nhat.html"><span
-                                class="starts-icon"></span>Truyện mới cập nhật</a></div>
-                    <ul class="list-stories grid-6">
-                        @for($i=1; $i <= 6; $i++)
-                            @include('include.item')
-                        @endfor
-                    </ul>
-                    <div class="has-text-centered">
-                        <a href="http://truyenqq.com/truyen-moi-cap-nhat/trang-2.html" class="view-more-btn">Xem
-                            thêm</a>
+                @if(isset($newUpdate) and count($newUpdate) > 0)
+                    <div class="latest">
+                        <div class="caption" id="list-update"><a
+                                href="http://truyenqq.com/truyen-moi-cap-nhat.html"><span
+                                    class="starts-icon"></span>Truyện mới cập nhật</a></div>
+                        <ul class="list-stories grid-6">
+                            @foreach($newUpdate as $chapter)
+                                @itemview(['comic'=>$chapter->comicwork()->first()])
+                            @endforeach
+                        </ul>
+                        <div class="has-text-centered">
+                            <a href="http://truyenqq.com/truyen-moi-cap-nhat/trang-2.html" class="view-more-btn">Xem
+                                thêm</a>
+                        </div>
                     </div>
-                </div>
+                @endif
 
-                <div class="latest">
-                    <div class="caption" id="list-update"><a href="http://truyenqq.com/truyen-moi-cap-nhat.html">
+                @if(isset($mostView) and count($mostView) > 0)
+                    <div class="latest">
+                        <div class="caption" id="list-update"><a href="http://truyenqq.com/truyen-moi-cap-nhat.html">
                         <span
                             class="starts-icon"></span>Top truyện thịnh hành</a></div>
-                    <ul class="list-stories grid-6">
-                        @for($i=1; $i <= 6; $i++)
-                            @include('include.item')
-                        @endfor
-                    </ul>
+                        <ul class="list-stories grid-6">
+                            @foreach($mostView as $chapter)
+                                @itemview(['comic'=>$chapter->comicwork()->first()])
+                            @endforeach
+                        </ul>
 
-                    <div class="has-text-centered">
-                        <a href="http://truyenqq.com/truyen-moi-cap-nhat/trang-2.html" class="view-more-btn">Xem
-                            thêm</a>
+                        <div class="has-text-centered">
+                            <a href="http://truyenqq.com/truyen-moi-cap-nhat/trang-2.html" class="view-more-btn">Xem
+                                thêm</a>
+                        </div>
                     </div>
-                </div>
+                @endif
 
-                <div class="latest">
-                    <div class="caption" id="list-update"><a href="http://truyenqq.com/truyen-moi-cap-nhat.html">
+                @if(isset($favorite) and count($favorite) > 0)
+                    <div class="latest">
+                        <div class="caption" id="list-update"><a href="http://truyenqq.com/truyen-moi-cap-nhat.html">
                         <span
                             class="starts-icon"></span>Top truyện yêu thích</a></div>
-                    <ul class="list-stories grid-6">
-                        @for($i=1; $i <= 6; $i++)
-                            @include('include.item')
-                        @endfor
-                    </ul>
-                    <div class="has-text-centered">
-                        <a href="http://truyenqq.com/truyen-moi-cap-nhat/trang-2.html" class="view-more-btn">Xem
-                            thêm</a>
+                        <ul class="list-stories grid-6">
+                            @foreach($favorite as $chapter)
+                                @itemview(['comic'=>$chapter->comicwork()->first()])
+                            @endforeach
+                        </ul>
+                        <div class="has-text-centered">
+                            <a href="http://truyenqq.com/truyen-moi-cap-nhat/trang-2.html" class="view-more-btn">Xem
+                                thêm</a>
+                        </div>
                     </div>
-                </div>
+                @endif
             </div>
+
             <div id="Top" class="scrollTop none" style="display: none;">
-            <span><a href=""><img src="http://static.truyenqq.com/template/frontend/images/back-to-top-icon.png"></a></span>
+                <span><a href=""><img
+                            src="http://static.truyenqq.com/template/frontend/images/back-to-top-icon.png"></a></span>
             </div>
         </section>
 

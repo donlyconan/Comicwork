@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="http://static.truyenqq.com/template/frontend/styles/styles.css?v=4.1">
     <link rel="stylesheet" type="text/css" href="http://static.truyenqq.com/template/frontend/styles/read.css?v=1.0">
     <script src="http://static.truyenqq.com/template/frontend/scripts/main.js?v=4.4"></script>
-    <link rel="stylesheet" href="{{asset('css/main.css')}}">
+    <link rel="stylesheet" href="{{asset('css/content.css')}}">
 </head>
 
 @extends('share/menubar');

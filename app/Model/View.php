@@ -14,7 +14,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $id_comicwork
  * @property string $created_at
  * @property-read \App\Model\Chapter|null $chapter
- * @property-read \App\Model\Comicwork $comicwork
+ * @property-read \App\Model\Comicwork $product
  * @property-read \App\Model\User|null $user
  * @method static \Illuminate\Database\Eloquent\Builder|View newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|View newQuery()

@@ -44,7 +44,7 @@
                         <label class="text-center" id="lbremeber">Nhớ mật khẩu</label>
                     </div>
                     <div class="bot-right">
-                        <a href="/user/forgot"><u>Quên mật khẩu?</u></a>
+                        <a href="/forgot"><u>Quên mật khẩu?</u></a>
                     </div>
                 </div>
                 <div class="notify">
@@ -76,7 +76,7 @@
                     </p>
                 </div>
                 <div class="form-group">
-                    <p class="text-center">Bạn không có tài khoản? <a href="signup" id="signup">Đăng ký tại
+                    <p class="text-center">Bạn không có tài khoản? <a href="/register" id="signup">Đăng ký tại
                             đây.</a></p>
                 </div>
             </form>

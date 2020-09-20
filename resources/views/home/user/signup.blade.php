@@ -22,7 +22,7 @@
                 <h1>Đăng ký</h1>
             </div>
         </div>
-        <form action="{{route("signup.register")}}" method="post">
+        <form action="{{route("signup.new-account")}}" method="post">
             @csrf
             <div class="form-group">
                 <div class="bot-left">

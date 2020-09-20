@@ -1315,7 +1315,7 @@
           </section>
           <!-- right col -->
         </div>
-        <!-- /.row (main row) -->
+        <!-- /.row (content row) -->
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->

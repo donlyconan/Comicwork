@@ -2,11 +2,11 @@
     <div class="level">
         <div class="level-left pc">
                 <span class="logo">
-                    <a href="/">Truyen QQ</a>
+                    <a href="{{route('homepage')}}">Truyen QQ</a>
                 </span>
 
-
-            <form class="top-search" style="margin-top: auto; margin-bottom: auto;" action="/home/search" method="get">
+            <form class="top-search" style="margin-top: auto; margin-bottom: auto;" action="{{route('home.search')}}"
+                  method="get">
                 <input name="q" id="txtSearch" type="text" class="txt-search"
                        placeholder="Nhập nội dung tìm kiếm...">
                 <button type="submit" class="submit-btn btn_search"></button>
@@ -21,10 +21,10 @@
         <div class="level-right">
             <ul class="top-links pc">
                 <li>
-                    <a href="/user/history">Lịch sử</a>
+                    <a href="{{route('user.history')}}">Lịch sử</a>
                 </li>
                 <li>
-                    <a href="/user/follow">Theo dõi</a>
+                    <a href="{{route('user.follow')}}">Theo dõi</a>
                 </li>
                 <li>
                     <a href="" class="download-app-link">
@@ -38,7 +38,7 @@
                 <div class="top-buttons has-login">
                     <div class="notify home smp">
                         <a href="http://truyenqq.com/index.html">
-                            <i class="fas fa-home">sssssssssssssssssdad</i>
+                            <i class="fas fa-home"></i>
                         </a>
                     </div>
 
@@ -65,9 +65,10 @@
                     <div class="notify center btn-search smp" for="focus-input"><i class="fas fa-search"></i></div>
 
                     <div class="notify user center">
+
                         @section("user-avatar")
                             <img style="border: #7f8c8d 1px solid;"
-                                 src="{{asset('image/avatar.png')}}">
+                                 src="{{Auth::user()->profile()}}">
                         @endsection
 
                         <span class="avatar-menu">
@@ -80,23 +81,23 @@
                                         class="fas fa-user-circle"></i>Quản lý tài khoản</a>
                             </li>
                             <li>
-                                <a href="http://truyenqq.com/truyen-dang-theo-doi.html"><i class="fas fa-heart"></i>
+                                <a href="{{route('user.follow')}}"><i class="fas fa-heart"></i>
                                     Truyện đang theo dõi</a>
                             </li>
                             <li>
-                                <a href="http://truyenqq.com/lich-su.html"><i class="fas fa-history"></i> Lịch sử
+                                <a href="{{route('user.history')}}"><i class="fas fa-history"></i> Lịch sử
                                     đọc truyện</a>
                             </li>
 
                             <li>
-                                <a href="http://truyenqq.com/tin-nhan.html"><i class="fas fa-envelope"></i> Tin nhắn</a>
+                                <a href=""><i class="fas fa-envelope"></i> Tin nhắn</a>
                             </li>
                             <li>
-                                <a href="http://truyenqq.com/doi-mat-khau.html"><i class="fas fa-lock"></i> Đổi mật
+                                <a href="{{route('change-password')}}"><i class="fas fa-lock"></i> Đổi mật
                                     khẩu</a>
                             </li>
                             <li>
-                                <a href="/user/logout"><i
+                                <a href="{{route('user.logout')}}"><i
                                         class="fas fa-sign-out-alt"></i> Đăng xuất</a>
                             </li>
                         </ul>
@@ -107,10 +108,10 @@
                 </div>
             @else
                 <div id="userinfo" class="top-buttons has-login">
-                    <button onclick="location.href = '/login'" id="btn_login" class="login-btn">Đăng
+                    <button onclick="location.href = '{{route('login')}}'" id="btn_login" class="login-btn">Đăng
                         nhập
                     </button>
-                    <button onclick="location.href = '/signup'" id="btn_register"
+                    <button onclick="location.href = '{{route('register')}}'" id="btn_register"
                             class="register-btn">Đăng ký
                     </button>
                 </div>

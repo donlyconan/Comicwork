@@ -1,19 +1,16 @@
 <?php
 
 namespace Tests\Unit;
-
-use App\Model\Comicwork;
+use Illuminate\Support\Facades\Storage;
 use PHPUnit\Framework\TestCase;
 
 class ExampleTest extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
+
     public function testBasicTest()
     {
-
+        $file = Storage::get('/user');
+        dd($file);
     }
+
 }

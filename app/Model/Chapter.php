@@ -14,7 +14,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $title
  * @property string $created_at
  * @property string $updated_at
- * @property-read \App\Model\Comicwork $comicwork
+ * @property-read \App\Model\Comicwork $product
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Model\Image[] $images
  * @property-read int|null $images_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Model\View[] $views

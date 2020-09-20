@@ -1,66 +1,101 @@
 @extends('layout.home')
 
+
+@php
+    /**
+    * Cài đặt và tính toán các thuộc tính hay sử dụng trc khi đổ lên view
+     * @var \App\Model\Comicwork $comic
+     */
+    $id = $comic->id;
+    $createdAt = date('d/m/Y', strtotime($comic->created_at));
+    $follows = $comic->countFollows();
+    $views = $comic->countViews();
+    $votes = $comic->countVotes();
+
+    $redirectToInfo = route('comicwork.info', ['id'=>$id]);
+@endphp
+
 @section('body-page')
     <section class="main-content">
         <div class="container has-background-white story-detail">
             <div id="path">
                 <ol class="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">
                     <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-                        <a itemprop="item" href="/">
+                        <a itemprop="item" href="{{ route('homepage') }}">
                             <span itemprop="name">Trang Chủ</span>
                         </a>
                         <meta itemprop="position" content="1">
                     </li>
                     <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-                        <a itemprop="item" href="http://truyenqq.com/truyen-tranh/ayakashiko-4247">
-                            <span itemprop="name">{{$comic->name}}</span>
+                        <a itemprop="item" href="">
+                            <span itemprop="name">{{ $comic->name }}</span>
                         </a>
                         <meta itemprop="position" content="2">
                     </li>
                 </ol>
             </div>
             <div class="block01">
-                <div class="left"><img src="http://i.mangaqq.com/ebook/190x247/ayakashiko_1521725604.jpg?r=r8645456"
-                                       alt="Ayakashiko"></div>
+                <div class="left">
+                    <img src="{{ $comic->profile() }}" alt="{{ $comic->name }}">
+                </div>
                 <div class="center" itemscope="" itemtype="http://schema.org/Book">
-                    <h1 itemprop="name">{{$comic->name}}</h1>
+                    <h1 itemprop="name">{{ $comic->name }}</h1>
                     <div class="txt">
                         <p class="info-item">Tác giả:
-                            <a class="org" href="http://truyenqq.com/tac-gia/dang-cap-nhat-239.html">
-                                {{$comic->author != null ? $comic->author : 'Đang Cập Nhật'}}
-                            </a></p>
+                            <a class="org"> {{ $comic->author ?? 'Đang Cập Nhật' }} </a>
+                        </p>
+
+
+                        <p class="info-item">Quốc gia:
+                            <a class="org"> {{ $comic->country()->name ?? 'Đang cập nhật' }} </a>
+
                         <p class="info-item">
-                            Tình trạng: {{$comic->status != 0 ? 'Hoàn thành' : 'Đang Cập Nhật'}}</p>
-                        <div>
-                            <span>Thống kê:</span>
-                            <span class="sp01"><i class="fas fa-thumbs-up"></i> <span
-                                    class="sp02 number-like">
-                                {{number_format($comic->votes->count(), 0, '.', ',')}}
-                                </span></span>
-                            <span class="sp01"><i class="fas fa-heart"></i> <span class="sp02">
-                                    {{number_format($comic->follows->count(), 0, '.', ',')}}
-                                </span></span>
+                            Tình trạng: {{!$comic->isUpdating() ? 'Đã Hoàn thành' : 'Đang Cập Nhật'}}</p>
+
+                        </p>
+
+                        <p class="info-item">Tổng số chương:
+                            <a class="org"> {{ $comic->countChapters() ?? 'Đang Cập Nhật' }} </a>
+
+                        <div class="statiscal">
+                            <span class="st">Lượt xem: </span>
                             <span class="sp01"><i class="fas fa-eye"></i> <span class="sp02">
-                                    {{number_format($comic->views->count(), 0, '.', ',')}}
+                                        {{ number_format($views) }}
                                 </span></span>
+
+                            <span style="margin-left: 25px;">Yêu thích: </span>
+                            <span class="sp01"><i class="fas fa-thumbs-up"></i> <span class="sp02 number-like">
+                                    {{ number_format($votes) }}
+                                </span></span>
+                            <span style="margin-left: 25px;">Theo dõi: </span>
+                            <span class="sp01"><i class="fas fa-heart"></i> <span class="sp02">
+                                    {{ number_format($follows) }}
+                                </span></span>
+
                         </div>
                     </div>
                     <ul class="list01">
                         @foreach($comic->tags as $tag)
-                            <li class="li03"><a href="">{{$tag->label}}</a></li>
+                            <li class="li03"><a
+                                    href="{{ route('home.category', ['id'=> $tag->id]) }}">{{$tag->label}}</a></li>
                         @endforeach
                     </ul>
 
                     <ul class="story-detail-menu">
-                        <li class="li01"><a href="http://truyenqq.com/truyen-tranh/ayakashiko-4247-chap-1.html"
-                                            class="button is-danger is-rounded"><span class="btn-read"></span>Đọc từ đầu</a>
+                        <li class="li01">
+                            <a href="{{ $redirectToInfo }}"
+                               class="button is-danger is-rounded"><span
+                                    class="btn-read"></span>Đọc từ đầu</a>
                         </li>
-                        <li class="li02"><a href="javascript:void(0);"
-                                            class="button is-danger is-rounded btn-subscribe subscribeBook"
-                                            data-page="index" data-id="4247"><span class="fas fa-heart"></span>Theo dõi</a>
+                        <li class="li02">
+                            <a onclick="onFollow()" class="button is-danger is-rounded btn-subscribe subscribeBook"
+                               data-page="index" data-id="4247">
+                                <span class="fas fa-heart"></span>Theo dõi</a>
                         </li>
-                        <li class="li03"><a href="javascript:void(0);" class="button is-danger is-rounded btn-like"
-                                            data-id="4247"><span class="fas fa-thumbs-up"></span>Thích</a></li>
+                        <li class="li03">
+                            <a onclick="onLike()" class="button is-danger is-rounded btn-like"
+                               data-id="4247"><span class="fas fa-thumbs-up"></span>Thích</a>
+                        </li>
                     </ul>
                     <div class="txt txt01 story-detail-info" itemprop="description">
                         <h2 style="margin-top: 5px; ">Tóm tắt</h2>
@@ -69,14 +104,22 @@
                 </div>
             </div>
             <ul class="story-detail-menu">
-                <li class="li01"><a href="http://truyenqq.com/truyen-tranh/ayakashiko-4247-chap-1.html"
-                                    class="button is-danger is-rounded"><span class="btn-read"></span>Đọc từ đầu</a>
+                <li class="li01">
+                    <button
+                        class="button is-danger is-rounded"><span class="btn-read"></span>Đọc từ đầu
+                    </button>
                 </li>
-                <li class="li02"><a href="javascript:void(0);"
-                                    class="button is-danger is-rounded btn-subscribe subscribeBook" data-page="index"
-                                    data-id="4247"><span class="fas fa-heart"></span>Theo dõi</a></li>
-                <li class="li03"><a href="javascript:void(0);" class="button is-danger is-rounded btn-like"
-                                    data-id="4247"><span class="fas fa-thumbs-up"></span>Thích</a></li>
+                <li class="li02">
+                    <button
+                        class="button is-danger is-rounded btn-subscribe subscribeBook" data-page="index"
+                        data-id="4247"><span class="fas fa-heart"></span>Theo dõi
+                    </button>
+                </li>
+                <li class="li03">
+                    <button class="button is-danger is-rounded btn-like"
+                            data-id="4247"><span class="fas fa-thumbs-up"></span>Thích
+                    </button>
+                </li>
             </ul>
 
             <div class="block02">
@@ -90,7 +133,7 @@
                                 <div class="works-chapter-item row">
                                     <div class="col-md-10 col-sm-10 col-xs-8 ">
                                         <a target="_blank"
-                                           href="/comicwork/{{$comic->id}}/{{$chapter->id}}">Chương
+                                           href="{{ route('comiwork.chapter', ['id'=>$comic->id, 'chapter'=>$chapter->id]) }}">Chương
                                             {{$chapter->chapter_number}}</a>
                                     </div>
                                     <div class="col-md-2 col-sm-2 col-xs-4 text-right">
@@ -101,7 +144,6 @@
                         </div>
                     @else
                         <div class="works-chapter-list">
-
                             <div class="works-chapter-item row">
                                 <div class="col-md-10 col-sm-10 col-xs-8 ">
                                     <a target="_blank">Đang cập nhật</a>
@@ -119,22 +161,21 @@
                 <div class="tile is-ancestor">
                     <div class="tile is-vertical is-parent">
                         <ul class="list-stories grid-6">
-                            @for($i=1; $i<=6;$i++)
-                                @include('include.item')
-                            @endfor
+                            {{--                            @for($i=1; $i<=6;$i++)--}}
+                            {{--                                @include('include.product.view')--}}
+                            {{--                            @endfor--}}
                         </ul>
                     </div>
                 </div>
-                <!-- /.list-stories -->
             </div>
             <div class="comment-container">
             <span class="story-detail-title"><i class="fas fa-comments"></i>Bình Luận (<span
                     class="comment-count">42</span>)</span>
                 <div class="group01 comments-container">
-                    @if(Auth::check())
-                        <div class="form-comment main_comment">
+                    <div class="form-comment main_comment">
+                        @if(Auth::check())
                             <div class="message-content">
-                                <img src="{{URL::asset("image/avatar.png")}}" alt="">
+                                <img src="{{Auth::user()->profile()}}" alt="">
                                 <div class="mess-input">
                                     <b id="full_name">{{Auth::user()->full_name}}</b>
                                     <textarea style="margin-top: 5px;" class="textarea" placeholder="Nội dung bình luận"
@@ -142,11 +183,19 @@
                                     <button style="margin-top: 30px;" type="submit" class="submit_comment"></button>
                                 </div>
                             </div>
-                        </div>
-                    @endif
+                        @else
+                            <div class="message-content">
+                                <div class="mess-input">
+                                    <textarea style="margin-top: 5px;" class="textarea" placeholder="Nội dung bình luận"
+                                              id="content_comment"></textarea>
+                                    <button style="margin-top: 30px;" type="submit" class="submit_comment"></button>
+                                </div>
+                            </div>
+                        @endif
+                    </div>
 
                     <div class="list-comment">
-                        <article class="info-comment child_1036934 parent_0 comment-main-level">
+                        <article class="info-comment comment-main-level">
                             <div class="outsite-comment comment-main-level">
                                 <figure class="avartar-comment">
                                     <img src="http://avatar.mangaqq.com/160x160/avatar_1597853743.jpg?r=r8645456"
@@ -173,7 +222,7 @@
                             </div>
                         </article>
 
-                        <article class="info-comment child_1041820 parent_1036934 reply-list">
+                        <article class="info-comment reply-list">
                             <div class="outsite-comment reply-list">
                                 <figure class="avartar-comment">
                                     <img src="http://static.truyenqq.com/template/frontend/images/noavatar.png"

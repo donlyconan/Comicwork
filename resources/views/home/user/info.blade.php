@@ -1,4 +1,4 @@
-@extends("home.user.user-master")
+@extends("layout.user-master")
 
 @section("user-info-body")
 
@@ -6,7 +6,7 @@
         <div class="user-right column">
             @csrf
             <div class="img">
-                <img id="avatar" class="image-avatar" src="{{asset($user->url_image)}}"
+                <img id="avatar" style="object-fit: cover;" class="image-avatar" src="{{$user->profile()}}"
                      alt="{{$user->full_name}}">
             </div>
             <button id="filechooser" onclick="onUpload()" class="button is-danger btn-avatar">Thay đổi</button>

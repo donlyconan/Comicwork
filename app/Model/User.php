@@ -5,10 +5,10 @@ namespace App\Model;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Storage;
 
 /**
  * App\Model\User
- *
  * @property int $id
  * @property string|null $username
  * @property string|null $url_image
@@ -79,7 +79,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    protected $attributes = ["url_image" => "image/avatar.png"];
+    protected $attributes = ["url_image" => "/public/user/avatar.png"];
 
     /**
      * The attributes that should be cast to native types.
@@ -133,17 +133,57 @@ class User extends Authenticatable
             , 'id_user', 'id_comicwork');
     }
 
-    public function isAdmin()
+
+    public function role_user()
     {
-        return $this->roles()->where("id", '=', '1')->count() > 0;
+        return $this->belongsTo('App\Model\RoleUser', 'id_user'
+            , 'user');
     }
 
-    public function isUser()
+    /**
+     * kiểm tra quyền người dùng là admin
+     */
+    public function isAdmin(): bool
     {
-        return $this->roles()->where("id", '=', '2')->count() > 0;
+        return $this->hasPermisson(1);
     }
 
 
+    /**
+     * Kiểm tra quyền người dùng là User
+     */
+    public function isUser(): bool
+    {
+        return $this->hasPermisson(2);
+    }
 
+    /**
+     * Kiểm tra một người dùng có một nhóm quyền nào đó hay không
+     */
+    public function hasPermisson($permission): bool
+    {
+        return $this->roles()->whereIn('id', $permission)->count() > 0;
+    }
+
+    /**
+     * kiểm tra tài khoản còn có ở trạng thái hoạt động hay không
+     * 0    : Chưa kích hoạt
+     * -1   : Trạng thái block
+     * 1    : Trạng thái hoạt động
+     */
+    public function isAvailable(): bool
+    {
+        return $this->status == 1;
+    }
+
+
+    /**
+     * Trả về ảnh đại diện của người dùng
+     */
+    public function profile()
+    {
+        return \Storage::exists($this->url_image)  ? Storage::url($this->url_image)
+            :\Storage::url('user/avatar.png');
+    }
 
 }
