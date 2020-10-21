@@ -29,73 +29,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="921aab84-2033-4a0c-9015-52444967e934" name="Default Changelist" comment="Cấu hình truy vấn thông tin">
-      <change afterPath="$PROJECT_DIR$/app/MyStorage/Paginator.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/MyStorage/TimeInt.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Render/NotificationRender.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/js/content.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/home/comic/chapter.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/home/comic/comic-info.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/home/mail/email_example.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/home/mail/email_user_activation.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/home/mail/email_user_forgot.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/home/password/reset.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/home/user-activation/account-noactive.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/home/user-activation/activation.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/home/user/user-info.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/include/item-comment.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/include/item-notify.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/include/list-comments.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/include/pageinate.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layout/login-master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Comicwork.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Comicwork.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="921aab84-2033-4a0c-9015-52444967e934" name="Default Changelist" comment="Hoàn thiện cơ bản cấu trúc Home">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Chapter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Chapter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Comicwork.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Comicwork.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/History.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/History.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Image.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Image.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Notification.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Notification.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/View.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/MyStorage/FileModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/MyStorage/FileModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/MyStorage/FileScript.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/MyStorage/FileScript.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/MyStorage/FileSystem.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/MyStorage/FileSystem.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/MyStorage/Regex.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/MyStorage/Regex.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/home/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/home/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/category/filter.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/category/filter.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/category/general.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/category/general.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/content/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/content/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/mail/email_template.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/product/chapter.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/product/info.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/user/forgot.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user/forgot.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/user/info.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/user/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/user/password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user/password.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/user/signup.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user/signup.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/include/itemview.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/include/item-comic.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/include/menu-bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/include/menu-bar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/include/nominations.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/include/nominations.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/include/top-bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/include/top-bar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/ExampleTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/ExampleTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -475,7 +411,7 @@
       <workItem from="1602726996398" duration="5000" />
       <workItem from="1602728626791" duration="142000" />
       <workItem from="1602818960934" duration="1349000" />
-      <workItem from="1603279468259" duration="781000" />
+      <workItem from="1603279468259" duration="2034000" />
     </task>
     <task id="LOCAL-00001" summary="Update-Model">
       <created>1599024156214</created>
@@ -554,7 +490,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600626365014</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Hoàn thiện cơ bản cấu trúc Home">
+      <created>1603283607774</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1603283607774</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -588,7 +531,8 @@
     <MESSAGE value="Update-Model" />
     <MESSAGE value="Hoàn tất thiết lập Model" />
     <MESSAGE value="Cấu hình truy vấn thông tin" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cấu hình truy vấn thông tin" />
+    <MESSAGE value="Hoàn thiện cơ bản cấu trúc Home" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hoàn thiện cơ bản cấu trúc Home" />
   </component>
   <component name="WindowStateProjectService">
     <state x="232" y="39" key="#CLI_Interpreters" timestamp="1600942822856">
@@ -739,10 +683,10 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="61" y="14" width="998" height="754" key="SettingsEditor/0.0.1304.768@0.0.1304.768" timestamp="1602604902310" />
-    <state x="244" y="117" key="Vcs.Push.Dialog.v2" timestamp="1601642043926">
+    <state x="244" y="117" key="Vcs.Push.Dialog.v2" timestamp="1603283487951">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="244" y="117" key="Vcs.Push.Dialog.v2/0.0.1304.768@0.0.1304.768" timestamp="1601642043926" />
+    <state x="244" y="117" key="Vcs.Push.Dialog.v2/0.0.1304.768@0.0.1304.768" timestamp="1603283487951" />
     <state x="480" y="118" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1599649986674">
       <screen x="0" y="0" width="1304" height="768" />
     </state>

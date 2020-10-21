@@ -96,7 +96,7 @@ Route::prefix('/auth')->group(function () {
 Route::get('login', 'LoginController@index')->name("login");
 
 //Dang nhap vao may chu
-Route::post('login', ['as' => 'login', 'uses' => 'LoginController@login']);
+Route::post('login', ['as' => 'login', 'uses' => 'LoginController@login'])->name('user-login');
 
 //trang dang ky tai khoan
 Route::get('register', 'RegisterController@index')->name("register");
