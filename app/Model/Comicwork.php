@@ -3,9 +3,8 @@
 namespace App\Model;
 
 
+use App\MyStorage\TimeInt;
 use Illuminate\Database\Eloquent\Model;
-use phpDocumentor\Reflection\Types\Self_;
-use phpDocumentor\Reflection\Types\This;
 
 /**
  * App\Model\Comicwork
@@ -104,7 +103,7 @@ class Comicwork extends Model
 
     public function country()
     {
-        return $this->hasOne('App\Model\Country', 'id_country');
+        return $this->belongsTo('App\Model\Country', 'id_country');
     }
 
     public function comicwork_tag()
@@ -125,40 +124,20 @@ class Comicwork extends Model
             , 'id_comicwork', 'id_user');
     }
 
+    public function comments()
+    {
+        return $this->hasMany('App\Model\Comment', 'id_comicwork');
+    }
+
 
     //trả về tên các trường của Model
-    public function columns()
+    public static function columns()
     {
         return ['comicworks.id', 'name', 'description', 'id_country', 'author', 'comicworks.status', 'publishing_company', 'publishing_year', 'url_image'];
     }
 
-    //Đếm số lượng người đã xem
-    public function countViews()
-    {
-        return self::leftJoin("Views", "views.id_comicwork", '=', 'comicworks.id')
-            ->where("comicworks.id", $this->id)
-            ->count("Views.id");
-    }
 
-    //Đếm số người theo dõi
-    public function countFollows()
-    {
-        return self::leftJoin("Follows", "Follows.id_comicwork", '=', 'comicworks.id')
-            ->where("comicworks.id", '=', $this->id)
-            ->where("Follows.status", '=', 1)
-            ->count("Follows.id_comicwork");
-    }
-
-
-    //Đếm số lượng votes
-    public function countVotes()
-    {
-        return self::leftJoin("Votes", "Votes.id_comicwork", '=', 'comicworks.id')
-            ->where("comicworks.id", '=', $this->id)
-            ->where("Votes.status", '=', '1')
-            ->count("Votes.id_comicwork");
-    }
- //Đếm số chương ra mắt
+    //Đếm số chương ra mắt
     public function countChapters()
     {
         return self::leftJoin("Chapters", "Chapters.id_comicwork", '=', 'comicworks.id')
@@ -168,10 +147,9 @@ class Comicwork extends Model
 
 
     //lấy chương truyện mới nhất của đoạn truyện
-    public function currentChapter()
+    public function latestChapter()
     {
-        return self::selectRaw('chapters.chapter_number')->leftJoin("chapters", "Chapters.id_comicwork", '=', 'Comicworks.id')
-            ->max("chapter_number");
+       return $this->chapters()->orderBy('chapter_number', 'desc')->first();
     }
 
     /*
@@ -189,44 +167,6 @@ class Comicwork extends Model
      */
     public function profile()
     {
-        return \Storage::url('public/comicwork/demo.jpg');
+        return $this->url_image ?? \Storage::url('public/comicwork/test/comic_profile.jpg');
     }
-
-    /**
-     * Trả về thời gian dạng chữ
-     */
-
-    public function getTimeAgo()
-    {
-        $release_time = self::selectRaw('chapters.release_date')
-            ->leftJoin("chapters", "Chapters.id_comicwork", '=', 'Comicworks.id')
-            ->orderBy('chapters.release_date', 'desc')
-            ->first()->release_date;
-
-        $min = 60;
-        $hour = $min * 60;
-        $day = $min * 24;
-        $weak = $day * 7;
-        $month = $day * 30;
-        $year = $day * 365;
-
-        $release_time = time() - strtotime($release_time);
-
-        if ($release_time < $min) {
-            return '1 phút trước';
-        } elseif ($release_time >= $min && $release_time < $hour) {
-            return round($release_time / $min, 0, PHP_ROUND_HALF_DOWN) . ' phút trước';
-        } elseif ($release_time >= $hour && $release_time < $day) {
-            return round($release_time / $hour, 0, PHP_ROUND_HALF_DOWN) . ' giờ trước';
-        } elseif ($release_time >= $day && $release_time < $weak) {
-            return round($release_time / $day, 0, PHP_ROUND_HALF_DOWN). ' ngày trước';
-        } elseif ($release_time >= $weak && $release_time < $month) {
-            return round($release_time / $weak, 0, PHP_ROUND_HALF_DOWN). ' tuần trước';
-        } elseif ($release_time >= $month && $release_time < $year) {
-            return round($release_time / $year, 0, PHP_ROUND_HALF_DOWN). ' tháng trước';
-        } elseif ($release_time >= $year) {
-            return round($release_time / $year, 0, PHP_ROUND_HALF_DOWN). ' năm trước';
-        }
-    }
-
 }

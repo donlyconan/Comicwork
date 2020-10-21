@@ -2,7 +2,7 @@
     <div class="tile is-ancestor">
         <div class="tile is-3 is-vertical is-parent">
             <div class="tile is-child">
-                <a href="http://truyenqq.com/truyen-tranh/nanatsu-no-taizai-740-chap-346.html">
+                <a href="">
                     <div class="hero-item">
                         <img class="cover" src="http://i.mangaqq.com/slider/290x191/slider_1559213426.jpg?r=r8645456"
                              alt="cover">
@@ -15,7 +15,7 @@
                 </a>
             </div>
             <div class="tile is-child">
-                <a href="http://truyenqq.com/truyen-tranh/fairy-tail-100-year-quest-5212-chap-62.html">
+                <a href="">
                     <div class="hero-item">
                         <img class="cover" src="http://i.mangaqq.com/slider/290x191/slider_1561609693.jpg?r=r8645456"
                              alt="cover">
@@ -31,7 +31,7 @@
         </div>
         <div class="tile is-parent">
             <div class="tile is-child">
-                <a href="http://truyenqq.com/truyen-tranh/kingdom-vuong-gia-thien-ha-245-chap-651.html">
+                <a href="">
                     <div class="hero-item has-excerpt">
                         <img class="cover" src="http://i.mangaqq.com/slider/583x386/slider_1567830171.jpg?r=r8645456"
                              alt="cover">
@@ -55,7 +55,7 @@
         </div>
         <div class="tile is-3 is-vertical is-parent">
             <div class="tile is-child">
-                <a href="http://truyenqq.com/truyen-tranh/lien-quan-mobile-anh-sang-bong-toi-9338-chap-2.html">
+                <a href="">
                     <div class="hero-item">
                         <img class="cover" src="http://i.mangaqq.com/slider/290x191/slider_1587986979.jpg?r=r8645456"
                              alt="cover">
@@ -69,7 +69,7 @@
                 </a>
             </div>
             <div class="tile is-child">
-                <a href="http://truyenqq.com/truyen-tranh/kimetsu-no-yaiba-2624-chap-205.html">
+                <a href="">
                     <div class="hero-item">
                         <img class="cover" src="http://i.mangaqq.com/slider/290x191/slider_1559213537.jpg?r=r8645456"
                              alt="cover">

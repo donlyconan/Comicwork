@@ -2,14 +2,10 @@
 
 namespace App\Providers;
 
-use App\Model\Comicwork;
-use App\Model\Country;
-use App\Model\Tag;
-use App\MyStorage\FileSystem;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
-use View;
+use Laravel\Passport\Passport;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -43,17 +39,10 @@ class AppServiceProvider extends ServiceProvider
         Blade::include('include.itemview', 'itemview');
 
         Schema::defaultStringLength(191);
-        FileSystem::makeIfNotExists();
-        View::share("categories", Tag::all());
-        View::share("countries", Country::all());
-        View::share("publishYear", $this->getPulishYear());
+
+        Passport::routes();
     }
 
-    //Lấy năm phát hành
-    public function getPulishYear()
-    {
-        return Comicwork::selectRaw("Year(publishing_year) as year")
-            ->distinct()
-            ->get();
-    }
+
+
 }

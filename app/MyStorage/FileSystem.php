@@ -60,7 +60,7 @@ class FileSystem implements FileScript
         if (Storage::exists($path)) {
             return new FileSystem($path);
         }
-        throw new FileNotFoundException('Không tìm thấy file: ' . $filename);
+//        throw new FileNotFoundException('Không tìm thấy file: ' . $filename);
     }
 
 
@@ -159,9 +159,9 @@ class FileSystem implements FileScript
         $filename = $file->getClientOriginalName();
 
         if (!$rootName) {
-            $filename = \Str::random(80) . '.' . $file->getClientOriginalExtension();
+            $filename = \Str::random(40) . '.' . $file->getClientOriginalExtension();
             while (Storage::exists($newFolder . '/' . $filename)) {
-                $filename = \Str::random(80) . '.' . $file->getClientOriginalExtension();
+                $filename = \Str::random(40) . '.' . $file->getClientOriginalExtension();
             }
         }
 

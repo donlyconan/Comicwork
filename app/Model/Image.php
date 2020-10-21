@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 /**
  * App\Model\Image
@@ -31,7 +32,14 @@ class Image extends Model
     protected $dateFormat = 'dd/MM/yyyy';
 
 
-    public function chapter() {
-       return $this->belongsTo('App\Model\Image', 'id_chapter', 'id');
+    public function chapter()
+    {
+        return $this->belongsTo('App\Model\Image', 'id_chapter', 'id');
+    }
+
+
+    public function url()
+    {
+        return Storage::url($this->url_image);
     }
 }

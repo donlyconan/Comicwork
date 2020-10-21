@@ -1,7 +1,6 @@
 @extends("layout.user-master")
 
 @section("user-info-body")
-
     <div class="column columns">
         <div class="user-right column">
             @csrf

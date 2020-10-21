@@ -8,7 +8,7 @@
                     <div class="list-results">
                     </div>
                 </div>
-                <a href="/home" class="navbar-item">Trang Chủ</a>
+                <a href="{{route('homepage')}}" class="navbar-item">Trang Chủ</a>
                 <div class="navbar-item has-dropdown is-hoverable is-mega">
                     <div class="navbar-link">Thể loại</div>
                     <div class="navbar-dropdown ">
@@ -66,6 +66,7 @@
                     </div>
                 </div>
 
+
                 <div class="navbar-item has-dropdown is-hoverable is-mega">
                     <div class="navbar-link">Sắp xếp</div>
                     <div class="navbar-dropdown ">
@@ -73,12 +74,17 @@
                             <div class="level">
                                 <div class="level-left mega-list-wrapper">
                                     <div class="columns">
-                                        <div class="column">
-                                            <ul class="mega-list">
-                                                <li><a href="http://truyenqq.com/top-ngay.html">Top Ngày</a></li>
-                                                <li><a href="http://truyenqq.com/top-tuan.html">Top Tuần</a></li>
-                                            </ul>
-                                        </div>
+                                        @foreach($top->chunk(2) as $items)
+                                            <div class="column">
+                                                <ul class="mega-list">
+                                                    @foreach($items as $key => $item)
+                                                        <li>
+                                                            <a href="{{route('home.sort', ['mode'=>$key])}}">{{$item}}</a>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
@@ -87,14 +93,13 @@
                 </div>
 
 
-                <a rel="nofollow" href="" class="navbar-item">Truyện Con Trai</a>
-                <a rel="nofollow" href="" class="navbar-item">Truyện Con Gái</a>
+                <a rel="nofollow" href="{{route('home.man', ['sexs' => 'con-trai'])}}" class="navbar-item">Truyện Con Trai</a>
+                <a rel="nofollow" href="{{route('home.man', ['sexs' => 'con-gai'])}}" class="navbar-item">Truyện Con Gái</a>
 
                 <a rel="nofollow" href="{{ route('user.history') }}" class="navbar-item">Lịch Sử</a>
                 <a rel="nofollow" href="{{ route('user.follow') }}" class="navbar-item">Theo Dõi</a>
-                <a rel="nofollow" href="" target="_blank"
-                   class="navbar-item">Thảo Luận</a>
-                <a rel="nofollow" href="" target="_blank" class="navbar-item">Fanpage</a>
+                <a rel="nofollow" href="#" class="navbar-item">Thảo Luận</a>
+                <a rel="nofollow" href="#" class="navbar-item">Fanpage</a>
 
             </div>
         </div>

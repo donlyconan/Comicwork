@@ -23,18 +23,18 @@
                 <div class="panel-body">
                     <div class="text-center">
                         <h3><i class="fa fa-lock fa-4x"></i></h3>
-                        <h2 class="text-center">Forgot Password?</h2>
-                        <p>You can reset your password here.</p>
+                        <h2 class="text-center">Quên mật khẩu?</h2>
+                        <p>Bạn có thể thiết lập lại mật khẩu tại đây.</p>
                         <div class="panel-body">
 
-                            <form id="register-form" action="/send-email" autocomplete="off" class="form"
+                            <form id="register-form" action="{{route('user.send-email')}}" autocomplete="off" class="form"
                                   method="post">
                                 @csrf
                                 <div class="form-group">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i
                                                 class="glyphicon glyphicon-envelope color-blue"></i></span>
-                                        <input id="email" name="email" placeholder="email address" class="form-control"
+                                        <input id="email" name="email" placeholder="Địa chỉ email" class="form-control"
                                                type="email">
 
                                     </div>
@@ -42,26 +42,26 @@
 
                                 <div>
                                     @if(count($errors) > 0 && $errors->any())
-                                        <ul class="alert alert-danger">
+                                        <ul class="alert alert-warning">
                                             @foreach($errors->all() as $error)
                                                 <li style="margin-left: 10px;">{{$error}}</li>
                                             @endforeach
                                         </ul>
                                     @elseif(session('notify'))
-                                        <div class="alert alert-warning"
+                                        <div class="alert alert-success"
                                              style="text-align: center;">
                                             {{session('notify')}}
                                         </div>
-                                        <a href="/login">Đăng nhập</a>
                                     @endif
                                 </div>
 
                                 <div class="form-group">
                                     <input name="recover-submit" class="btn btn-lg btn-primary btn-block"
-                                           value="Reset Password" type="submit">
+                                           value="Hoàn tất" type="submit">
                                 </div>
 
                                 <input type="hidden" class="hide" name="token" id="token" value="">
+                                <a href="/login">Đăng nhập</a>
                             </form>
 
                         </div>

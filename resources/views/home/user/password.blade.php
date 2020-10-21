@@ -15,6 +15,13 @@
                         <input class="input" type="password" value="" name="oldPassword" id="password_old">
                     </p>
                 </div>
+                @isset($failed)
+                    <div class="field">
+                        <div class="alert alert-danger">
+                            {{$failed}}
+                        </div>
+                    </div>
+                @endisset
                 <div class="field">
                     <p class="txt">Mật khẩu mới</p>
                     <p class="control">

@@ -3,7 +3,10 @@
 namespace App\Model;
 
 
+use App\MyStorage\TimeInt;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use function GuzzleHttp\json_decode;
 
 /**
  * App\Model\Notification
@@ -30,15 +33,41 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Notification extends Model
 {
-    protected $table = 'notifications';
+    protected $table = 'Notifications';
     public $incrementing = true;
     protected $guarded = [];
     protected $primaryKey = 'id';
     public $timestamps = true;
-    protected $dateFormat = 'dd/MM/yyyy';
 
 
-    public function user() {
+    public function user()
+    {
         return $this->belongsTo('App\Model\User', 'id_user');
+    }
+
+    public function userLink(): User
+    {
+        return User::find($this->content()->id_user);
+    }
+
+    public function comicLink(): Comicwork
+    {
+        return Comicwork::find($this->content()->id_comic);
+    }
+
+    public function chapterLink(): Chapter
+    {
+        return Chapter::find($this->content()->id_chapter);
+    }
+
+
+    public function content()
+    {
+        return json_decode($this->content);
+    }
+
+    public function toTime(): string
+    {
+        return TimeInt::create(time() - strtotime($this->updated_at))->convertIf(2 * 24 * 3600);
     }
 }

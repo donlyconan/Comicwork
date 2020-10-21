@@ -37,55 +37,53 @@
 
         <section class="main-content index">
             <div class="container">
-                @if(isset($newUpdate) and count($newUpdate) > 0)
+                @if(isset($news) and count($news) > 0)
                     <div class="latest">
                         <div class="caption" id="list-update"><a
                                 href="http://truyenqq.com/truyen-moi-cap-nhat.html"><span
                                     class="starts-icon"></span>Truyện mới cập nhật</a></div>
                         <ul class="list-stories grid-6">
-                            @foreach($newUpdate as $chapter)
-                                @itemview(['comic'=>$chapter->comicwork()->first()])
+                            @foreach($news as $chapter)
+                                @include('include.item-comic', [
+                                    'comic'=>$chapter->comicwork()->first(),
+                                    'status'=>'new', 'title'=>'New'
+                                ])
                             @endforeach
                         </ul>
                         <div class="has-text-centered">
-                            <a href="http://truyenqq.com/truyen-moi-cap-nhat/trang-2.html" class="view-more-btn">Xem
+                            <a href="" class="view-more-btn">Xem
                                 thêm</a>
                         </div>
                     </div>
                 @endif
 
-                @if(isset($mostView) and count($mostView) > 0)
+                @if(isset($most) and count($most) > 0)
                     <div class="latest">
                         <div class="caption" id="list-update"><a href="http://truyenqq.com/truyen-moi-cap-nhat.html">
                         <span
                             class="starts-icon"></span>Top truyện thịnh hành</a></div>
                         <ul class="list-stories grid-6">
-                            @foreach($mostView as $chapter)
-                                @itemview(['comic'=>$chapter->comicwork()->first()])
+                            @foreach($most as $item)
+                                @includeIf('include.item-comic',[
+                                    'comic'=>$item, 'status'=>'hot', 'title'=>'Hot'
+                                 ])
                             @endforeach
                         </ul>
-
-                        <div class="has-text-centered">
-                            <a href="http://truyenqq.com/truyen-moi-cap-nhat/trang-2.html" class="view-more-btn">Xem
-                                thêm</a>
-                        </div>
                     </div>
                 @endif
 
-                @if(isset($favorite) and count($favorite) > 0)
+                @if(isset($favs) and count($favs) > 0)
                     <div class="latest">
-                        <div class="caption" id="list-update"><a href="http://truyenqq.com/truyen-moi-cap-nhat.html">
+                        <div class="caption" id="list-update"><a href="">
                         <span
                             class="starts-icon"></span>Top truyện yêu thích</a></div>
                         <ul class="list-stories grid-6">
-                            @foreach($favorite as $chapter)
-                                @itemview(['comic'=>$chapter->comicwork()->first()])
+                            @foreach($favs as $item)
+                                @includeIf('include.item-comic',[
+                                    'comic'=>$item, 'status'=>'hot', 'title'=>'Hot'
+                                 ])
                             @endforeach
                         </ul>
-                        <div class="has-text-centered">
-                            <a href="http://truyenqq.com/truyen-moi-cap-nhat/trang-2.html" class="view-more-btn">Xem
-                                thêm</a>
-                        </div>
                     </div>
                 @endif
             </div>
@@ -100,38 +98,8 @@
         <div class="container quick-link">
             <ul class="list-inline">
                 <li>
-                    <a href="http://truyenqq.com" title="Truyện tranh">
+                    <a href="" title="Truyện tranh">
                         <strong class="text-link">Truyện tranh</strong>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://truyenqq.com" title="Truyen tranh online">
-                        <strong class="text-link">Truyen tranh online</strong>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://truyenqq.com" title="Truyện tranh online">
-                        <strong class="text-link">Truyện tranh online</strong>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://truyenqq.com" title="Doc truyen tranh">
-                        <strong class="text-link">Doc truyen tranh</strong>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://truyenqq.com" title="Đọc truyện tranh">
-                        <strong class="text-link">Đọc truyện tranh</strong>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://truyenqq.com" title="Manhua">
-                        <strong class="text-link">Manhua</strong>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://truyenqq.com" title="Manga">
-                        <strong class="text-link">Manga</strong>
                     </a>
                 </li>
             </ul>

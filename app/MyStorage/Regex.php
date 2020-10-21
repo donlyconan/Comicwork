@@ -27,7 +27,7 @@ class Regex
      *Phải là chữ có thể có dấu cách
      * và phải có từ 1-40 ký tự
      */
-    public static function geRegexFirstname()
+    public static function getRegexFirstname()
     {
         return '((((\w+)+( )?)+){1,40})';
     }
@@ -61,6 +61,7 @@ class Regex
     {
         return '(0(\d+){8,20})';
     }
+
 
 
     /*

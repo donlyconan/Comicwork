@@ -2,6 +2,8 @@
 
 namespace App\Model;
 
+use App\MyStorage\TimeInt;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 
@@ -14,7 +16,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $title
  * @property string $created_at
  * @property string $updated_at
- * @property-read \App\Model\Comicwork $product
+ * @property-read \App\Model\Comicwork $comic
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Model\Image[] $images
  * @property-read int|null $images_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Model\View[] $views
@@ -69,11 +71,6 @@ class Chapter extends Model
 
 
     /**
-     * Thiet lap gia tri mac dinh cho mo hinh
-     */
-    protected $attributes = ['chapter' => 'Unknown'];
-
-    /**
      * Cac truong lien quan den thoi gian mac dinh la
      * 'created_at', 'updated_at'
      */
@@ -95,6 +92,33 @@ class Chapter extends Model
     public function views()
     {
         return $this->hasMany('App\Model\View', 'id_chapter');
+    }
+
+
+    public function next()
+    {
+        return self::where('id_comicwork', $this->id_comicwork)
+            ->where('chapter_number', '>', $this->chapter_number)
+            ->orderBy('chapter_number', 'asc')->first();
+
+    }
+
+    public function previous()
+    {
+        return self::where('id_comicwork', $this->id_comicwork)
+            ->where('chapter_number', '<', $this->chapter_number)
+            ->orderBy('chapter_number', 'desc')->first();
+    }
+
+    /**
+     * Trả về thời gian tính từ ngày ra mắt
+     * Format: dạng chữ và số
+     */
+
+    public function getTimeAgo(): string
+    {
+        $time = time() - strtotime($this->release_date);
+        return TimeInt::createToStr($time);
     }
 
 

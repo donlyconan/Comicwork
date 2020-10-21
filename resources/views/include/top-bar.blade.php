@@ -1,3 +1,7 @@
+@php
+    $notifies = \App\Render\NotificationRender::share();
+@endphp
+
 <div class="container">
     <div class="level">
         <div class="level-left pc">
@@ -42,18 +46,26 @@
                         </a>
                     </div>
 
-                    <div class="notify center " data-id="notification">
-                        <i class="fas fa-bell"></i>
+                    <div class="notify center notify-left">
+                        <i class="fas fa-bell">
+                            <span class="top-number" {{$notifies->total > 0 ?: 'hidden'}}>{{$notifies->total}}</span>
+                        </i>
                         <div class="list-messages">
                             <div class="title-message">Thông báo</div>
-                            <ul>
-                                <li class="no-result" style="padding: 10px">Không Có Thông Báo Nào!</li>
+                            <ul class="list-notify">
+                                @forelse($notifies as $notify)
+                                    @includeIf('include.item-notify', compact('notify'))
+                                @empty
+                                    <li class="no-result" style="padding: 10px">Không Có Thông Báo Nào!</li>
+                                @endforelse
                             </ul>
-
+                            <div data-user="{{Auth::id()}}" data-from="{{count($notifies)}}" class="load-more load_more_notification">
+                                <a class="is-info">Xem thêm</a>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="notify center ">
+                    <div class="notify center">
                         <i class="fas fa-envelope"></i>
                         <div class="list-messages">
                             <div class="title-message">Tin nhắn</div>
@@ -62,7 +74,9 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="notify center btn-search smp" for="focus-input"><i class="fas fa-search"></i></div>
+
+                    <div class="notify center btn-search smp" for="focus-input">
+                        <i class="fas fa-search"></i></div>
 
                     <div class="notify user center">
 
@@ -90,10 +104,7 @@
                             </li>
 
                             <li>
-                                <a href=""><i class="fas fa-envelope"></i> Tin nhắn</a>
-                            </li>
-                            <li>
-                                <a href="{{route('change-password')}}"><i class="fas fa-lock"></i> Đổi mật
+                                <a href="{{route('user.account')}}"><i class="fas fa-lock"></i> Đổi mật
                                     khẩu</a>
                             </li>
                             <li>

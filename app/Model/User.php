@@ -6,6 +6,9 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
+use Laravel\Passport\HasApiTokens;
+use phpDocumentor\Reflection\DocBlock\Tags\Reference\Url;
 
 /**
  * App\Model\User
@@ -58,7 +61,13 @@ use Illuminate\Support\Facades\Storage;
  */
 class User extends Authenticatable
 {
-    use Notifiable;
+    use HasApiTokens, Notifiable;
+
+    public const STT_BLOCK = -1;
+    public const STT_NOT_AVAILABLE = 0;
+    public const STT_SOCIAL = 3;
+    public const STT_AVAILABLE = 1;
+
 
     protected $table = 'Users';
     public $incrementing = true;
@@ -145,7 +154,7 @@ class User extends Authenticatable
      */
     public function isAdmin(): bool
     {
-        return $this->hasPermisson(1);
+        return $this->hasPermission(1);
     }
 
 
@@ -154,36 +163,73 @@ class User extends Authenticatable
      */
     public function isUser(): bool
     {
-        return $this->hasPermisson(2);
+        return $this->hasPermission(2);
     }
 
     /**
      * Kiểm tra một người dùng có một nhóm quyền nào đó hay không
      */
-    public function hasPermisson($permission): bool
+    public function hasPermission(...$permission): bool
     {
         return $this->roles()->whereIn('id', $permission)->count() > 0;
     }
 
     /**
      * kiểm tra tài khoản còn có ở trạng thái hoạt động hay không
-     * 0    : Chưa kích hoạt
+     *  0    : Chưa kích hoạt
      * -1   : Trạng thái block
-     * 1    : Trạng thái hoạt động
+     *  1    : Trạng thái hoạt động
      */
-    public function isAvailable(): bool
+    public function activated(): bool
     {
-        return $this->status == 1;
+        return $this->status == self::STT_AVAILABLE || $this->status == self::STT_SOCIAL;
     }
 
 
     /**
      * Trả về ảnh đại diện của người dùng
      */
-    public function profile()
+    public function profile(): string
     {
-        return \Storage::exists($this->url_image)  ? Storage::url($this->url_image)
-            :\Storage::url('user/avatar.png');
+        if ($this->url_image != null && str_starts_with($this->url_image, 'http'))
+            return $this->url_image;
+
+        return \Storage::exists($this->url_image) ? Storage::url($this->url_image)
+            : \Storage::url('user/avatar.png');
     }
+
+    /**
+     * Kiem tra theo doi bo truyen co id?
+     */
+    public function hasFollow($id_comic)
+    {
+        return $this->follows()->where('id_comicwork', $id_comic)
+                ->first() != null;
+    }
+
+
+    /**
+     * Kiem tra nguoi dung co thich bo truyen co id_comic hay khong
+     */
+    public function hasVote($id_comic)
+    {
+        return $this->votes()->where('id_comicwork', $id_comic)
+                ->first() != null;
+    }
+
+
+    //Tạo token thay thế cho tự động đăng nhập
+    public function createRememberToken()
+    {
+        while (self::whereRememberToken(($code = Str::random(100)))->first() != null);
+        $this->remember_token = $code;
+        $this->save();
+        return $this->remember_token;
+    }
+
+
+//    public function findForPassport($username) {
+//        return $this->where('username', $username)->first();
+//    }
 
 }

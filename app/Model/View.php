@@ -14,7 +14,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $id_comicwork
  * @property string $created_at
  * @property-read \App\Model\Chapter|null $chapter
- * @property-read \App\Model\Comicwork $product
+ * @property-read \App\Model\Comicwork $comic
  * @property-read \App\Model\User|null $user
  * @method static \Illuminate\Database\Eloquent\Builder|View newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|View newQuery()
@@ -32,9 +32,9 @@ class View extends Model
     public $incrementing = true;
     protected $guarded = [];
     protected $primaryKey = 'id';
-    public $timestamps = true;
+    public $timestamps = false;
 
-    public const CREATED_AT = 'created_date';
+    public const CREATED_AT = 'created_at';
 
 
     public function user() {

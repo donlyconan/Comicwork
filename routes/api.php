@@ -14,40 +14,57 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
+Route::prefix('/v1')->group(function () {
+
+    Route::get('/ping', function () {
+        return Response::json(['result' => 'Ok', 'time' => date('d-m-Y h:m:s', time())]);
+    });
+
+    Route::prefix('/comment')->group(function () {
+
+        //lay comment cho 1 bo truyen tranh
+        Route::get('/load', 'CommentController@load')->name('comment.load');
+
+        //Giử binh luan 1 bo truyen tranh
+        Route::post('/post', 'CommentController@post')->name('comment.post');
+
+        //tra loi 1 binh luan
+        Route::post('/reply', 'CommentController@reply')->name('comment.reply');
+
+        //xoa binh luận
+        Route::delete('/delete/{id}', 'CommentController@delete')->name('comment.delete');
+
+    });
 
 
-Route::prefix('/v1/comment')->group(function () {
+    Route::prefix('notify')->group(function (){
 
-    //lay comment cho 1 bo truyen tranh
-    Route::get('/load', 'CommentController@load')->name('comment.load');
+        //Load nội dung tin nhắn
+        Route::get('/load', 'NotificationController@load')->name('notify.load');
 
-    //Giử comment lên từ client
-    Route::post('/post', 'CommentController@post')->name('comment.post');
-});
+        //Đánh dấu thông báo đã được xem
+        Route::put('/seen', 'NotificationController@seen')->name('notify.seen');
+
+    });
+
+    Route::middleware('cache.headers:public;max_age=2628000;etag')->prefix('/image')->group(function () {
+
+        //upload ảnh cho 1 bộ truyện
+        Route::post('/upload', 'ImageController@upload')->name('image.upload');
+    });
 
 
-Route::prefix('/v1/vote')->group(function () {
+    //Xoá 1 bộ truyện khỏi lịch sử xem của người dùng
+    Route::delete('/history/delete', 'HistoryController@delete')->name('history.delete');
+
 
     //Nhan ve luot like cua 1 bo truyen
-    Route::get('/product/{id}', 'VoteController@load')->name('vote.load');
+    Route::post('/vote', 'VoteController@handle')->name('vote.handle-comic');
 
 
-    //like mot bo truyen
-    Route::post('/product/like', 'VoteController@like')->name('vote.like');
-
+    //Theo doi hoac huy bo theo doi mot bo truyen
+    Route::post('/follow', 'FollowController@handle')->name('follow.handle-comic');
 
 });
 
-
-Route::prefix('/v1/follow')->group(function () {
-
-    //Theo doi mot bo truyen
-    Route::get('/{id}', 'FollowController@follow')->name('follow.follow');
-
-
-    //bo theo doi mot bo truyen
-    Route::post('/unfollow', 'FollowController@unfollow')->name('follow.unfollow');
-});

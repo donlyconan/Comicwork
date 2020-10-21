@@ -2,8 +2,11 @@
 
 namespace Tests\Feature;
 
+use App\Mail\UserForgot;
+use App\Model\User;
+use App\Model\UserActivation;
 use App\Model\Vote;
-use App\MyStorage\FileSystem;
+use Carbon\Carbon;
 use Tests\TestCase;
 
 
@@ -12,29 +15,43 @@ class ExampleTest extends TestCase
 
 
     /**
-     *
+     * A basic test example.
+     * @return void
      */
-    public function database(){
-        //Sắp xếp theo danh mục yêu thích cập nhật theo tuần
-        $from = date("m-d-y", 0);
-        $to = date('m-d-y', time());
+    public function database()
+    {
 
-        $favourite = Vote::selectRaw("id_comicwork, count(id_user) as totalVote")
+//        /Sắp xếp theo danh mục yêu thích cập nhật theo tuần
+        $carbon = Carbon::now();
+        $to = $carbon->endOfWeek()->toDateTime();
+        $from = $carbon->startOfWeek()->toDateTime();
+
+        $fav = Vote::selectRaw("id_comicwork, count(id_user) as totalVote")
             ->whereBetween('created_at', [$from, $to])
-            ->groupBy("id_comicwork")->get();
+            ->groupBy("id_comicwork")
+            ->orderBy('totalVote', 'desc')->get();
+
+        dd($fav);
     }
+
+    public function sendEmail()
+    {
+        $data = new UserActivation();
+        $data->user_id = 20;
+        $data->createToken('User Active');
+
+        \Mail::to('donlyconan@gmail.com')->send(new UserForgot($data));
+    }
+
     /**
      * A basic test example.
      * @return void
      */
     public function testBasicTest()
     {
-
-        $file = FileSystem::getFolderUser();
-        var_dump($file->getPath());
-        var_dump($file->listFiles(function ($f){
-            return true;
-        }));
-        var_dump($file->parent());
+        $user = new UserActivation();
+        $user->createToken('Passport');
+        echo $user->id.'\n';
+        echo \Crypt::decryptString($user->token());
     }
 }

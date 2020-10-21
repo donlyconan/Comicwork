@@ -12,10 +12,22 @@
           content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=6.0, user-scalable=yes">
     <link rel="shortcut icon" href="http://static.truyenqq.com/template/frontend/images/favicon.ico?v=1.1"
           type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="http://static.truyenqq.com/template/frontend/styles/styles.css?v=4.1">
     <link rel="stylesheet" type="text/css" href="http://static.truyenqq.com/template/frontend/styles/read.css?v=1.0">
-    <script src="http://static.truyenqq.com/template/frontend/scripts/main.js?v=4.4"></script>
-    <link rel="stylesheet" href="{{asset('css/content.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('home/css/main.css')}}">
+    <script src="{{ asset('home/js/main.js') }}"></script>
+
+    <script type="text/javascript">
+        @if(Auth::check())
+            $.ajaxSetup({
+                headers: {
+                    Accept: 'application/json',
+                    Authorization: 'Bearer '  + {{Auth::user()->token()->acesssToken}},
+                }
+            })
+        @endif
+    </script>
 </head>
 <body>
 
@@ -42,18 +54,12 @@
         <div class="level">
             <div class="level-left">
                 <div class="col-sm-4 text-center" itemscope="" itemtype="http://schema.org/Organization">
-                    <a itemprop="url" href="//truyenqq.com">
-                        <img itemprop="logo" src="//static.truyenqq.com/template/frontend/images/logo.png"
-                             alt="Truyện tranh Online">
-                    </a>
                 </div>
             </div>
             <div class="level-right">
                 <ul class="social-links">
-                    <li><a href="https://itunes.apple.com/us/app/truyenqq/id1282215661?ls=1&amp;mt=8"><span
-                                class="app-store-icon"></span></a></li>
-                    <li><a href="https://play.google.com/store/apps/details?id=com.truyenqq.truyen"><span
-                                class="google-play-icon"></span></a></li>
+                    <li><a href=""><span class="app-store-icon"></span></a></li>
+                    <li><a href=""><span class="google-play-icon"></span></a></li>
                 </ul>
             </div>
         </div>

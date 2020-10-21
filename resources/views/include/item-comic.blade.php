@@ -2,33 +2,39 @@
     /**
     *@var \App\Model\Comicwork $comic
     *@ClassName Comicwork
+    * @var \App\Model\Chapter
+    * @ClassName Chapter
     */
+
     $id = $comic->id;
-    $follows = $comic->countFollows();
-    $views = $comic->countViews();
-    $chapter = $comic->currentChapter();
+    $follows = $comic->follows()->count();
+    $views = $comic->views()->count();
+
+    $chapter = $comic->current_chapter ?? $comic->latestChapter() ?? \App\Model\Chapter::find(1);
+    $id_chapter = $chapter->id;
+    $chapter_number = $chapter->chapter_number;
 
     //định nghĩa url chuyển hường
-    $redirectToInfo = route('comicwork.info', ['id'=>$id]);
-    $redirectToChapter =  route('comiwork.chapter', ['id'=>$id, 'chapter'=> $chapter]);
+    $redirectToInfo = route('comic.info', ['id'=>$id]);
+    $redirectToChapter =  route('comic.chapter', ['id'=>$id, 'chapter'=> $id_chapter]);
 @endphp
 
 
 <li>
-
     <div class="story-item">
-        @isset( $hasRemove )
-        <span class="remove-subscribe" title="Xoá">
+        @if(isset($action) && Auth::check())
+            <span data-comic="{{$comic->id}}" data-user="{{Auth::id()}}" data-action="{{$action}}"
+                  class="remove-subscribe" title="Xoá">
                 <i class="far fa-times-circle"></i>
             </span>
-        @endisset
+        @endif
 
         <a href="{{ $redirectToInfo }}" title="{{$comic->name}}"><img
                 class="story-cover lazy_cover"
-                src="{{ $comic->profile() }}" alt="Đảo Hải Tặc"></a>
+                src="{{ $comic->profile() }}" alt="{{$comic->name}}"></a>
 
         <div class="top-notice">
-            <span class="time-ago">{{ $comic->getTimeAgo() }}</span>
+            <span class="time-ago">{{ $chapter->getTimeAgo() }}</span>
 
             @isset($status, $title)
                 <span class="type-label {{$status}}">{{$title}}</span>
@@ -41,7 +47,7 @@
         </h3>
         <div class="episode-book">
             <a href="{{ $redirectToChapter }}">
-                {{'Chương '.$chapter}}</a>
+                {{'Chương '.($comic->chapter_number ?? $chapter_number) }}</a>
         </div>
 
         <div class="more-info">
@@ -56,9 +62,9 @@
                 @endforeach
             </div>
 
-            <h2><b>Mô tả:</b></h2>
+            <strong>Tóm tắt:</strong>
             <div class="excerpt">
-                {{$comic->description}}
+                {{$comic->description ?? 'Đang cập nhật'}}
             </div>
         </div>
 

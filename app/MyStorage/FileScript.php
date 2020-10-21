@@ -28,7 +28,7 @@ interface FileScript
      * Trả về lớp cha của file hiện tại
      * @return mixed
      */
-    public function parent(): FileScript;
+    public function parent();
 
 
     /**
@@ -42,7 +42,7 @@ interface FileScript
      * lấy file dự trên đường dẫn file chính nó nếu tên đối truyền vào là Null
      * Trả về một file trong danh sách file con nếu nó tồn tại
      */
-    public function get($filename): FileScript;
+    public function get($filename);
 
 
     /**

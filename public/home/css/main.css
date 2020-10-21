@@ -382,7 +382,7 @@ body.fb_hidden {
 }
 
 
-.story-list-bl01 .top-buttons {
+.btn-submit {
     width: 120px;
     height: 35px;
     margin: auto;
@@ -420,10 +420,41 @@ body.fb_hidden {
     justify-content: center;
 }
 
-.pagination {
+.notify .top-number {
+    background: #ec4637;
+    color: white;
+    font-size: 11px;
+    padding: 3px;
     width: auto;
-    max-width: 300px;
     height: auto;
-    margin: auto;
+    position: absolute;
+    left: 10px;
+    top: -5px;
+    text-align: center;
+    border-radius: 50px;
 }
 
+.notify .load-more {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.message a {
+    display: flex;
+    align-content: center;
+}
+
+.message .avatar-menu {
+    width: auto;
+    height: inherit;
+    display: inline-block;
+    border-radius: 30px;
+}
+.message .notify-left {
+    margin-left: 10px;
+}
+
+.load_more_notification {
+   padding: 10px;
+}
