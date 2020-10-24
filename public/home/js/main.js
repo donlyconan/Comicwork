@@ -5084,42 +5084,37 @@
         }
 
         var s = null;
-        h(".text-search").bind("keyup", function (e) {
-            var t = h(this), n = h(this).val(), i = e.keyCode;
-            if (38 != i && 40 != i && 37 != i && 39 != i && 13 != i) 0 < n.trim().length ? (clearTimeout(s), s = setTimeout(function () {
-                h.ajax({type: "POST", url: urlSearch, data: {search: n, type: 0}}).done(function (e) {
-                    h(".list-results").addClass("open"), h(".list-results").html(e)
-                })
-            }, 500)) : h(".list-results").removeClass("open"); else if (0 < n.trim().length && 1 == t.is(":focus") && 13 == i && 0 == h(".list-results .active").length) {
-                var o = h(t).val();
-                window.location.href = document.location.origin + "/tim-kiem.html?q=" + o
+
+        // //Chon phan tu trong danh sach
+        // h(document).on("selected", '.selectEpisode', function(){
+        //     console.log(h(this).val());
+        // });
+
+        function isAuthuricated() {
+            var meta = document.getElementById('token');
+
+            if (meta == null || meta.content.length == 0) {
+                alert('Bạn cần đăng nhập để sử dụng tính năng này');
+                return false;
             }
-        }), h(".text-search").click(function () {
-            var e = h(this).val();
-            "" != h(this).val() && 0 == h(".list-results").hasClass("open") ? h.ajax({
-                type: "POST",
-                url: urlSearch,
-                data: {search: e, type: 0}
-            }).done(function (e) {
-                h(".list-results").addClass("open"), h(".list-results").html(e)
-            }) : "" != h(".list-container").html().trim() ? h(".list-results").addClass("open") : h.ajax({
-                type: "POST",
-                url: urlSearch,
-                data: {search: h("#keyword-default").val(), type: 1}
-            }).done(function (e) {
-                h(".list-results").addClass("open"), h(".list-results").html(e)
-            })
-        }), h("body").click(function (e) {
-            h(e.target).closest(".list-results").length || h(e.target).closest(".text-search").length || h(".list-results").removeClass("open")
-        }), h(document).on("click", ".subscribeBook", function () {
+
+            h.ajaxSetup({
+                     headers: {
+                        Accept: 'application/json',
+                        Authorization: 'Bearer '  + meta.content,
+                    }
+            });
+            return true;
+        }
+
+        h(document).on("click", ".subscribeBook", function () {
             var t = h(this), id_comic = t.data("comic"),
                 id_user = t.data('user');
 
 
-            if (id_user == -1 || id_user == null) {
-                alert('Bạn cần đăng nhập để sử dụng tính năng này');
+            
+            if(!isAuthuricated())
                 return null;
-            }
 
             var follow = h('.number-follow');
 
@@ -5138,23 +5133,18 @@
         });
         var o = 0;
         h(document).on("click", ".btn-like", function () {
-            var t = h(this), id_comic = t.data("comic"),
-                id_user = t.data('user');
+            var t = h(this), id_comic = t.data("comic");
 
-
-            if (id_user == -1 || id_user == null) {
-                alert('Bạn cần đăng nhập để sử dụng tính năng này');
+            if (!isAuthuricated()) {
                 return null;
             }
-
             var vote = h('.number-like');
 
             h.ajax({
                 url: '/api/v1/vote', type: "post",
                 dataType: 'json',
                 data: {
-                    id_comic: id_comic,
-                    id_user: id_user
+                    id_comic: id_comic
                 }, success: function (rep) {
                     rep.voted ?t.html('<span class="fa fa-thumbs-up"></span> Đã thích') :
                     t.html('<span class="far fa-thumbs-up"></span> Thích');
@@ -5217,6 +5207,10 @@
                 p = h(this);
                 
                 if(res) {
+                    if (!isAuthuricated()) {
+                        return null;
+                    }   
+
                     h.ajax({
                         method: "delete",
                         url: '/api/v1/comment/delete/' + id,
@@ -5228,34 +5222,9 @@
                     });
                 }
                 
-        }), h(document).on("click", ".comment-head .bannick_comnent", function (e) {
-            var t = h(this).data("id"), n = confirm("Bạn có chắc muốn xoá Cấm Bình Luận thành viên này không?");
-            h(this);
-            1 == n && h.ajax({method: "POST", url: urlCommentBannick, data: {id: t}}).done(function (e) {
-            })
-        }), h(document).on("click", "#list_emoji .emoji_comment", function (e) {
-            var t = h(this).data("code");
+        }),
 
-            !function (e, t) {
-                var n = document.getElementById(e);
-                if (n) {
-                    var i = n.scrollTop, o = 0,
-                        s = n.selectionStart || "0" == n.selectionStart ? "ff" : !!document.selection && "ie";
-                    if ("ie" == s) {
-                        n.focus();
-                        var r = document.selection.createRange();
-                        r.moveStart("character", -n.value.length), o = r.text.length
-                    } else "ff" == s && (o = n.selectionStart);
-                    var a = n.value.substring(0, o), l = n.value.substring(o, n.value.length);
-                    if (n.value = a + t + l, o += t.length, "ie" == s) {
-                        n.focus();
-                        var c = document.selection.createRange();
-                        c.moveStart("character", -n.value.length), c.moveStart("character", o), c.moveEnd("character", 0), c.select()
-                    } else "ff" == s && (n.selectionStart = o, n.selectionEnd = o, n.focus());
-                    n.scrollTop = i
-                }
-            }(h("#id_textarea").val(), t)
-        }), h(document).on("click", ".submit_comment", function (e) {
+        h(document).on("click", ".submit_comment", function (e) {
             var p = h(this).parent();
             var id_user = p.data('user'), id_comic = p.data('comic'), id_parent = p.data('parent');
             var content = p.find('textarea').val().trim();
@@ -5263,10 +5232,10 @@
             var d = null, url=null;
             var form = p.parent().parent();
 
-            if(id_user <= 0) {
-                alert('Bạn phải đăng nhận để sử dụng tính năng này');
-                return;
-            }
+             if (!isAuthuricated()) {
+                return null;
+             }
+
             form.hasClass("main_comment")? (d = {
                     id_user: id_user,
                     id_comic: id_comic,
@@ -5355,8 +5324,12 @@
             if(from != -1) {
                 h(".load_more_notification a").text("Đang tải thông báo...");
 
+                if (!isAuthuricated()) {
+                    return null;
+                }
+
                 h.ajax({
-                    method: "GET", 
+                    method: "GET",
                     url: '/api/v1/notify/load',
                     data: {from: from, id_user: id_user}
                 }).done(function (e) {
@@ -5381,6 +5354,10 @@
             var act = parseInt(action);
             var type = act == 1 ? 'delete' : 'post';
             var url = act == 1 ? '/api/v1/history/delete' : '/api/v1/follow';
+
+            if (!isAuthuricated()) {
+                return null;
+            }
 
             h.ajax({
                 url: url, 

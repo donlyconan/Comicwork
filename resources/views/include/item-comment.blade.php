@@ -8,7 +8,7 @@
     class="info-comment child_{{$comment->id}} parent_{{$comment->id_parent}} {{$comment->isParent() ? 'comment-main-level' : 'reply-list'}}">
     <div class="outsite-comment comment-main-level">
         <figure class="avartar-comment">
-            <img src="{{$user->profile()}}" alt="{{$user->full_name}}">
+            <img style="object-fit: cover;" src="{{$user->profile()}}" alt="{{$user->full_name}}">
         </figure>
         <div class="item-comment">
             <div class="outline-content-comment">

@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::prefix('/v1')->group(function () {
+Route::middleware('auth:api')->prefix('/v1')->group(function () {
 
     Route::get('/ping', function () {
         return Response::json(['result' => 'Ok', 'time' => date('d-m-Y h:m:s', time())]);
@@ -24,7 +24,7 @@ Route::prefix('/v1')->group(function () {
     Route::prefix('/comment')->group(function () {
 
         //lay comment cho 1 bo truyen tranh
-        Route::get('/load', 'CommentController@load')->name('comment.load');
+        Route::get('/load', 'CommentController@load')->name('comment.load')->withoutMiddleware('auth:api');
 
         //Giử binh luan 1 bo truyen tranh
         Route::post('/post', 'CommentController@post')->name('comment.post');
@@ -38,7 +38,7 @@ Route::prefix('/v1')->group(function () {
     });
 
 
-    Route::prefix('notify')->group(function (){
+    Route::prefix('notify')->group(function () {
 
         //Load nội dung tin nhắn
         Route::get('/load', 'NotificationController@load')->name('notify.load');
@@ -65,6 +65,13 @@ Route::prefix('/v1')->group(function () {
 
     //Theo doi hoac huy bo theo doi mot bo truyen
     Route::post('/follow', 'FollowController@handle')->name('follow.handle-comic');
+
+
+    Route::post('/login', 'ApiAuthentication@login')->withoutMiddleware('auth:api');
+
+    Route::get('/logout', 'ApiAuthentication@logout');
+
+    Route::get('/user-info', 'ApiAuthentication@user');
 
 });
 

@@ -191,8 +191,7 @@
             </div>
 
             <div class="comment-container">
-            <span class="story-detail-title"><i class="fas fa-comments"></i>Bình Luận (<span
-                    class="comment-count">{{ $comic->comments()->count() }}</span>)</span>
+                <span class="story-detail-title"><i class="fas fa-comments"></i>Bình Luận (<span class="comment-count">{{ $comic->comments()->count() }}</span>)</span>
                 <div class="group01 comments-container">
                     <div class="form-comment main_comment">
                         <div class="message-content">

@@ -6,7 +6,7 @@
         <div class="level title">
             <p class="level-left has-text-weight-bold">Đổi mật khẩu</p>
         </div>
-        <form action="/user/change-password" method="post">
+        <form action="{{route('user.change-password')}}" method="post">
             @csrf
             <div class="form-change-pass">
                 <div class="field">

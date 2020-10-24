@@ -1,10 +1,11 @@
+
 <div class="container">
     <div class="tile is-ancestor">
         <div class="tile is-3 is-vertical is-parent">
             <div class="tile is-child">
                 <a href="">
                     <div class="hero-item">
-                        <img class="cover" src="http://i.mangaqq.com/slider/290x191/slider_1559213426.jpg?r=r8645456"
+                        <img class="cover" src="/storage/comicwork/test/comic_profile.jpg"
                              alt="cover">
                         <div class="bottom-shadow"></div>
                         <div class="captions">
@@ -17,7 +18,7 @@
             <div class="tile is-child">
                 <a href="">
                     <div class="hero-item">
-                        <img class="cover" src="http://i.mangaqq.com/slider/290x191/slider_1561609693.jpg?r=r8645456"
+                        <img class="cover" src="/storage/comicwork/test/comic_profile.jpg"
                              alt="cover">
                         <div class="bottom-shadow"></div>
                         <div class="captions">
@@ -33,7 +34,7 @@
             <div class="tile is-child">
                 <a href="">
                     <div class="hero-item has-excerpt">
-                        <img class="cover" src="http://i.mangaqq.com/slider/583x386/slider_1567830171.jpg?r=r8645456"
+                        <img class="cover" src="/storage/comicwork/test/comic_profile.jpg"
                              alt="cover">
                         <div class="bottom-shadow"></div>
                         <div class="captions">
@@ -57,7 +58,7 @@
             <div class="tile is-child">
                 <a href="">
                     <div class="hero-item">
-                        <img class="cover" src="http://i.mangaqq.com/slider/290x191/slider_1587986979.jpg?r=r8645456"
+                        <img class="cover" src="/storage/comicwork/test/comic_profile.jpg"
                              alt="cover">
                         <div class="bottom-shadow"></div>
                         <div class="captions">
@@ -68,10 +69,11 @@
                     <!-- /.hero-item -->
                 </a>
             </div>
+
             <div class="tile is-child">
                 <a href="">
                     <div class="hero-item">
-                        <img class="cover" src="http://i.mangaqq.com/slider/290x191/slider_1559213537.jpg?r=r8645456"
+                        <img class="cover" src="/storage/comicwork/test/comic_profile.jpg"
                              alt="cover">
                         <div class="bottom-shadow"></div>
                         <div class="captions">

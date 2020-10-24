@@ -17,16 +17,16 @@
                         Lịch Ra Truyện Ngày 03/09/2020
                     </div>
                     <ul class="schedule-list">
-                        <li><a href="http://truyenqq.com/truyen-tranh/baki-dou-2018-6321.html"><strong
+                        <li><a href=""><strong
                                     class="hot">[12:00]</strong> Baki Dou (2018) - Chương 8</a></li>
-                        <li><a href="http://truyenqq.com/truyen-tranh/lang-hoan-thu-vien-5456.html"><strong class="hot">[14:00]</strong>
+                        <li><a href=""><strong class="hot">[14:00]</strong>
                                 Lang Hoàn Thư Viện - Chương 111</a></li>
-                        <li><a href="http://truyenqq.com/truyen-tranh/toi-tho-cung-co-the-manh-hon-9830.html"><strong
+                        <li><a href=""><strong
                                     class="">[16:00]</strong> Tôi Thở Cũng Có Thể Mạnh Hơn - Chương 28</a></li>
-                        <li><a href="http://truyenqq.com/truyen-tranh/toi-khong-phai-quy-vuong-9820.html"><strong
+                        <li><a href=""><strong
                                     class="">[18:00]</strong>
                                 Tôi Không Phải Quỷ Vương - Chương 18.2</a></li>
-                        <li><a href="http://truyenqq.com/truyen-tranh/dau-thai-thanh-yeu-quai-10129.html"><strong
+                        <li><a href=""><strong
                                     class="">[20:00]</strong>
                                 Đầu Thai Thành Yêu Quái - Chương 6</a></li>
                     </ul>
@@ -40,7 +40,7 @@
                 @if(isset($news) and count($news) > 0)
                     <div class="latest">
                         <div class="caption" id="list-update"><a
-                                href="http://truyenqq.com/truyen-moi-cap-nhat.html"><span
+                                href=""><span
                                     class="starts-icon"></span>Truyện mới cập nhật</a></div>
                         <ul class="list-stories grid-6">
                             @foreach($news as $chapter)
@@ -59,7 +59,8 @@
 
                 @if(isset($most) and count($most) > 0)
                     <div class="latest">
-                        <div class="caption" id="list-update"><a href="http://truyenqq.com/truyen-moi-cap-nhat.html">
+                        <div class="caption" id="list-update">
+                            <a href="">
                         <span
                             class="starts-icon"></span>Top truyện thịnh hành</a></div>
                         <ul class="list-stories grid-6">

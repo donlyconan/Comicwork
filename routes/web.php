@@ -93,13 +93,13 @@ Route::prefix('/auth')->group(function () {
 
 
 //Tai trang dang nhap
-Route::get('login', 'LoginController@index')->name("login");
+Route::get('/login', 'LoginController@index')->name("login");
 
 //Dang nhap vao may chu
-Route::post('login', ['as' => 'login', 'uses' => 'LoginController@login'])->name('user-login');
+Route::post('/user-login', 'LoginController@login')->name('user-login');
 
 //trang dang ky tai khoan
-Route::get('register', 'RegisterController@index')->name("register");
+Route::get('/register', 'RegisterController@index')->name("register");
 
 //dang ky tai khoan
 Route::post("/signup/new-account", 'RegisterController@register')->name("signup.new-account");
@@ -120,6 +120,13 @@ Route::prefix("/forgot")->group(function () {
 
     //Hoan tat thiet lap mat khau
     Route::post('/reset-password', 'PasswordController@reset')->name('user.reset-password');
+});
+
+Route::prefix('/message')->group(function (){
+
+    Route::get('/token/{message?}', 'MessageController@token')->name('message.token');
+
+
 });
 
 

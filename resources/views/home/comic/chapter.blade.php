@@ -3,23 +3,20 @@
 @php
     /**@var \App\Model\Chapter $chapter;*/
     $urlhome = route('homepage');
-    $id_comic = $chapter->id_comicwork;
+    $comic = $chapter->comicwork()->first();
     $user = Auth::user();
     $followed = $voted = false;
 
     if(Auth::check()){
-        $followed = $user->hasFollow($id_comic);
-        $voted =  $user->hasVote($id_comic);
+        $followed = $user->hasFollow($comic->id);
+        $voted =  $user->hasVote($comic->id);
     }
 
     $nextChap = $chapter->next();
     $prevChap = $chapter->previous();
 
-    $urlNextChap = $nextChap == null ? null : route('comic.chapter', ['id'=>$nextChap->id_comicwork,
-        'chapter'=> $nextChap->id]);
-    $urlPrevChap = $prevChap == null ? null : route('comic.chapter', ['id'=>$prevChap->id_comicwork,
-        'chapter'=> $prevChap->id]);
-
+    $urlNextChap = $nextChap == null ? null : route('comic.chapter', ['id'=>$nextChap->id_comicwork, 'chapter'=> $nextChap->id]);
+    $urlPrevChap = $prevChap == null ? null : route('comic.chapter', ['id'=>$prevChap->id_comicwork, 'chapter'=> $prevChap->id]);
 
     //dd($urlNextChap, $urlPrevChap)
 @endphp
@@ -112,28 +109,54 @@
                         </div>
 
 
+                        {{--                        <div class="comment-container">--}}
+                        {{--                            <span class="story-detail-title"><i class="fas fa-comments"></i>Bình Luận (<span--}}
+                        {{--                                    class="comment-count">{{13}}</span>)</span>--}}
+
+                        {{--                            <div class="group01 comments-container">--}}
+                        {{--                                <div class="form-comment main_comment">--}}
+                        {{--                                    <div class="message-content">--}}
+                        {{--                                        <div class="mess-input">--}}
+                        {{--                                            <textarea class="textarea" placeholder="Nội dung bình luận"--}}
+                        {{--                                                      id="content_comment">--}}
+                        {{--                                            </textarea>--}}
+                        {{--                                            <button type="submit" class="submit_comment"></button>--}}
+                        {{--                                        </div>--}}
+                        {{--                                    </div>--}}
+                        {{--                                </div>--}}
+
+                        {{--                                @includeIf('include.list-comments')--}}
+                        {{--                            </div>--}}
+                        {{--                            <div class="load-more load_more_comment"><a class="button is-info">Xem thêm nhiều bình--}}
+                        {{--                                    luận</a></div>--}}
+                        {{--                        </div>--}}
+
                         <div class="comment-container">
                             <span class="story-detail-title"><i class="fas fa-comments"></i>Bình Luận (<span
-                                    class="comment-count">{{13}}</span>)</span>
-
+                                    class="comment-count">{{ $comic->comments()->count() }}</span>)</span>
                             <div class="group01 comments-container">
                                 <div class="form-comment main_comment">
                                     <div class="message-content">
-                                        <div class="mess-input">
-                                            <textarea class="textarea" placeholder="Nội dung bình luận"
-                                                      id="content_comment">
-                                            </textarea>
+                                        <div data-user="{{Auth::id()}}" data-comic="{{$comic->id}}" class="mess-input">
+                                <textarea class="textarea" placeholder="Nội dung bình luận"
+                                          id="content_comment"></textarea>
                                             <button type="submit" class="submit_comment"></button>
                                         </div>
                                     </div>
                                 </div>
 
-                                @includeIf('include.list-comments')
-                            </div>
-                            <div class="load-more load_more_comment"><a class="button is-info">Xem thêm nhiều bình
-                                    luận</a></div>
-                        </div>
+                                <div class="list-comment">
+                                    @foreach($comments as $comment)
+                                        @include('include.item-comment', compact('owner', 'comment'))
+                                    @endforeach
+                                </div>
+                                {{--                    @includeIf('include.list-comments')--}}
 
+                            </div>
+                            <div data-from="{{$from}}" data-comic="{{$comic->id}}}" class="load-more load_more_comment">
+                                <a
+                                    class="button is-info">Xem thêm nhiều bình luận</a></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -161,21 +184,23 @@
                 </div>
                 <div class="center level">
                     <div class="prev level-left">
-                        <a class="{{$urlPrevChap != null ? 'link-prev-chap' : 'disable'}}" href="{{$urlPrevChap ?? '#'}}">
+                        <a class="{{$urlPrevChap != null ? 'link-prev-chap' : 'disable'}}"
+                           href="{{$urlPrevChap ?? '#'}}">
                             <i class="fas fa-arrow-circle-left"></i></a>
                     </div>
 
-                    <select class="selectEpisode">
+
+                    <select onchange="location.href = this.value" class="selectEpisode">
                         @foreach($listChapter as $item)
-                            <option
-                                value="{{ route('comic.chapter', ['id'=> $item->id_comicwork, 'chapter'=> $item->id]) }}"
+                            <option  value="{{route('comic.chapter', ['id'=>$comic->id, 'chapter'=>$item->id])}}"
                                 {{$item->chapter_number == $chapter->chapter_number ? 'selected' : ''}}>
                                 Chương {{ $item->chapter_number }}
                             </option>
                         @endforeach
                     </select>
                     <div class="next level-right">
-                        <a class="{{$urlNextChap != null ? 'link-next-chap' : 'disable'}}" href="{{$urlNextChap ?? '#'}}">
+                        <a class="{{$urlNextChap != null ? 'link-next-chap' : 'disable'}}"
+                           href="{{$urlNextChap ?? '#'}}">
                             <i class="fas fa-arrow-circle-right"></i>
                         </a>
                     </div>
@@ -195,3 +220,4 @@
         </div>
     </section>
 @endsection
+

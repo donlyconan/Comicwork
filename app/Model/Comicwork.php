@@ -3,8 +3,10 @@
 namespace App\Model;
 
 
+use App\MyStorage\FileSystem;
 use App\MyStorage\TimeInt;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\UploadedFile;
 
 /**
  * App\Model\Comicwork
@@ -167,6 +169,6 @@ class Comicwork extends Model
      */
     public function profile()
     {
-        return $this->url_image ?? \Storage::url('public/comicwork/test/comic_profile.jpg');
+        return FileSystem::asset('public/comicwork/test/comic_profile.jpg');
     }
 }

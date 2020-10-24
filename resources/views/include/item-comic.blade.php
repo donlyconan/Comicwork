@@ -1,9 +1,7 @@
 @php
     /**
-    *@var \App\Model\Comicwork $comic
-    *@ClassName Comicwork
+    * @var \App\Model\Comicwork $comic
     * @var \App\Model\Chapter
-    * @ClassName Chapter
     */
 
     $id = $comic->id;

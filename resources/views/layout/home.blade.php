@@ -8,6 +8,10 @@
 
     <title>@yield('title-page')</title>
 
+    @auth
+        <meta id="token" name="token" content="{{session('access-token')}}">
+    @endauth
+
     <meta name="viewport"
           content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=6.0, user-scalable=yes">
     <link rel="shortcut icon" href="http://static.truyenqq.com/template/frontend/images/favicon.ico?v=1.1"
@@ -18,16 +22,6 @@
     <link rel="stylesheet" type="text/css" href="{{asset('home/css/main.css')}}">
     <script src="{{ asset('home/js/main.js') }}"></script>
 
-    <script type="text/javascript">
-        @if(Auth::check())
-            $.ajaxSetup({
-                headers: {
-                    Accept: 'application/json',
-                    Authorization: 'Bearer '  + {{Auth::user()->token()->acesssToken}},
-                }
-            })
-        @endif
-    </script>
 </head>
 <body>
 

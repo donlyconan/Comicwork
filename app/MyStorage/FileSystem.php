@@ -6,7 +6,6 @@ namespace App\MyStorage;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
-use League\Flysystem\FileNotFoundException;
 
 /*
  * - Xây dựng độ tương tác các file với thư mục
@@ -15,13 +14,13 @@ use League\Flysystem\FileNotFoundException;
  */
 
 //ĐỊnh nghĩa đường dẫn folder gốc
-const ROOT_FOLDER = '/';
+const ROOT_FOLDER = 'public/';
 
 //Định nghĩa đường dẫn  lưu truyện
-const ROOT_COMICWORK = '/comicwork';
+const ROOT_COMICWORK = 'public/comicwork';
 
 //Định nghĩa đường dẫn file người dùng
-const ROOT_USER = '/user';
+const ROOT_USER = 'public/user';
 
 
 /**
@@ -198,6 +197,7 @@ class FileSystem implements FileScript
         Storage::makeDirectory($path);
     }
 
+
     public function url(): string
     {
         return Storage::url($this->pathname);
@@ -205,7 +205,7 @@ class FileSystem implements FileScript
 
     public function getPath(): string
     {
-        return Storage::path($this->pathname);
+        return $this->pathname;
     }
 
 
@@ -230,6 +230,19 @@ class FileSystem implements FileScript
             && Storage::makeDirectory(ROOT_USER);
     }
 
+
+    public static function asset($pathname)
+    {
+        $path = str_replace('public/', 'storage/', $pathname);
+        return asset($path);
+    }
+
+
+
+    public static function create($path): FileSystem
+    {
+        return new FileSystem($path);
+    }
 
     /**
      * Tạo thư mục đối tượng cha

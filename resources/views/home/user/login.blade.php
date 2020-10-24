@@ -14,7 +14,7 @@
                         <h1>Đăng nhập</h1>
                     </div>
                 </div>
-                <form action="{{route('login')}}" method="post">
+                <form action="{{route('user-login')}}" method="post">
                     @csrf
                     <div class="form-group">
                         <label for="exampleInputEmail1">Tài khoản</label>
@@ -30,7 +30,7 @@
                     <div class="form-group" id="bottom-media">
                         <div class="bot-left">
                             <input type="checkbox" class="text-center" id="remember" name="remember"
-                                   value="Nhớ mật khẩu">
+                                {{old('remember_token') ? 'checked' : ''}}>
                             <label class="text-center" id="lbremeber">Nhớ mật khẩu</label>
                         </div>
                         <div class="bot-right">

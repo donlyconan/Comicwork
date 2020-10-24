@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+use App\MyStorage\FileSystem;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -194,8 +195,8 @@ class User extends Authenticatable
         if ($this->url_image != null && str_starts_with($this->url_image, 'http'))
             return $this->url_image;
 
-        return \Storage::exists($this->url_image) ? Storage::url($this->url_image)
-            : \Storage::url('user/avatar.png');
+        return \Storage::exists($this->url_image) ? FileSystem::asset($this->url_image)
+            : asset('storage/user/avatar.png');
     }
 
     /**

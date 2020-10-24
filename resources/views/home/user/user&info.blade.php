@@ -25,7 +25,7 @@
                 @elseif(session('notify'))
                 @section("user-avatar")
                     <img style="border: #7f8c8d 1px solid;"
-                         src="{{$user->url_image or asset('storage/default/avatar.png')}}">
+                         src="{{Auth::user()->profile()}}">
                 @endsection
                 <div class="alert alert-success" style="text-align: center;">{{session('notify')}}</div>
                 @endif
