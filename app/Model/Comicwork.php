@@ -5,6 +5,7 @@ namespace App\Model;
 
 use App\MyStorage\FileSystem;
 use App\MyStorage\TimeInt;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\UploadedFile;
 
@@ -62,7 +63,6 @@ class Comicwork extends Model
     protected $primaryKey = 'id';
     protected $dateFormat = 'dd/MM/yyyy';
 
-
     public function tags()
     {
         return $this->belongsToMany('App\Model\Tag', 'Comicwork_tag'
@@ -80,7 +80,6 @@ class Comicwork extends Model
         return $this->belongsToMany('App\Model\User', 'Follows'
             , 'id_comicwork', 'id_user');
     }
-
 
     public function views()
     {
@@ -138,30 +137,35 @@ class Comicwork extends Model
         return ['comicworks.id', 'name', 'description', 'id_country', 'author', 'comicworks.status', 'publishing_company', 'publishing_year', 'url_image'];
     }
 
-
-    //Đếm số chương ra mắt
-    public function countChapters()
+    // Truyện chưa phát hành
+    public function unreleasedChapters()
     {
-        return self::leftJoin("Chapters", "Chapters.id_comicwork", '=', 'comicworks.id')
-            ->where("comicworks.id", '=', $this->id)
-            ->count("Chapters.id");
+        return $this->chapters()->whereDate("release_date", '>', Carbon::now()->toDateTime());
+    }
+
+    // Truyện đã phát hành
+    public function releasedChapters()
+    {
+        return $this->chapters()->whereDate("release_date", '<=', Carbon::now()->toDateTime());
     }
 
 
-    //lấy chương truyện mới nhất của đoạn truyện
-    public function latestChapter()
+    // Lấy chương truyện mới nhất của đoạn truyện
+    public function latest()
     {
-       return $this->chapters()->orderBy('chapter_number', 'desc')->first();
+        return $this->releasedChapters()->orderByDesc('chapter_number')
+            ->orderByDesc('release_date')->first();
     }
+
 
     /*
      * kiểm tra trạng thái của bộ truyện
-     * status: 0 đang cập nhật
-     *         1 đã hoàn thành
+     * status: 1 đang cập nhật
+     *         2 đã hoàn thành
      */
     public function isUpdating()
     {
-        return $this->status == 0;
+        return $this->status == 1;
     }
 
     /**
@@ -169,6 +173,6 @@ class Comicwork extends Model
      */
     public function profile()
     {
-        return FileSystem::asset('public/comicwork/test/comic_profile.jpg');
+        return FileSystem::asset($this->url_image);
     }
 }

@@ -3,7 +3,6 @@
 namespace App\Model;
 
 use App\MyStorage\TimeInt;
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 
@@ -119,6 +118,16 @@ class Chapter extends Model
     {
         $time = time() - strtotime($this->release_date);
         return TimeInt::createToStr($time);
+    }
+
+    public function isPublished() : bool {
+        return strtotime($this->release_date) < time();
+    }
+
+
+    public function asHour()
+    {
+        return date('h:m', strtotime($this->release_date));
     }
 
 

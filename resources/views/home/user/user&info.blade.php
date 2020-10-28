@@ -61,7 +61,7 @@
                         <p class="txt">Ngày sinh</p>
                         <p class="control">
                             <input class="input" type="date" id="birthday" name="date_of_birth"
-                                   value="{{"2017-07-07"}}">
+                                   value="{{date('Y-m-d', strtotime(Auth::user()->date_of_birth))}}">
                         </p>
                     </div>
                     <div class="field">

@@ -150,9 +150,9 @@
                     <h2 class="story-detail-title">Danh sách chương</h2>
                 </div>
                 <div class="box">
-                    @if($comic->chapters->count() > 0)
+                    @if(!$listChapters->isEmpty())
                         <div class="works-chapter-list">
-                            @foreach($comic->chapters()->orderBy('chapter_number', 'desc')->get() as $chapter)
+                            @foreach($listChapters as $chapter)
                                 <div class="works-chapter-item row">
                                     <div class="col-md-10 col-sm-10 col-xs-8 ">
                                         <a target="_blank"
@@ -160,7 +160,7 @@
                                             {{$chapter->chapter_number}}</a>
                                     </div>
                                     <div class="col-md-2 col-sm-2 col-xs-4 text-right">
-                                        {{date('m/d/Y', strtotime($chapter->created_at))}}
+                                        {{date('m/d/Y', strtotime($chapter->release_date))}}
                                     </div>
                                 </div>
                             @endforeach

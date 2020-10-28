@@ -45,7 +45,7 @@ class FileModel
      * Lưu toàn 1 mảng file vào bộ nhớ
      * Lưu đường dẫn của file từ bộ nhớ vào DB
      */
-    public static function addNewChapter($id_comic, $id_chapter, $files)
+    public static function addNewChapter($id_comic, $id_chapter,array $files)
     {
         $path = "$id_comic/$id_chapter";
 

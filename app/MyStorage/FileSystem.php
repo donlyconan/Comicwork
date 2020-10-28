@@ -233,10 +233,9 @@ class FileSystem implements FileScript
 
     public static function asset($pathname)
     {
-        $path = str_replace('public/', 'storage/', $pathname);
+        $path = Storage::url($pathname);
         return asset($path);
     }
-
 
 
     public static function create($path): FileSystem

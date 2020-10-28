@@ -11,6 +11,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UserSeeder::class);
+        $tab = \App\Model\Comicwork::cursor()->filter(function ($item){
+            return $item->chapters()->count() == 0;
+        });
+
+
     }
 }

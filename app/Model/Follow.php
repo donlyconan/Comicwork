@@ -14,8 +14,7 @@ class Follow extends Model
     public $timestamps = true;
     protected $dateFormat = 'dd/MM/yyyy';
 
-    public const CREATED_AT = 'follow_date';
-
+    public const UPDATED_AT = null;
 
     public function comicwork()
     {

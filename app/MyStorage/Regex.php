@@ -69,10 +69,10 @@ class Regex
      */
     public static function getExtentionImage()
     {
-        return 'jpg,gif,png,jpge';
+        return 'jpg,gif,png,jpeg';
     }
 
-    const EXT_IMAGE = ['.jpg', '.gif', '.png', '.jpge'];
+    const EXT_IMAGE = ['.jpg', '.gif', '.png', '.jpeg'];
 
     /*
      * Kiểm tra tên file có phải là định dạng image hay không

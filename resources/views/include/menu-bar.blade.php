@@ -21,7 +21,7 @@
                                                 <ul class="mega-list">
                                                     @foreach($items as $item)
                                                         <li>
-                                                            <a href="/home/category?id={{$item->id}}">
+                                                            <a href="{{route('home.category', ['id'=>$item->id])}}">
                                                                 {{$item->label}}
                                                             </a>
                                                         </li>
@@ -51,7 +51,7 @@
                                                 <ul class="mega-list">
                                                     @foreach($items as $item)
                                                         <li>
-                                                            <a href="/home/country?id={{$item->id}}">
+                                                            <a href="{{route('home.country', ['id'=>$item->id])}}">
                                                                 {{$item->name}}
                                                             </a>
                                                         </li>
@@ -93,8 +93,10 @@
                 </div>
 
 
-                <a rel="nofollow" href="{{route('home.man', ['sexs' => 'con-trai'])}}" class="navbar-item">Truyện Con Trai</a>
-                <a rel="nofollow" href="{{route('home.man', ['sexs' => 'con-gai'])}}" class="navbar-item">Truyện Con Gái</a>
+                <a rel="nofollow" href="{{route('home.man', ['sexs' => 'con-trai'])}}" class="navbar-item">Truyện Con
+                    Trai</a>
+                <a rel="nofollow" href="{{route('home.man', ['sexs' => 'con-gai'])}}" class="navbar-item">Truyện Con
+                    Gái</a>
 
                 <a rel="nofollow" href="{{ route('user.history') }}" class="navbar-item">Lịch Sử</a>
                 <a rel="nofollow" href="{{ route('user.follow') }}" class="navbar-item">Theo Dõi</a>

@@ -6,7 +6,7 @@
     <div class="level">
         <div class="level-left pc">
                 <span class="logo">
-                    <a href="{{route('homepage')}}">Truyen QQ</a>
+                    <a href="{{route('homepage')}}">Truyện Tranh</a>
                 </span>
 
             <form class="top-search" style="margin-top: auto; margin-bottom: auto;" action="{{route('home.search')}}"
@@ -81,8 +81,7 @@
                     <div class="notify user center">
 
                         @section("user-avatar")
-                            <img style="border: #7f8c8d 1px solid;"
-                                 src="{{Auth::user()->profile()}}">
+                            <img style="border: #7f8c8d 1px solid;" src="{{Auth::user()->profile()}}">
                         @endsection
 
                         <span class="avatar-menu">
@@ -91,8 +90,9 @@
                         <div class="notify btn-user smp"><i class="fas fa-user-circle"></i></div>
                         <ul class="user-links">
                             <li>
-                                <a href="{{route("user.info")}}"><i
-                                        class="fas fa-user-circle"></i>Quản lý tài khoản</a>
+                                <a href="{{route("user.info")}}">
+                                    <i class="fas fa-user-circle"></i>Quản lý tài khoản
+                                </a>
                             </li>
                             <li>
                                 <a href="{{route('user.follow')}}"><i class="fas fa-heart"></i>

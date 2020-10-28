@@ -23,13 +23,13 @@ Route::middleware('autologin')->get('/', 'HomeController@index')
 
 Route::group(['prefix' => 'home'], function () {
     //Tìm kiếm theo thể loại
-    Route::get('/category', 'HomeController@category')->name("home.category");
+    Route::get('/category/{id}', 'CategoryController@category')->name("home.category");
 
     //Tìm kiếm theo đất nước
-    Route::get('/country', 'HomeController@country')->name("home.country");
+    Route::get('/country/{id}', 'CountryController@country')->name("home.country");
 
     //Tìm kiếm theo danh mục
-    Route::get('/sort/{mode}', 'HomeController@sort')->name("home.sort");
+    Route::get('/top/{mode}', 'TopController@sort')->name("home.sort");
 
     //tim kiem noi dung
     Route::get('/browser', 'SearchController@browser')->name('home.browser');
@@ -38,7 +38,7 @@ Route::group(['prefix' => 'home'], function () {
     Route::get('/search', 'SearchController@search')->name('home.search');
 
     //Tải danh sách truyện tranh dành cho namx
-    Route::get('/for/{sexs}', 'SearchController@forBoy')->name('home.man');
+    Route::get('/{sexs}', 'SearchController@forBoy')->name('home.man');
 });
 
 
@@ -74,10 +74,10 @@ Route::prefix("user")->group(function () {
 Route::prefix("/comic")->group(function () {
 
     //tải tranh truyện tranh
-    Route::get('/{id}', 'ComicworkController@index')->name("comic.info");
+    Route::get('{id}', 'ComicworkController@index')->name("comic.info");
 
     //tải chapter bộ truyện
-    Route::get('/{id}/{chapter}', 'ComicworkController@chapter')->name("comic.chapter");
+    Route::get('{id}/chapter/{chapter}', 'ComicworkController@chapter')->name("comic.chapter");
 });
 
 
