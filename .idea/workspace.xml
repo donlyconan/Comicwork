@@ -29,25 +29,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="921aab84-2033-4a0c-9015-52444967e934" name="Default Changelist" comment="Sửa lỗi FileSystem.php">
+    <list default="true" id="921aab84-2033-4a0c-9015-52444967e934" name="Default Changelist" comment="Update 28/10/2020">
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Chapter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Chapter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Comicwork.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Comicwork.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Follow.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Follow.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/MyStorage/FileModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/MyStorage/FileModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/MyStorage/FileSystem.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/MyStorage/FileSystem.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/MyStorage/Regex.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/MyStorage/Regex.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/category/general.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/category/general.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/comic/comic-info.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/comic/comic-info.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/content/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/content/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/user/user&amp;info.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user/user&amp;info.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/include/item-comic.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/include/item-comic.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/include/menu-bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/include/menu-bar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/include/nominations.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/include/nominations.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/include/top-bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/include/top-bar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -442,7 +426,7 @@
       <workItem from="1603848883618" duration="6435000" />
       <workItem from="1603858762092" duration="1459000" />
       <workItem from="1603862331900" duration="1061000" />
-      <workItem from="1603872706479" duration="3693000" />
+      <workItem from="1603872706479" duration="4079000" />
     </task>
     <task id="LOCAL-00001" summary="Update-Model">
       <created>1599024156214</created>
@@ -549,7 +533,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603504562003</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Update 28/10/2020">
+      <created>1603876529945</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1603876529945</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -585,7 +576,8 @@
     <MESSAGE value="Cấu hình truy vấn thông tin" />
     <MESSAGE value="Hoàn thiện cơ bản cấu trúc Home" />
     <MESSAGE value="Sửa lỗi FileSystem.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sửa lỗi FileSystem.php" />
+    <MESSAGE value="Update 28/10/2020" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update 28/10/2020" />
   </component>
   <component name="WindowStateProjectService">
     <state x="232" y="39" key="#CLI_Interpreters" timestamp="1600942822856">
@@ -736,10 +728,10 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="61" y="14" width="998" height="754" key="SettingsEditor/0.0.1304.768@0.0.1304.768" timestamp="1602604902310" />
-    <state x="244" y="117" key="Vcs.Push.Dialog.v2" timestamp="1603504581340">
+    <state x="244" y="117" key="Vcs.Push.Dialog.v2" timestamp="1603876549904">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="244" y="117" key="Vcs.Push.Dialog.v2/0.0.1304.768@0.0.1304.768" timestamp="1603504581340" />
+    <state x="244" y="117" key="Vcs.Push.Dialog.v2/0.0.1304.768@0.0.1304.768" timestamp="1603876549904" />
     <state x="259" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1603542695537">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
