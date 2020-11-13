@@ -150,6 +150,12 @@ class Comicwork extends Model
     }
 
 
+    public function oldest() {
+        return $this->releasedChapters()->orderBy('chapter_number')
+            ->first();
+    }
+
+
     // Lấy chương truyện mới nhất của đoạn truyện
     public function latest()
     {

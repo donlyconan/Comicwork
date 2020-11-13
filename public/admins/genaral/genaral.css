@@ -1,0 +1,52 @@
+.select2-selection__choice{
+    background-color: #000000 !important;
+}
+.main-header{
+    position: fixed;
+    left: 0;
+    right: 0;
+}
+.above-content-wrapper{
+    height: 50px;
+}
+/*create page*/
+.create-img-preview{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+    margin-left: 50px;
+}
+.validation-comicwork{
+    margin-top: 5px;
+    padding: 3px 5px;
+}
+
+/*edit page*/
+.edit-img-preview{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+    margin-left: 50px;
+}
+
+/*index page*/
+.index-img-profile{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+}
+
+
+/*show page*/
+.show-img-profile{
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 5px;
+    width: 100%;
+}
+.show-img-preview{
+    width: 100%;
+}

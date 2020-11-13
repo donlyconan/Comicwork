@@ -1,0 +1,16 @@
+.index-img-profile{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+}
+.main-header{
+    position: fixed;
+    left: 0;
+    right: 0;
+}
+.above-content-wrapper{
+    height: 50px;
+}
+
+

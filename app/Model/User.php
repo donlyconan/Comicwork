@@ -89,7 +89,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    protected $attributes = ["url_image" => "/public/user/avatar.png"];
+    protected $attributes = ["url_image" => "image/avatar.png"];
 
     /**
      * The attributes that should be cast to native types.
@@ -196,7 +196,7 @@ class User extends Authenticatable
             return $this->url_image;
 
         return \Storage::exists($this->url_image) ? FileSystem::asset($this->url_image)
-            : asset('storage/user/avatar.png');
+            : asset('image/avatar.png');
     }
 
     /**

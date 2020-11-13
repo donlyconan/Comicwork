@@ -43,7 +43,6 @@ class NotificationRender
                     'chapter' => $json->id_chapter]);
                 $seen = $item->status == 1;
 
-
                 return compact('content', 'seen', 'url', 'time');
         }
     }

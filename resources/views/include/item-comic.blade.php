@@ -8,7 +8,7 @@
         @endif
 
         <a href="{{ route('comic.info', ['id'=>$comic->id]) }}" title="{{$comic->name}}">
-            <img style="object-fit: cover; height: 290px;" class="story-cover lazy_cover"
+            <img style="object-fit: cover; height: 260px;" class="story-cover lazy_cover"
                  src="{{ $comic->profile() }}" alt="{{$comic->name}}"></a>
 
         <div class="top-notice">
@@ -43,7 +43,7 @@
 
             <strong>Tóm tắt:</strong>
             <div class="excerpt">
-                {{$comic->description ?? 'Đang cập nhật'}}
+                {!!$comic->description ?? 'Đang cập nhật'!!}
             </div>
         </div>
 

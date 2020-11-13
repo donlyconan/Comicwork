@@ -1,0 +1,21 @@
+.main-header{
+    position: fixed;
+    left: 0;
+    right: 0;
+
+}
+.above-content-wrapper{
+    height: 50px;
+}
+.show-img-profile{
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 5px;
+    width: 100%;
+}
+
+.show-img-preview{
+    width: 100%;
+}
+
+

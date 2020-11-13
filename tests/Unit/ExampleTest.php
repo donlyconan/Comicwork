@@ -10,6 +10,7 @@ class ExampleTest extends TestCase
 
     public function testBasicTest()
     {
+        echo false | false | false;
     }
 
 }
