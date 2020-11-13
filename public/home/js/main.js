@@ -5274,6 +5274,7 @@
             }
             
         });
+        
         h(document).on("click", ".load_more_comment", function (e) {
             var cmpsend = h(this);
             var from = parseInt(cmpsend.data('from')), id_comic = cmpsend.data('comic');
@@ -5292,6 +5293,7 @@
                     } else {
                         cmpsend.data('from', e.from);
                         h(".list-comment").append(e.listRender);
+
                         h(".content-comment").readmore({
                             maxHeight: 105,
                             speed: 100,
@@ -5336,7 +5338,7 @@
                     h(".load_more_notification a").text("Xem thêm");
                     div.parent().parent().addClass('open');
 
-                    if(e.from == -1) {
+                    if(e.listRender == null || e.listRender.length == 0) {
                         div.hide();
                     } else {
                         div.data('from', e.from);
@@ -5369,21 +5371,7 @@
                     location.reload(!0);
                 }
             })
-        }), h(".submit-message").click(function () {
-            var e = "";
-            if ("" == h("#content-message").val().trim() && (e += "Nội dung tin nhắn không được để trống.\n"), "" != e) alert(e); else {
-                var t = h(this).data("id"), n = h(this).data("receiver"), i = h(this).data("type"),
-                    o = h(this).data("token");
-                h.ajax({
-                    url: linkMessage,
-                    type: "POST",
-                    data: {token: o, parent_id: t, receive_id: n, type: i, content: h("#content-message").val().trim()},
-                    success: function (e) {
-                        location.reload(!0)
-                    }
-                })
-            }
-        });
+        })
         var a = 0;
         h(document).on("click", ".like-comment", function () {
             var t = h(this), e = t.data("id");

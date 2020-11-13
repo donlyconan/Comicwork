@@ -10,7 +10,6 @@
         <div class="container story-list">
             <div class="title-list">{{$title}}</div>
 
-
             <form action="{{ route('home.browser') }}" method="GET" class="story-list-bl01 box">
                 @csrf
                 <table>

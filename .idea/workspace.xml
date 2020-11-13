@@ -29,9 +29,20 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="921aab84-2033-4a0c-9015-52444967e934" name="Default Changelist" comment="Update 28/10/2020">
+    <list default="true" id="921aab84-2033-4a0c-9015-52444967e934" name="Default Changelist" comment="Update 03/11/2020">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Comicwork.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Comicwork.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Render/NotificationRender.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Render/NotificationRender.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/home/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/home/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/category/filter.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/category/filter.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/include/item-comic.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/include/item-comic.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/include/item-comment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/include/item-comment.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/include/nominations.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/include/nominations.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/ExampleTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/ExampleTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,13 +237,6 @@
     <property name="settings.editor.selected.configurable" value="reference.settings.deploy.options" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\donly\Desktop\My Project\Comicwork\public\storage\comicwork" />
-      <recent name="C:\Users\donly\Desktop\My Project\Comicwork\public\storage\comicwork\test" />
-      <recent name="C:\Users\donly\Desktop\My Project\Comicwork\public\storage\comicwork\test\chapter" />
-      <recent name="C:\Users\donly\Desktop\My Project\Comicwork\public\dist\js" />
-      <recent name="C:\Users\donly\Desktop\My Project\Comicwork\storage\app\comicwork" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\donly\Desktop\My Project\Comicwork\public\storage\user" />
       <recent name="C:\Users\donly\Desktop\My Project\Comicwork\public\storage\user\profile" />
@@ -240,9 +244,16 @@
       <recent name="C:\Users\donly\Desktop\My Project\Comicwork\public\storage\public" />
       <recent name="C:\Users\donly\Desktop\My Project\Comicwork\resources\views\home" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\donly\Desktop\My Project\Comicwork\public\storage\comicwork" />
+      <recent name="C:\Users\donly\Desktop\My Project\Comicwork\public\storage\comicwork\test" />
+      <recent name="C:\Users\donly\Desktop\My Project\Comicwork\public\storage\comicwork\test\chapter" />
+      <recent name="C:\Users\donly\Desktop\My Project\Comicwork\public\dist\js" />
+      <recent name="C:\Users\donly\Desktop\My Project\Comicwork\storage\app\comicwork" />
+    </key>
   </component>
   <component name="RunManager" selected="PHPUnit.ExampleTest (2)">
-    <configuration name="email_user_activation.blade.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" engineId="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" uri="http://localhost:63342/Comicwork/resources/views/home/mail/email_user_activation.blade.php" useBuiltInWebServerPort="true">
+    <configuration name="HomeController.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Comicwork/Http/Controllers/Home/HomeController.php" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="ExampleTest (2)" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
@@ -276,7 +287,7 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JavaScript Debug.email_user_activation.blade.php" />
+      <item itemvalue="JavaScript Debug.HomeController.php" />
       <item itemvalue="PHPUnit.phpunit.xml" />
       <item itemvalue="PHPUnit.ExampleTest (2)" />
       <item itemvalue="PHPUnit.ExampleTest" />
@@ -287,9 +298,9 @@
       <list>
         <item itemvalue="PHPUnit.ExampleTest (2)" />
         <item itemvalue="PHPUnit.ExampleTest.testBasicTest (1)" />
-        <item itemvalue="PHPUnit.ExampleTest.testBasicTest" />
         <item itemvalue="PHPUnit.ExampleTest" />
-        <item itemvalue="JavaScript Debug.email_user_activation.blade.php" />
+        <item itemvalue="PHPUnit.ExampleTest.testBasicTest" />
+        <item itemvalue="JavaScript Debug.HomeController.php" />
       </list>
     </recent_temporary>
   </component>
@@ -429,6 +440,22 @@
       <workItem from="1603872706479" duration="5182000" />
       <workItem from="1604319964107" duration="551000" />
       <workItem from="1604363313163" duration="258000" />
+      <workItem from="1604372699141" duration="4387000" />
+      <workItem from="1604384159803" duration="7514000" />
+      <workItem from="1604492673331" duration="3057000" />
+      <workItem from="1604903991569" duration="12083000" />
+      <workItem from="1604932849347" duration="2522000" />
+      <workItem from="1604989350555" duration="3218000" />
+      <workItem from="1605001419169" duration="1887000" />
+      <workItem from="1605018605392" duration="2152000" />
+      <workItem from="1605068134174" duration="620000" />
+      <workItem from="1605083655974" duration="164000" />
+      <workItem from="1605084251799" duration="1728000" />
+      <workItem from="1605094191323" duration="16000" />
+      <workItem from="1605094227438" duration="5000" />
+      <workItem from="1605111912002" duration="2201000" />
+      <workItem from="1605196600428" duration="2034000" />
+      <workItem from="1605277849638" duration="1211000" />
     </task>
     <task id="LOCAL-00001" summary="Update-Model">
       <created>1599024156214</created>
@@ -549,7 +576,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603876859763</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Update 03/11/2020">
+      <created>1604372740734</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1604372740734</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,7 +620,8 @@
     <MESSAGE value="Hoàn thiện cơ bản cấu trúc Home" />
     <MESSAGE value="Sửa lỗi FileSystem.php" />
     <MESSAGE value="Update 28/10/2020" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update 28/10/2020" />
+    <MESSAGE value="Update 03/11/2020" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update 03/11/2020" />
   </component>
   <component name="WindowStateProjectService">
     <state x="232" y="39" key="#CLI_Interpreters" timestamp="1600942822856">
@@ -673,22 +708,22 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="424" y="89" key="Github.UntrackedFilesDialog/0.0.1304.768@0.0.1304.768" timestamp="1599020037960" />
-    <state width="1261" height="534" key="GridCell.Tab.0.bottom" timestamp="1603877901032">
+    <state width="1261" height="278" key="GridCell.Tab.0.bottom" timestamp="1605198678065">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="534" key="GridCell.Tab.0.bottom/0.0.1304.768@0.0.1304.768" timestamp="1603877901032" />
-    <state width="1261" height="534" key="GridCell.Tab.0.center" timestamp="1603877901031">
+    <state width="1261" height="278" key="GridCell.Tab.0.bottom/0.0.1304.768@0.0.1304.768" timestamp="1605198678065" />
+    <state width="1261" height="278" key="GridCell.Tab.0.center" timestamp="1605198678065">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="534" key="GridCell.Tab.0.center/0.0.1304.768@0.0.1304.768" timestamp="1603877901031" />
-    <state width="1261" height="534" key="GridCell.Tab.0.left" timestamp="1603877901031">
+    <state width="1261" height="278" key="GridCell.Tab.0.center/0.0.1304.768@0.0.1304.768" timestamp="1605198678065" />
+    <state width="1261" height="278" key="GridCell.Tab.0.left" timestamp="1605198678064">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="534" key="GridCell.Tab.0.left/0.0.1304.768@0.0.1304.768" timestamp="1603877901031" />
-    <state width="1261" height="534" key="GridCell.Tab.0.right" timestamp="1603877901031">
+    <state width="1261" height="278" key="GridCell.Tab.0.left/0.0.1304.768@0.0.1304.768" timestamp="1605198678064" />
+    <state width="1261" height="278" key="GridCell.Tab.0.right" timestamp="1605198678065">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="534" key="GridCell.Tab.0.right/0.0.1304.768@0.0.1304.768" timestamp="1603877901031" />
+    <state width="1261" height="278" key="GridCell.Tab.0.right/0.0.1304.768@0.0.1304.768" timestamp="1605198678065" />
     <state width="1261" height="285" key="GridCell.Tab.1.bottom" timestamp="1600433536332">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
@@ -737,10 +772,10 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="61" y="14" width="998" height="754" key="SettingsEditor/0.0.1304.768@0.0.1304.768" timestamp="1602604902310" />
-    <state x="244" y="117" key="Vcs.Push.Dialog.v2" timestamp="1603876864473">
+    <state x="244" y="117" key="Vcs.Push.Dialog.v2" timestamp="1605282370578">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="244" y="117" key="Vcs.Push.Dialog.v2/0.0.1304.768@0.0.1304.768" timestamp="1603876864473" />
+    <state x="244" y="117" key="Vcs.Push.Dialog.v2/0.0.1304.768@0.0.1304.768" timestamp="1605282370578" />
     <state x="259" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1603542695537">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
@@ -833,10 +868,10 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="308" y="172" width="672" height="677" key="run.anything.popup/0.0.1304.768@0.0.1304.768" timestamp="1603618385720" />
-    <state x="308" y="37" width="672" height="678" key="search.everywhere.popup" timestamp="1603617890739">
+    <state x="308" y="37" width="672" height="678" key="search.everywhere.popup" timestamp="1604906123302">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="308" y="37" width="672" height="678" key="search.everywhere.popup/0.0.1304.768@0.0.1304.768" timestamp="1603617890739" />
+    <state x="308" y="37" width="672" height="678" key="search.everywhere.popup/0.0.1304.768@0.0.1304.768" timestamp="1604906123302" />
     <state x="450" y="70" key="svn.repositoryBrowser" timestamp="1599019653195">
       <screen x="0" y="0" width="1304" height="768" />
     </state>

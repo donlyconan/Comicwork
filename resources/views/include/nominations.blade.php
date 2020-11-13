@@ -3,9 +3,9 @@
     <div class="tile is-ancestor">
         <div class="tile is-3 is-vertical is-parent">
             <div class="tile is-child">
-                <a href="">
+                <a href="{{$topComic->lup->url}}">
                     <div class="hero-item">
-                        <img class="cover" src="{{$topComic->lup->url}}"
+                        <img class="cover" src="{{$topComic->lup->url_image}}"
                              alt="cover">
                         <div class="bottom-shadow"></div>
                         <div class="captions">
@@ -16,9 +16,9 @@
                 </a>
             </div>
             <div class="tile is-child">
-                <a href="">
+                <a href="{{$topComic->ldown->url}}">
                     <div class="hero-item">
-                        <img class="cover" src="{{$topComic->ldown->url}}"
+                        <img class="cover" src="{{$topComic->ldown->url_image}}"
                              alt="cover">
                         <div class="bottom-shadow"></div>
                         <div class="captions">
@@ -32,9 +32,9 @@
         </div>
         <div class="tile is-parent">
             <div class="tile is-child">
-                <a href="">
+                <a href="{{$topComic->center->url}}">
                     <div class="hero-item has-excerpt">
-                        <img class="cover" src="{{$topComic->center->url}}"
+                        <img class="cover" src="{{$topComic->center->url_image}}"
                              alt="cover">
                         <div class="bottom-shadow"></div>
                         <div class="captions">
@@ -49,11 +49,12 @@
                 </a>
             </div>
         </div>
+
         <div class="tile is-3 is-vertical is-parent">
             <div class="tile is-child">
-                <a href="">
+                <a href="{{$topComic->rup->url}}">
                     <div class="hero-item">
-                        <img class="cover" src="{{$topComic->rup->url}}"
+                        <img class="cover" src="{{$topComic->rup->url_image}}"
                              alt="cover">
                         <div class="bottom-shadow"></div>
                         <div class="captions">
@@ -66,9 +67,9 @@
             </div>
 
             <div class="tile is-child">
-                <a href="">
+                <a href="{{$topComic->rdown->url}}">
                     <div class="hero-item">
-                        <img class="cover" src="{{$topComic->rdown->url}}"
+                        <img class="cover" src="{{$topComic->rdown->url_image}}"
                              alt="cover">
                         <div class="bottom-shadow"></div>
                         <div class="captions">

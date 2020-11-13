@@ -1,7 +1,6 @@
 <html>
 <head>
     <meta charset="utf-8">
-
     @section('title-page')
         Truyện tranh online
     @endsection
@@ -9,7 +8,7 @@
     <title>@yield('title-page')</title>
 
     @auth
-        <meta id="token" name="token" content="{{session('access-token')}}">
+        <meta id="token" name="token" content="{{request()->cookie('access-token')}}">
     @endauth
 
     <meta name="viewport"
@@ -21,7 +20,6 @@
     <link rel="stylesheet" type="text/css" href="http://static.truyenqq.com/template/frontend/styles/read.css?v=1.0">
     <link rel="stylesheet" type="text/css" href="{{asset('home/css/main.css')}}">
     <script src="{{ asset('home/js/main.js') }}"></script>
-
 </head>
 <body>
 

@@ -31,7 +31,7 @@
                     <i class="far fa-comment"></i> Trả lời
                 </span>
 
-                @if(isset($owner) && $owner == $user->id)
+                @if(Auth::check() && isset($owner) && $owner == Auth::id())
                     <span class="remove_comnent" data-id="{{$comment->id}}" title="Xoá">
                     <i class="fa fa-trash" aria-hidden="true"></i> Xoá</span>
                 @endif
