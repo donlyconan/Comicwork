@@ -41,7 +41,7 @@
                         @if(count($errors) > 0 && $errors->any())
                             <ul class="alert alert-danger">
                                 @foreach($errors->all() as $error)
-                                    <li style="margin-left: 10px;">{{$error}}</li>
+                                    <li style="margin-left: 10px; text-align: center;">{{$error}}</li>
                                 @endforeach
                             </ul>
                         @elseif(session('notify'))

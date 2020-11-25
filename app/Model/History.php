@@ -21,6 +21,7 @@ class History extends Model
     protected $dateFormat = 'd-m-Y';
 
 
+
     public function comicwork()
     {
         return $this->belongsTo('App\Model\Comicwork', 'id_comicwork');

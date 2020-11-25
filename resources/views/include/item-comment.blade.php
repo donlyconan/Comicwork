@@ -13,14 +13,22 @@
         <div class="item-comment">
             <div class="outline-content-comment">
                 <div>
-                    <span class="time"><strong>{{$user->full_name}}</strong>  {{$comment->getTimeAgo()}}</span>
+                    <span class="time"><strong>{{$user->full_name}}</strong>
+                        @if($comment->getUser()->isAdmin())
+                            <span class="title-user-comment title-admin">Admin</span>
+                        @else
+                            <span class="title-user-comment title-member">Member</span>
+                        @endif
+                        {{$comment->getTimeAgo()}}
+                    </span>
                 </div>
                 <div class="content-comment">
                     <strong>{{$replyname}}</strong> {{$comment->content}}
                 </div>
             </div>
+
             <div class="action-comment">
-                <span class="like-comment"
+                <span style="margin-left: 10px;" class="like-comment"
                       data-comic="{{$comment->id_comicwork}}"
                       data-id="{{$comment->id}}">
                     <i class="fas fa-thumbs-up"></i>
@@ -31,10 +39,12 @@
                     <i class="far fa-comment"></i> Trả lời
                 </span>
 
-                @if(Auth::check() && isset($owner) && $owner == Auth::id())
-                    <span class="remove_comnent" data-id="{{$comment->id}}" title="Xoá">
-                    <i class="fa fa-trash" aria-hidden="true"></i> Xoá</span>
-                @endif
+                @auth
+                    @if($comment->id_user == Auth::id())
+                        <span class="remove_comnent" data-id="{{$comment->id}}" title="Xoá">
+                        <i class="fa fa-trash" aria-hidden="true"></i> Xoá</span>
+                    @endif
+                @endauth
             </div>
         </div>
     </div>

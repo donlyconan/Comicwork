@@ -64,9 +64,12 @@ class User extends Authenticatable
 {
     use HasApiTokens, Notifiable;
 
+    public const ADMIN = 1;
+    public const USER = 2;
+
     public const STT_BLOCK = -1;
     public const STT_NOT_AVAILABLE = 0;
-    public const STT_SOCIAL = 3;
+    public const STT_SOCIAL = 2;
     public const STT_AVAILABLE = 1;
 
 
@@ -155,7 +158,7 @@ class User extends Authenticatable
      */
     public function isAdmin(): bool
     {
-        return $this->hasPermission(1);
+        return $this->hasPermission(self::ADMIN);
     }
 
 
@@ -164,7 +167,7 @@ class User extends Authenticatable
      */
     public function isUser(): bool
     {
-        return $this->hasPermission(2);
+        return $this->hasPermission(self::USER);
     }
 
     /**
@@ -172,7 +175,7 @@ class User extends Authenticatable
      */
     public function hasPermission(...$permission): bool
     {
-        return $this->roles()->whereIn('id', $permission)->count() > 0;
+        return $this->roles()->whereIn('permission', $permission)->count() > 0;
     }
 
     /**

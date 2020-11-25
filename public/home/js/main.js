@@ -1,9 +1,11 @@
+
 !function (e, t) {
     "object" == typeof module && "object" == typeof module.exports ? module.exports = e.document ? t(e, !0) : function (e) {
         if (!e.document) throw new Error("jQuery requires a window with a document");
         return t(e)
     } : t(e)
-}("undefined" != typeof window ? window : this, function (f, e) {
+}
+("undefined" != typeof window ? window : this, function (f, e) {
     function t(e, t) {
         return t.toUpperCase()
     }
@@ -1437,7 +1439,7 @@
                 l[o] && (delete l[o], c ? delete n[a] : typeof n.removeAttribute !== O ? n.removeAttribute(a) : n[a] = null, d.push(o))
             }
         }
-    }), 
+    }),
     C.fn.extend({
         text: function (e) {
             return Q(this, function (e) {
@@ -2228,11 +2230,11 @@
                         return f && f.abort(t), l(0, t), this
                     }
                 };
-            if (y.promise(x).complete = b.add, x.success = x.done, x.error = x.fail, 
+            if (y.promise(x).complete = b.add, x.success = x.done, x.error = x.fail,
                 m.url = ((e || m.url || _t) + "").replace($t, "").replace(Nt, St[1] + "//"),
-                m.type = t.method || t.type || m.method || m.type, 
-                m.dataTypes = C.trim(m.dataType || "*").toLowerCase().match(j) || [""], 
-                null == m.crossDomain && (n = Lt.exec(m.url.toLowerCase()), 
+                m.type = t.method || t.type || m.method || m.type,
+                m.dataTypes = C.trim(m.dataType || "*").toLowerCase().match(j) || [""],
+                null == m.crossDomain && (n = Lt.exec(m.url.toLowerCase()),
                     m.crossDomain = !(!n || n[1] === St[1] && n[2] === St[2] && (n[3] || ("http:" === n[1] ? "80" : "443")) === (St[3] || ("http:" === St[1] ? "80" : "443")))), m.data && m.processData && "string" != typeof m.data && (m.data = C.param(m.data, m.traditional)), qt(Dt, m, t, x), 2 === k) return x;
             for (i in (h = m.global) && 0 == C.active++ && C.event.trigger("ajaxStart"), m.type = m.type.toUpperCase(), m.hasContent = !jt.test(m.type), u = m.url, m.hasContent || (m.data && (u = m.url += (Ct.test(u) ? "&" : "?") + m.data, delete m.data), !1 === m.cache && (m.url = At.test(u) ? u.replace(At, "$1_=" + xt++) : u + (Ct.test(u) ? "&" : "?") + "_=" + xt++)), m.ifModified && (C.lastModified[u] && x.setRequestHeader("If-Modified-Since", C.lastModified[u]), C.etag[u] && x.setRequestHeader("If-None-Match", C.etag[u])), (m.data && m.hasContent && !1 !== m.contentType || t.contentType) && x.setRequestHeader("Content-Type", m.contentType), x.setRequestHeader("Accept", m.dataTypes[0] && m.accepts[m.dataTypes[0]] ? m.accepts[m.dataTypes[0]] + ("*" !== m.dataTypes[0] ? ", " + Ot + "; q=0.01" : "") : m.accepts["*"]), m.headers) x.setRequestHeader(i, m.headers[i]);
             if (m.beforeSend && (!1 === m.beforeSend.call(g, x, m) || 2 === k)) return x.abort();
@@ -4961,12 +4963,12 @@
         jQuery(window).resize(function () {
             u = jQuery(window).width(), d = jQuery(window).height()
         }).resize(), h(this).on("click", ".top-bar .notify", function () {
-            if (h(this).hasClass("open")) 
-                h(this).removeClass("open"); 
-            else if (h(".top-bar .notify").removeClass("open"), 
-                h(".top-bar .btn-search").removeClass("action"), 
-                h(this).addClass("open"), "notification" == h(this).data("id") && "" 
-                != h("#id_notification").val()) 
+            if (h(this).hasClass("open"))
+                h(this).removeClass("open");
+            else if (h(".top-bar .notify").removeClass("open"),
+                h(".top-bar .btn-search").removeClass("action"),
+                h(this).addClass("open"), "notification" == h(this).data("id") && ""
+                != h("#id_notification").val())
             {
                 var t = this;
                 h.ajax({
@@ -5090,7 +5092,7 @@
         //     console.log(h(this).val());
         // });
 
-        function isAuthuricated() {
+        function isAuthenticated() {
             var meta = document.getElementById('token');
 
             if (meta == null || meta.content.length == 0) {
@@ -5112,14 +5114,15 @@
                 id_user = t.data('user');
 
 
-            
-            if(!isAuthuricated())
+
+            if(!isAuthenticated())
                 return null;
 
             var follow = h('.number-follow');
 
             h.ajax({
-                url: '/api/v1/follow', type: "post",
+                url: '/api/v1/follow',
+                type:'post',
                 dataType: 'json',
                 data: {
                     id_comic: id_comic,
@@ -5135,23 +5138,26 @@
         h(document).on("click", ".btn-like", function () {
             var t = h(this), id_comic = t.data("comic");
 
-            if (!isAuthuricated()) {
+            if (!isAuthenticated()) {
                 return null;
             }
             var vote = h('.number-like');
 
             h.ajax({
-                url: '/api/v1/vote', type: "post",
+                url: '/api/v1/vote',
+                type: 'post',
                 dataType: 'json',
                 data: {
                     id_comic: id_comic
                 }, success: function (rep) {
-                    rep.voted ?t.html('<span class="fa fa-thumbs-up"></span> Đã thích') :
+                    rep.voted ? t.html('<span class="fa fa-thumbs-up"></span> Đã thích') :
                     t.html('<span class="far fa-thumbs-up"></span> Thích');
                         vote.text(rep.number);
                 }
             })
-        }), h(".content-comment").readmore({
+        }),
+
+         h(".content-comment").readmore({
             maxHeight: 105,
             speed: 100,
             moreLink: '<p class="readmore"><a href="#">Xem Thêm</a></p>',
@@ -5182,7 +5188,9 @@
         }), h(document).on("click", ".close-emoji", function (e) {
             return h("#list_emoji").removeClass("is-active"), !1
 
-        }), h(document).on("click", ".action-comment .reply-comment", function (e) {
+        }),
+
+        h(document).on("click", ".action-comment .reply-comment", function (e) {
                 var p = h(this);
                 var id_parent = h(this).data("id");
 
@@ -5202,14 +5210,16 @@
                     var p = h("reply_"+id_parent);
                     p.find('textarea').focus();
                 }
-            }), h(document).on("click", ".list-comment .remove_comnent", function (e) {
+            }),
+
+        h(document).on("click", ".list-comment .remove_comnent", function (e) {
                 var id = h(this).data("id") , res = confirm("Bạn có chắc muốn xoá comment này không?"),
                 p = h(this);
-                
+
                 if(res) {
-                    if (!isAuthuricated()) {
+                    if (!isAuthenticated()) {
                         return null;
-                    }   
+                    }
 
                     h.ajax({
                         method: "delete",
@@ -5221,7 +5231,7 @@
                         }
                     });
                 }
-                
+
         }),
 
         h(document).on("click", ".submit_comment", function (e) {
@@ -5232,7 +5242,7 @@
             var d = null, url=null;
             var form = p.parent().parent();
 
-             if (!isAuthuricated()) {
+             if (!isAuthenticated()) {
                 return null;
              }
 
@@ -5272,17 +5282,18 @@
                 alert("Bạn chưa nhập bình luận");
                 h(this).parent().find('textarea').focus();
             }
-            
+
         });
-        
+
         h(document).on("click", ".load_more_comment", function (e) {
             var cmpsend = h(this);
             var from = parseInt(cmpsend.data('from')), id_comic = cmpsend.data('comic');
 
+
             if(from != -1) {
                 h(".load_more_comment a").text("Đang tải thêm bình luận....");
                 h.ajax({
-                    method: "GET", 
+                    method: "GET",
                     url: '/api/v1/comment/load',
                     data: {from: from, id_comic: id_comic}
                 }).done(function (e) {
@@ -5326,7 +5337,7 @@
             if(from != -1) {
                 h(".load_more_notification a").text("Đang tải thông báo...");
 
-                if (!isAuthuricated()) {
+                if (!isAuthenticated()) {
                     return null;
                 }
 
@@ -5348,7 +5359,59 @@
             }
 
         });
-        
+
+
+        function renderItemSuggest(item) {
+            return `<div class="result-item">
+                                    <a href="${item.url}">
+                                        <div class="media">
+                                            <figure class="media-left">
+                                                <p class="image" style="width: 50px; height: 50px;">
+                                                    <img src="${item.url_image}"
+                                                         alt="Đảo Hải Tặc">
+                                                </p>
+                                            </figure>
+                                            <div class="media-content">
+                                                <b>${item.name}</b>
+                                                <p style="font-size: 13px;">Lượt xem: ${item.views}</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                        `;
+        }
+
+
+        h(".top-search .txt-search").bind("keyup", function(){
+            var node = h('.txt-search');
+            var text = node.val();
+
+            var url = "/api/v1/suggest?q="+text;
+            var list = h('.top-search .list-container');
+
+            h.ajax({
+                url: url,
+                type: 'get'
+            }).done(function(e){
+                var list = h('.top-search .list-results');
+
+                if(!list.hasClass('open'))
+                    list.addClass('open');
+
+                if(e.data) {
+                    list.empty();
+                    for(var i in e.data) {
+                        var item = e.data[i];
+                        list.append(renderItemSuggest(item));
+                    }
+                } else {
+                    list.empty();
+                    list.append('<div class="no-result" style="padding: 10px">Không Tìm Thấy Kết Quả Nào!</div>');
+                }
+            });
+
+        });
+
 
         h(".remove-subscribe").click(function () {
             var p = h(this), id_user = p.data("user"), id_comic = p.data('comic'), action=p.data('action');
@@ -5357,38 +5420,39 @@
             var type = act == 1 ? 'delete' : 'post';
             var url = act == 1 ? '/api/v1/history/delete' : '/api/v1/follow';
 
-            if (!isAuthuricated()) {
+            if (!isAuthenticated()) {
                 return null;
             }
 
             h.ajax({
-                url: url, 
-                type: type, 
-                data: {id_user: id_user, id_comic: id_comic}, 
+                url: url,
+                type: type,
+                data: {id_user: id_user, id_comic: id_comic},
 
                 success: function (e) {
-                    console.log(e);
-                    location.reload(!0);
+                    p.parent().parent().remove();
                 }
             })
         })
+
         var a = 0;
-        h(document).on("click", ".like-comment", function () {
-            var t = h(this), e = t.data("id");
-            0 == a && (a = 1, h.ajax({
-                url: urlLikeComment, type: "POST", data: {id: e}, success: function (e) {
-                    1 == (e = h.parseJSON(e)).success ? t.find(".total-like-comment").text(parseInt(t.find(".total-like-comment").text()) + 1) : alert(e.error), a = 0
-                }
-            }))
-        });
+        // h(document).on("click", ".like-comment", function () {
+        //     var t = h(this), e = t.data("id");
+        //     0 == a && (a = 1, h.ajax({
+        //         url: urlLikeComment, type: "POST", data: {id: e}, success: function (e) {
+        //             1 == (e = h.parseJSON(e)).success ? t.find(".total-like-comment").text(parseInt(t.find(".total-like-comment").text()) + 1) : alert(e.error), a = 0
+        //         }
+        //     }))
+        // });
         var l = h(".story-see-footer");
         if (0 < l.length) {
             var c = 0;
             h(window).on("resize scroll", function () {
                 var t = h(this).scrollTop();
-                t < c ?  (l.show(), h(".scrollTop").css("bottom", "60px")) 
+                t < c ?  (l.show(), h(".scrollTop").css("bottom", "60px"))
                 :( l.hide(), h(".scrollTop").css("bottom", "20px"), c = t);
             })
         };
+
     })
 }(window.jQuery);

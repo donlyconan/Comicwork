@@ -8,7 +8,7 @@
         @endif
 
         <a href="{{ route('comic.info', ['id'=>$comic->id]) }}" title="{{$comic->name}}">
-            <img style="object-fit: cover; height: 260px;" class="story-cover lazy_cover"
+            <img style="object-fit: cover; height: 250px;" class="story-cover lazy_cover"
                  src="{{ $comic->profile() }}" alt="{{$comic->name}}"></a>
 
         <div class="top-notice">
@@ -24,8 +24,8 @@
                title="{{ $comic->name }}">{{ $comic->name }}</a>
         </h3>
         <div class="episode-book">
-            <a href="{{ route('comic.chapter', ['id'=>$comic->id, 'chapter'=>$id_chapter ?? $comic->latest()->id]) }}">
-                Chương {{$chapter_number ?? $comic->latest()->chapter_number}}
+            <a href="{{ route('comic.chapter', ['id'=>$comic->id, 'chapter'=>isset($chapter) ? $chapter->id : $comic->latest()->id]) }}">
+                Chương {{isset($chapter) ? $chapter->chapter_number : $comic->latest()->chapter_number}}
             </a>
         </div>
 

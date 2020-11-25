@@ -2,13 +2,10 @@
 
 
 @section('nominations')
-    @isset($topComic)
-        <section class="hero">
-            @include('include.nominations', compact('topComic'))
-        </section>
-    @endisset
+    <div class="hero">
+        @includeIf('include.nominations')
+    </div>
 @endsection
-
 
 @section('body-page')
     <div class="outsite ">
@@ -36,39 +33,41 @@
             </section>
         @endif
 
+
         <section class="main-content index">
             <div class="container">
-                @if(isset($topUpdate) and count($topUpdate) > 0)
-                    <div class="latest">
-                        <div class="caption" id="list-update">
-                            <a href=#"">
-                                <span class="starts-icon"></span>Truyện mới cập nhật
-                            </a>
-                        </div>
-                        <ul class="list-stories grid-6">
-                            @foreach($topUpdate as $item)
-                                @include('include.item-comic', [
-                                    'comic'=>$item, 'status'=>'new', 'title'=>'New'
-                                ])
-                            @endforeach
-                        </ul>
-                        {{--                        <div class="has-text-centered">--}}
-                        {{--                            <a href="" class="view-more-btn">Xem--}}
-                        {{--                                thêm</a>--}}
-                        {{--                        </div>--}}
+                <div class="latest">
+                    <div class="caption" id="list-update">
+                        <a href=#"">
+                            <span class="starts-icon"></span>Truyện mới cập nhật
+                        </a>
                     </div>
-                @endif
+                    <ul class="list-stories grid-6">
+                        @foreach($topUpdate as $item)
+                            @include('include.item-comic', [
+                                'comic'=>$item, 'status'=>'new', 'title'=>'New'
+                            ])
+                        @endforeach
+                    </ul>
+                    {{--                    <div class="has-text-centered">--}}
+                    {{--                        <a href="" class="view-more-btn">Xem thêm</a>--}}
+                    {{--                    </div>--}}
+                </div>
 
-                @if(isset($topView) and count($topView) > 0)
+                @if(!$topView->isEmpty())
                     <div class="latest">
                         <div class="caption" id="list-update">
                             <a href="#">
-                        <span
-                            class="starts-icon"></span>Top truyện thịnh hành</a></div>
+                                <span class="starts-icon"></span>Truyện thịnh hành</a>
+                        </div>
                         <ul class="list-stories grid-6">
                             @foreach($topView as $item)
                                 @include('include.item-comic',[
-                                    'comic'=>$item, 'status'=>'hot', 'title'=>'Hot'
+                                    'comic' => $item,
+                                    'status' => 'hot',
+                                    'title' => 'Trending',
+                                    'chapter' => $item->current_chapter,
+                                    'numberOfViews' => $item->views
                                  ])
                             @endforeach
                         </ul>
@@ -76,42 +75,28 @@
                 @endif
 
 
-
-                @if(isset($topFav) and count($topFav) > 0)
-                    <div class="latest">
-                        <div class="caption" id="list-update">
-                            <a href="#">
-                                <span class="starts-icon"></span>Top truyện yêu thích
-                            </a>
-                        </div>
-                        <ul class="list-stories grid-6">
-                            @foreach($topFav as $item)
-                                @include('include.item-comic',[
-                                    'comic'=>$item, 'status'=>'hot', 'title'=>'Hot'
-                                 ])
-                            @endforeach
-                        </ul>
+                <div class="latest">
+                    <div class="caption" id="list-update">
+                        <a href="#">
+                            <span class="starts-icon"></span>Truyện yêu thích
+                        </a>
                     </div>
-                @endif
+                    <ul class="list-stories grid-6">
+                        @foreach($topFav as $item)
+                            @include('include.item-comic',[
+                                'comic'=>$item, 'status'=>'hot', 'title'=>'Hot'
+                             ])
+                        @endforeach
+                    </ul>
+                </div>
             </div>
 
             <div id="Top" class="scrollTop none" style="display: none;">
                 <span>
                     <a href="javascript:void(0);">
-                        <img src="http://static.truyenqq.com/template/frontend/images/back-to-top-icon.png">
+                        <img src="{{asset('image/icon.png')}}">
                     </a>
                 </span>
             </div>
         </section>
-
-
-        <div class="container quick-link">
-            <ul class="list-inline">
-                <li>
-                    <a href="#" title="Truyện tranh">
-                        <strong class="text-link">Truyện tranh</strong>
-                    </a>
-                </li>
-            </ul>
-        </div>
 @endsection

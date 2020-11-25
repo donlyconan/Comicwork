@@ -162,7 +162,7 @@
             </div>
             <div id="stop" class="scrollTop" style="display: none; bottom: 60px;">
                 <span><a href=""><img
-                            src="http://static.truyenqq.com/template/frontend/images/back-to-top-icon.png"></a></span>
+                            src="{{asset('image/icon.png')}}"></a></span>
             </div>
         </div>
     </section>

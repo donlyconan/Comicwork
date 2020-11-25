@@ -150,7 +150,7 @@ class Comicwork extends Model
     }
 
 
-    public function oldest() {
+    public function oldest(): Chapter {
         return $this->releasedChapters()->orderBy('chapter_number')
             ->first();
     }

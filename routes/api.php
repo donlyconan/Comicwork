@@ -21,6 +21,8 @@ Route::middleware('auth:api')->prefix('/v1')->group(function () {
         return Response::json(['result' => 'Ok', 'time' => date('d-m-Y h:m:s', time())]);
     });
 
+    Route::get('analysis', 'AnalysisController@analysis')->name('analysis');
+
     Route::prefix('/comment')->group(function () {
 
         //lay comment cho 1 bo truyen tranh
@@ -36,6 +38,9 @@ Route::middleware('auth:api')->prefix('/v1')->group(function () {
         Route::delete('/delete/{id}', 'CommentController@delete')->name('comment.delete');
 
     });
+
+
+    Route::get('/suggest', 'SuggestController@index')->name('suggest')->withoutMiddleware('auth:api');
 
 
     Route::prefix('notify')->group(function () {
@@ -60,16 +65,16 @@ Route::middleware('auth:api')->prefix('/v1')->group(function () {
 
 
     //Nhan ve luot like cua 1 bo truyen
-    Route::post('/vote', 'VoteController@handle')->name('vote.handle-comic');
+    Route::match(['delete', 'post'], '/vote', 'VoteController@handle')->name('vote.handle-comic');
 
 
     //Theo doi hoac huy bo theo doi mot bo truyen
-    Route::post('/follow', 'FollowController@handle')->name('follow.handle-comic');
+    Route::match(['delete', 'post'], '/follow', 'FollowController@handle')->name('follow.handle-comic');
 
 
     Route::post('/login', 'ApiAuthentication@login')->withoutMiddleware('auth:api');
 
-    Route::get('/logout', 'ApiAuthentication@logout');
+    Route::get('/logout', 'ApiAuthentication@logout')->name('api.logout');
 
     Route::get('/user-info', 'ApiAuthentication@user');
 

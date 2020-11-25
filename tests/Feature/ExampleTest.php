@@ -2,15 +2,10 @@
 
 namespace Tests\Feature;
 
-use App\Http\Controllers\Home\HomeController;
 use App\Model\Chapter;
 use App\Model\Comicwork;
-use App\Model\ComicworkTag;
-use App\Model\Tag;
-use App\Model\View;
 use Carbon\Carbon;
-use Illuminate\Pagination\Paginator;
-use PHPUnit\Framework\Exception;
+use Ramsey\Collection\Collection;
 use Tests\TestCase;
 
 
@@ -26,6 +21,46 @@ class ExampleTest extends TestCase
         $rootTime = strtotime(Carbon::create(2020, 9, 1));
 
         return (4 * $vote + 3 * $comment + $views) / 10 - ($time - $rootTime) / 10800;
+    }
+
+    public function testExample()
+    {
+        $startDate = now()->subMonths();
+        $endDate = now();
+        $timeStartDate = strtotime($startDate);
+
+        // Đánh giá điểm cho bộ truyện
+        $h = function (Comicwork $comic) use ($timeStartDate, $endDate, $startDate) {
+            $v = $comic->views()->whereBetween('created_at', [$startDate, $endDate])->count('id');
+            $f = $comic->votes()->whereBetween('created_at', [$startDate, $endDate])->count();
+            $n = $comic->chapters()->count();
+            $d = time() - $timeStartDate;
+            $c = 1000000;
+            return ($f + $v) / $n - $d / $c;
+        };
+
+        // Xử lý dữ liệu thô
+        $comics = Comicwork::select(['id', 'name'])
+            ->cursor()->sort(function ($u, $v) use ($h, $startDate, $endDate) {
+                return \request('category') == 'cao-nhat' ? $h($v) - $h($u) : $h($u) - $h($v);
+            })->take(5);
+
+
+        $data = collect();
+        $data->put('columns', $comics->values());
+
+        $values = new Collection();
+
+        foreach ($comics as $comic) {
+            $valCol = new Collection();
+            $startDate = now()->subMonths();
+            $del = $endDate
+
+            for ()
+        }
+
+
+        dd($comics->all());
     }
 
 }

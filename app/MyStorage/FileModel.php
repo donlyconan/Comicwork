@@ -19,6 +19,21 @@ use PHPUnit\Framework\Exception;
  */
 class FileModel
 {
+    public static function uploadUserProfile(UploadedFile $file){
+        $url_image = FileSystem::getFolderUser()->save('profile', $file);
+        return $url_image;
+    }
+
+    /**
+     * @param UploadedFile $file
+     * Upload ảnh đại diện của comicwork lên hệ thống
+     * Lấy lại đường dẫn của file ảnh
+     */
+    public static function uploadComicworkProfile(UploadedFile $file)
+    {
+        $url_image = FileSystem::getFolderComicwork()->save('profile', $file);
+        return $url_image;
+    }
     /**
      * Thay đổi ảnh đại diện của một Bộ truyện
      */

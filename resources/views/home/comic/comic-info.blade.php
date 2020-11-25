@@ -72,15 +72,16 @@
                         <div class="statiscal">
                             <span class="st">Lượt xem: </span>
                             <span class="sp01"><i class="fas fa-eye"></i> <span class="sp02">
-                                        {{ number_format($views) }} {{ "  •  ".$chapter->getTimeAgo() }}
+                                        {{ number_format($views) }} {{ "   •   ".$chapter->getTimeAgo() }}
                                 </span></span>
 
-                            <span style="margin-left: 25px;">Theo dõi: </span>
+                            <span style="margin-left: 13px;"></span>
                             <span class="sp01"><i class="fas fa-heart"></i> <span class="sp02 number-follow">
                                     {{ number_format($follows) }}
-                                </span></span>
+                                </span>
+                            </span>
 
-                            <span style="margin-left: 25px;">Yêu thích: </span>
+                            <span style="margin-left: 9px;"></span>
                             <span class="sp01"><i class="fas fa-thumbs-up"></i> <span class="sp02 number-like">
                                     {{ number_format($votes) }}
                                 </span></span>

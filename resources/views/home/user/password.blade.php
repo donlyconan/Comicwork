@@ -15,13 +15,14 @@
                         <input class="input" type="password" value="" name="oldPassword" id="password_old">
                     </p>
                 </div>
-                @isset($failed)
+                @if(session('failed') != null)
                     <div class="field">
                         <div class="alert alert-danger">
-                            {{$failed}}
+                            {{session('failed')}}
+                            @php(Session::forget('failed'))
                         </div>
                     </div>
-                @endisset
+                @endif
                 <div class="field">
                     <p class="txt">Mật khẩu mới</p>
                     <p class="control">
@@ -42,9 +43,11 @@
                                 <div>{{$error}}</div>
                             @endforeach
                         </div>
-                    @elseif(session('notify'))
-                        <div class="alert alert-success">{{session('notify')}}</div>
+                    @elseif(session('success'))
+                        <div class="alert alert-success">{{session('success')}}</div>
+                        @php(Session::forget('success'))
                     @endif
+
                 </div>
                 <div class="field">
                     <p class="control">

@@ -1,3 +1,5 @@
+
+
 void function selected(_class, index) {
     var children = document.getElementsByClassName(_class);
     for (child in children) {
@@ -17,8 +19,4 @@ void function selectByValue(_class, value) {
         }
     }
 }
-
-
-
-
 

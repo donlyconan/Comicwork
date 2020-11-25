@@ -14,7 +14,7 @@
                                     @include('include.item-comic', [
                                         'comic'=>$comic,
                                         'id_chapter'=>$comic->current_chapter->id,
-                                        'chapter_number'=>$comic->current_chapter->chapter_number
+                                        'chapter'=>$comic->current_chapter
                                     ])
                                 @elseif(isset($action))
                                     @include('include.item-comic', compact('comic', 'action'))
